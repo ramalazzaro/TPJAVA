@@ -1,0 +1,120 @@
+<PerfilInstagram>
+    <Imagen>
+        <nombre>Tarde en la playa</nombre>
+        <fechaSubida>2022/02/02</fechaSubida>
+        <cantMG>65</cantMG>
+        <etiqueta>Playa</etiqueta>
+        <etiqueta>Atardecer</etiqueta>
+        <etiqueta>Familia</etiqueta>
+        <cometario>
+            <usuario>JuanPerez</usuario>
+            <contenido>Que lindo x dios</contenido>
+            <fecha>2022/02/02</fecha>
+        </cometario>
+        <cometario>
+            <usuario>BoquitaPasion</usuario>
+            <contenido>Esto es boooca</contenido>
+            <fecha>2022/02/03</fecha>
+        </cometario>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>:D</contenido>
+            <fecha>2022/02/03</fecha>
+        </comentario>
+        <resolucion>1920*1080</resolucion>
+        <Ancho>1920</Ancho>
+        <Alto>1080</Alto>
+    </Imagen>
+    <Video>
+        <nombre>Jugando con mis perritos</nombre>
+        <fechaSubida>2022/04/14</fechaSubida>
+        <cantMG>102</cantMG>
+        <etiqueta>Perros</etiqueta>
+        <etiqueta>DogFriendly</etiqueta>
+        <etiqueta>Amor</etiqueta>
+        <cometario>
+            <usuario>JuanPerez</usuario>
+            <contenido>Esta grandote che!</contenido>
+            <fecha>2022/04/15</fecha>
+        </cometario>
+        <cometario>
+            <usuario>SabriGomez</usuario>
+            <contenido>Que lindo esta Pipo</contenido>
+            <fecha>2022/04/15</fecha>
+        </cometario>
+        <comentario>
+            <usuario>BoquitaPasion</usuario>
+            <contenido>:(((</contenido>
+            <fecha>2022/16/20</fecha>
+        </comentario>
+        <duracion>15</duracion>
+        <resolucion>1080*720</resolucion>
+        <cuadros>60</cuadros>
+    </Video>
+    <Imagen>
+        <nombre>Estudiando</nombre>
+        <fechaSubida>2022/04/20</fechaSubida>
+        <cantMG>41</cantMG>
+        <etiqueta>Estudio</etiqueta>
+        <etiqueta>SinGanas</etiqueta>
+        <etiqueta>VamosQueSeAprueba</etiqueta>
+        <cometario>
+            <usuario>LolaLoCelso</usuario>
+            <contenido>Es para el parcial de algoritmos, no?</contenido>
+            <fecha>2022/04/20</fecha>
+        </cometario>
+        <cometario>
+            <usuario>LeoMessi</usuario>
+            <contenido>Estamos iguales, me estan matando con el frances a mi</contenido>
+            <fecha>2022/04/22</fecha>
+        </cometario>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>MESSI TE COMENTO LA FOTO?</contenido>
+            <fecha>2022/04/23</fecha>
+        </comentario>
+        <resolucion>1920*1350</resolucion>
+        <Ancho>1920</Ancho>
+        <Alto>1350</Alto>
+    </Imagen>
+    <Audio>
+        <nombre>Charlas de oficina</nombre>
+        <fechaSubida>2022/06/05</fechaSubida>
+        <cantMG>55</cantMG>
+        <etiqueta>Informativo</etiqueta>
+        <etiqueta>Informacion</etiqueta>
+        <etiqueta>Actualidad</etiqueta>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>Interesantisimo</contenido>
+            <fecha>2022/06/05</fecha>
+        </comentario>
+        <cometario>
+            <usuario>JuanPerez</usuario>
+            <contenido>me dejo pensando</contenido>
+            <fecha>2022/06/10</fecha>
+        </cometario>
+        <cometario>
+            <usuario>LeoMessi</usuario>
+            <contenido>Lo escuchamos con Anto y nos encanto! Segui asi</contenido>
+            <fecha>2022/06/11</fecha>
+        </cometario>
+        <duracion>636</duracion>
+        <velocidad>1</velocidad>
+    </Audio>
+    <Audio>
+        <nombre>Charlas de oficina CAP2</nombre>
+        <fechaSubida>2022/06/18</fechaSubida>
+        <cantMG>67</cantMG>
+        <etiqueta>Informativo</etiqueta>
+        <etiqueta>Informacion</etiqueta>
+        <etiqueta>Actualidad</etiqueta>
+        <comentario>
+            <usuario>LeoMessi</usuario>
+            <contenido>Buenisimo</contenido>
+            <fecha>200/06/19</fecha>
+        </comentario>
+        <duracion>720</duracion>
+        <velocidad>1</velocidad>
+    </Audio>
+</PerfilInstagram>
