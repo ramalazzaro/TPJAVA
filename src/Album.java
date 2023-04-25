@@ -26,3 +26,5 @@ public class Album {
         this.cantPublicacionesTipo = cantPublicacionesTipo;
     }
 }
+int I;
+//PRUEBA
