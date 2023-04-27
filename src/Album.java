@@ -1,7 +1,10 @@
+
 public class Album {
     private int cantidadAcumuladaMG;
     private int cantPublicacionesTotales;
-    private int[] cantPublicacionesTipo = new int[3];
+    private int[] cantPublicacionesTipo = new int[3];//cambiar a resultado calculado
+    private List<Album> listaAlbumSub;
+    private List<Publicacion> listaAlbumPublicaciones;
 
     public Album(int cantidadAcumuladaMG, int cantPublicacionesTotales) {
         this.cantidadAcumuladaMG = cantidadAcumuladaMG;
@@ -24,5 +27,8 @@ public class Album {
     }
     public void setCantPublicacionesTipo(int[] cantPublicacionesTipo) {
         this.cantPublicacionesTipo = cantPublicacionesTipo;
+    }
+    public void setAlbumSub(Album ob){
+        if(listaAlbumSub == )
     }
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Publicacion implements Comparable<Publicacion> {
 
     private String nombre;
-    private String fechaSubida;
+    private String fechaSubida;//local date
     private int cantidadMG;
     private ArrayList<Etiqueta> listaEtiquetas = new ArrayList<>();
     private ArrayList<Comentario> listaComentarios = new ArrayList<>();

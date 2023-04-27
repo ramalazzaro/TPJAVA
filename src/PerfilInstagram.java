@@ -5,7 +5,4 @@ public class PerfilInstagram {
     public void addPublicacion(Publicacion nuevaPublicacion) {
         listaPublicaciones.add(nuevaPublicacion);
     }
-
-    public static void main (String[] args) {}
-
 }
