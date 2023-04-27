@@ -5,8 +5,8 @@ public class Publicacion implements Comparable<Publicacion> {
     private String nombre;
     private String fechaSubida;//local date
     private int cantidadMG;
-    private ArrayList<Etiqueta> listaEtiquetas = new ArrayList<>();
-    private ArrayList<Comentario> listaComentarios = new ArrayList<>();
+    private List<Etiqueta> listaEtiquetas = new ArrayList<>();
+    private List<Comentario> listaComentarios = new ArrayList<>();
     public Publicacion(String nombre,String fechaSubida,int cantidadMG){
         this.nombre = nombre;
         this.fechaSubida = fechaSubida;

@@ -1,10 +1,8 @@
-import javax.print.DocFlavor.STRING;
-
 public class Video extends Publicacion implements Filtrable,Durable {
     private int duracion; //en segundos
     private String resolucion; 
     private int cantidadCuadros;
-    public Videos(String nombre, String fechaSubida, int cantidadMG,int duracion,String resolucion,int cantidadCuadros) {
+    public Video(String nombre, String fechaSubida, int cantidadMG, int duracion, String resolucion, int cantidadCuadros) {
         super(nombre,fechaSubida,cantidadMG);
         this.duracion = duracion;
         this.resolucion = resolucion;

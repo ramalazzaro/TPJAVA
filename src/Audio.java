@@ -1,7 +1,7 @@
-public class Audios extends Publicacion{
+public class Audio extends Publicacion{
     private int duracion; 
     private int velocidad;
-    public Audios(String nombre, String fechaSubida, int cantidadMG,int duracion,int velocidad) {
+    public Audio(String nombre, String fechaSubida, int cantidadMG, int duracion, int velocidad) {
         super(nombre, fechaSubida, cantidadMG);
         this.duracion = duracion;
         this.velocidad = velocidad;

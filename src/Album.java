@@ -1,34 +1,23 @@
+import java.util.List;
 
 public class Album {
-    private int cantidadAcumuladaMG;
-    private int cantPublicacionesTotales;
-    private int[] cantPublicacionesTipo = new int[3];//cambiar a resultado calculado
     private List<Album> listaAlbumSub;
     private List<Publicacion> listaAlbumPublicaciones;
+    private List<Integer> listaCantTipo;
 
-    public Album(int cantidadAcumuladaMG, int cantPublicacionesTotales) {
-        this.cantidadAcumuladaMG = cantidadAcumuladaMG;
-        this.cantPublicacionesTotales = cantPublicacionesTotales;
-    }
+    //FALTA: anade listaPub y listaSub (si no hay elementos, crearla y agregarla)
+    //al anadir publicacion agregar automaticamente a listaCantTipo
+
     public int getCantidadAcumuladaMG() {
-        return cantidadAcumuladaMG;
+        int x = new int;
+        for(Publicacion publicacion: listaAlbumPublicaciones){
+            x += publicacion.getCantidadMG();
+        }
+        return x;
     }
-    public void setCantidadAcumuladaMG(int cantidadAcumuladaMG) {
-        this.cantidadAcumuladaMG = cantidadAcumuladaMG;
+
+    public int[] getCantPublicaciones() {
+        return new int[]{listaAlbumPublicaciones.size()};
     }
-    public int getCantPublicacionesTotales() {
-        return cantPublicacionesTotales;
-    }
-    public void setCantPublicacionesTotales(int cantPublicacionesTotales) {
-        this.cantPublicacionesTotales = cantPublicacionesTotales;
-    }
-    public int[] getCantPublicacionesTipo() {
-        return cantPublicacionesTipo;
-    }
-    public void setCantPublicacionesTipo(int[] cantPublicacionesTipo) {
-        this.cantPublicacionesTipo = cantPublicacionesTipo;
-    }
-    public void setAlbumSub(Album ob){
-        if(listaAlbumSub == )
-    }
+
 }
