@@ -9,7 +9,7 @@ public class Album {
     //al anadir publicacion agregar automaticamente a listaCantTipo
 
     public int getCantidadAcumuladaMG() {
-        int x = new int;
+        Integer x = new Integer(0);
         for(Publicacion publicacion: listaAlbumPublicaciones){
             x += publicacion.getCantidadMG();
         }
