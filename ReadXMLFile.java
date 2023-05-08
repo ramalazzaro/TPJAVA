@@ -20,6 +20,7 @@ public class ReadXMLFile {
             NodeList imagenList = doc.getElementsByTagName("Imagen");
             NodeList videoList = doc.getElementsByTagName("Video");
             NodeList audioList = doc.getElementsByTagName("Audio");
+            NodeList textoList = doc.getElementsByTagName("Texto");
 
             System.out.println("RESUMEN DE IMÁGENES");
             System.out.println("----------------------------");
@@ -115,6 +116,21 @@ public class ReadXMLFile {
                     System.out.println("Formato: " + getElementValue(audioElement, "formato"));
                     System.out.println("Tamaño: " + getElementValue(audioElement, "tamanio"));
 
+                    System.out.println("----------------------------");
+                }
+            }
+
+
+            System.out.println("RESUMEN DE TEXTOS");
+            System.out.println("----------------------------");
+            for (int i = 0; i < textoList.getLength(); i++) {
+                Node textoNode = textoList.item(i);
+                if (textoNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element textoElement = (Element) textoNode;
+                    System.out.println("Contenido: " + getElementValue(textoElement, "contenido"));
+                    System.out.println("Caracteres: " + getElementValue(textoElement, "caracteres"));
+                    System.out.println("Fuente: " + getElementValue(textoElement, "fuente"));
+                    System.out.println("Tamaño: " + getElementValue(textoElement, "tamaño"));
                     System.out.println("----------------------------");
                 }
             }
