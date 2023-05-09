@@ -7,131 +7,86 @@ import org.w3c.dom.Element;
 import java.io.File;
 
 public class ReadXMLFile {
+    private PerfilInstagram perfilInstagram;
 
-    public static void main(String argv[]) {
+    public ReadXMLFile(PerfilInstagram perfilInstagram) {
+        this.perfilInstagram = perfilInstagram;
+    }
+
+    public void parseXML(String xmlPath) {
         try {
-            File fXmlFile = new File("datos.xml");
+            File fXmlFile = new File(xmlPath);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
             doc.getDocumentElement().normalize();
 
-            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
             NodeList imagenList = doc.getElementsByTagName("Imagen");
             NodeList videoList = doc.getElementsByTagName("Video");
             NodeList audioList = doc.getElementsByTagName("Audio");
             NodeList textoList = doc.getElementsByTagName("Texto");
 
-            System.out.println("RESUMEN DE IMÁGENES");
-            System.out.println("----------------------------");
             for (int i = 0; i < imagenList.getLength(); i++) {
                 Node imagenNode = imagenList.item(i);
                 if (imagenNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element imagenElement = (Element) imagenNode;
-                    System.out.println("Nombre: " + getElementValue(imagenElement, "nombre"));
-                    System.out.println("Fecha de Subida: " + getElementValue(imagenElement, "fechaSubida"));
-                    System.out.println("Cantidad de Me Gusta: " + getElementValue(imagenElement, "cantMG"));
-
-                    NodeList etiquetasList = imagenElement.getElementsByTagName("etiqueta");
-                    System.out.println("Etiquetas:");
-                    for (int j = 0; j < etiquetasList.getLength(); j++) {
-                        Node etiquetaNode = etiquetasList.item(j);
-                        if (etiquetaNode.getNodeType() == Node.ELEMENT_NODE) {
-                            Element etiquetaElement = (Element) etiquetaNode;
-                            System.out.println("- " + etiquetaElement.getTextContent());
-                        }
-                    }
-
-                    NodeList comentarioList = imagenElement.getElementsByTagName("cometario");
-                    System.out.println("Comentarios:");
-                    for (int j = 0; j < comentarioList.getLength(); j++) {
-                        Node comentarioNode = comentarioList.item(j);
-                        if (comentarioNode.getNodeType() == Node.ELEMENT_NODE) {
-                            Element comentarioElement = (Element) comentarioNode;
-                            System.out.println("- Usuario: " + getElementValue(comentarioElement, "usuario"));
-                            System.out.println("  Contenido: " + getElementValue(comentarioElement, "contenido"));
-                            System.out.println("  Fecha: " + getElementValue(comentarioElement, "fecha"));
-                        }
-                    }
-
-                    System.out.println("Resolución: " + getElementValue(imagenElement, "resolucion"));
-                    System.out.println("Ancho: " + getElementValue(imagenElement, "Ancho"));
-                    System.out.println("Alto: " + getElementValue(imagenElement, "Alto"));
-
-                    System.out.println("----------------------------");
+            
+                    String nombre = getElementValue(imagenElement, "nombre");
+                    String fechaSubida = getElementValue(imagenElement, "fechaSubida");
+                    int cantMG = Integer.parseInt(getElementValue(imagenElement, "cantMG"));
+                    int ancho = Integer.parseInt(getElementValue(imagenElement, "Ancho")); // Cambiado aquí
+                    int alto = Integer.parseInt(getElementValue(imagenElement, "Alto")); // Cambiado aquí
+                    String formato = getElementValue(imagenElement, "formato");
+            
+                    Imagen imagen = new Imagen(nombre, fechaSubida, cantMG, formato, ancho, alto);
+            
+                    perfilInstagram.addPublicacion(imagen);
                 }
             }
+            
 
-            System.out.println("RESUMEN DE VIDEOS");
-            System.out.println("----------------------------");
             for (int i = 0; i < videoList.getLength(); i++) {
                 Node videoNode = videoList.item(i);
                 if (videoNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element videoElement = (Element) videoNode;
-                    System.out.println("Nombre: " + getElementValue(videoElement, "nombre"));
-                    System.out.println("Fecha de Subida: " + getElementValue(videoElement, "fechaSubida"));
-                    System.out.println("Cantidad de Me Gusta: " + getElementValue(videoElement, "cantMG"));
-                    System.out.println("Duración: " + getElementValue(videoElement, "duracion"));
-                    System.out.println("Resolución: " + getElementValue(videoElement, "resolucion"));
-                    System.out.println("Formato: " + getElementValue(videoElement, "formato"));
-                    System.out.println("Tamaño: " + getElementValue(videoElement, "tamanio"));
-
-                    System.out.println("----------------------------");
+                    String nombre = getElementValue(videoElement, "nombre");
+                    String fechaSubida = getElementValue(videoElement, "fechaSubida");
+                    int cantMG = Integer.parseInt(getElementValue(videoElement, "cantMG"));
+                    int duracion = Integer.parseInt(getElementValue(videoElement, "duracion"));
+                    String resolucion = getElementValue(videoElement, "resolucion");
+                    int cantidadCuadros = Integer.parseInt(getElementValue(videoElement, "cantidadCuadros"));
+                    Video video = new Video(nombre, fechaSubida, cantMG, duracion, resolucion, cantidadCuadros);
+                    perfilInstagram.addPublicacion(video);
                 }
             }
 
-            System.out.println("RESUMEN DE AUDIOS");
-            System.out.println("----------------------------");
             for (int i = 0; i < audioList.getLength(); i++) {
                 Node audioNode = audioList.item(i);
                 if (audioNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element audioElement = (Element) audioNode;
-                    System.out.println("Nombre: " + getElementValue(audioElement, "nombre"));
-                    System.out.println("Fecha de Subida: " + getElementValue(audioElement, "fechaSubida"));
-                    System.out.println("Cantidad de Me Gusta: " + getElementValue(audioElement, "cantMG"));
-
-                    NodeList etiquetasList = audioElement.getElementsByTagName("etiqueta");
-                    System.out.println("Etiquetas:");
-                    for (int j = 0; j < etiquetasList.getLength(); j++) {
-                        Node etiquetaNode = etiquetasList.item(j);
-                        if (etiquetaNode.getNodeType() == Node.ELEMENT_NODE) {
-                            Element etiquetaElement = (Element) etiquetaNode;
-                            System.out.println("- " + etiquetaElement.getTextContent());
-                        }
-                    }
-
-                    NodeList comentarioList = audioElement.getElementsByTagName("cometario");
-                    System.out.println("Comentarios:");
-                    for (int j = 0; j < comentarioList.getLength(); j++) {
-                        Node comentarioNode = comentarioList.item(j);
-                        if (comentarioNode.getNodeType() == Node.ELEMENT_NODE) {
-                            Element comentarioElement = (Element) comentarioNode;
-                            System.out.println("- Usuario: " + getElementValue(comentarioElement, "usuario"));
-                            System.out.println("  Contenido: " + getElementValue(comentarioElement, "contenido"));
-                            System.out.println("  Fecha: " + getElementValue(comentarioElement, "fecha"));
-                        }
-                    }
-
-                    System.out.println("Duración: " + getElementValue(audioElement, "duracion"));
-                    System.out.println("Formato: " + getElementValue(audioElement, "formato"));
-                    System.out.println("Tamaño: " + getElementValue(audioElement, "tamanio"));
-
-                    System.out.println("----------------------------");
+                    String nombre = getElementValue(audioElement, "nombre");
+                    String fechaSubida = getElementValue(audioElement, "fechaSubida");
+                    int cantMG = Integer.parseInt(getElementValue(audioElement, "cantMG"));
+                    int duracion = Integer.parseInt(getElementValue(audioElement, "duracion"));
+                    int velocidad = Integer.parseInt(getElementValue(audioElement, "velocidad"));
+                    Audio audio = new Audio(nombre, fechaSubida, cantMG, duracion, velocidad);
+                    perfilInstagram.addPublicacion(audio);
                 }
             }
 
-
-            System.out.println("RESUMEN DE TEXTOS");
-            System.out.println("----------------------------");
             for (int i = 0; i < textoList.getLength(); i++) {
                 Node textoNode = textoList.item(i);
                 if (textoNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element textoElement = (Element) textoNode;
-                    System.out.println("Contenido: " + getElementValue(textoElement, "contenido"));
-                    System.out.println("Caracteres: " + getElementValue(textoElement, "caracteres"));
-                    System.out.println("Fuente: " + getElementValue(textoElement, "fuente"));
-                    System.out.println("Tamaño: " + getElementValue(textoElement, "tamaño"));
-                    System.out.println("----------------------------");
+                    String nombre = getElementValue(textoElement, "nombre");
+                    String fechaSubida = getElementValue(textoElement, "fechaSubida");
+                    int cantMG = Integer.parseInt(getElementValue(textoElement, "cantMG"));
+                    String contenido = getElementValue(textoElement, "contenido");
+                    int caracteres = Integer.parseInt(getElementValue(textoElement, "caracteres"));
+                    String fuente = getElementValue(textoElement, "fuente");
+                    String tamaño = getElementValue(textoElement, "tamaño");
+                    Texto texto = new Texto(nombre, fechaSubida, cantMG, contenido, caracteres, fuente, tamaño);
+                    perfilInstagram.addPublicacion(texto);
                 }
             }
 
@@ -140,12 +95,17 @@ public class ReadXMLFile {
         }
     }
 
-    private static String getElementValue(Element element, String tagName) {
-        NodeList nodeList = element.getElementsByTagName(tagName);
-        if (nodeList.getLength() > 0) {
+    private String getElementValue(Element element, String tagName) {
+        Node firstChild = element.getElementsByTagName(tagName).item(0);
+        if (firstChild != null) {
+            NodeList nodeList = firstChild.getChildNodes();
             Node node = nodeList.item(0);
-            return node.getTextContent();
+            return node.getNodeValue();
+        } else {
+            return "0";  // Retorna "0" como valor predeterminado si no se encuentra el elemento hijo
         }
-        return "";
     }
+    
+    
 }
+
