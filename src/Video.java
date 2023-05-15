@@ -1,9 +1,11 @@
-public class Video extends Publicacion implements Filtrable,Durable {
-    private int duracion; //en segundos
-    private String resolucion; 
+public class Video extends Publicacion {
+    private int duracion;
+    private String resolucion;
     private int cantidadCuadros;
-    public Video(String nombre, String fechaSubida, int cantidadMG, int duracion, String resolucion, int cantidadCuadros) {
-        super(nombre,fechaSubida,cantidadMG);
+    
+
+    public Video(String nombre, String fechaSubida, int cantidadMG, int duracion,String resolucion,int cantidadCuadros) {
+        super(nombre, fechaSubida, cantidadMG);
         this.duracion = duracion;
         this.resolucion = resolucion;
         this.cantidadCuadros = cantidadCuadros;
@@ -31,5 +33,17 @@ public class Video extends Publicacion implements Filtrable,Durable {
 
     public void setCantidadCuadros(int cantidadCuadros) {
         this.cantidadCuadros = cantidadCuadros;
+    }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "nombre='" + getNombre() + '\'' +
+                ", fechaSubida='" + getFechaSubida() + '\'' +
+                ", cantidadMG=" + getCantidadMG() +
+                ", duracion=" + duracion +
+                ", resolucion='" + resolucion + '\'' +
+                ", cantidadCuadros=" + cantidadCuadros +
+                '}';
     }
 }

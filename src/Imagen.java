@@ -1,4 +1,4 @@
-public class Imagen extends Publicacion implements Filtrable{
+public class Imagen extends Publicacion {
     private String resolucion;
     private int ancho;
     private int alto;
@@ -32,6 +32,21 @@ public class Imagen extends Publicacion implements Filtrable{
     public void setAlto(int alto) {
         this.alto = alto;
     }
+
+    
+     @Override
+        public String toString() {
+            return "Imagen{" +
+                    "nombre='" + getNombre() + '\'' +
+                    ", fechaSubida='" + getFechaSubida() + '\'' +
+                    ", cantidadMG=" + getCantidadMG() +
+                    ", resolucion='" + resolucion + '\'' +
+                    ", ancho=" + ancho +
+                    ", alto=" + alto +
+                    '}';
+        }
+    
+    
 }
 
 

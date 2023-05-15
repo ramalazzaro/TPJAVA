@@ -1,6 +1,7 @@
-public class Audio extends Publicacion{
+public class Audio extends Publicacion {
     private int duracion; 
     private int velocidad;
+
     public Audio(String nombre, String fechaSubida, int cantidadMG, int duracion, int velocidad) {
         super(nombre, fechaSubida, cantidadMG);
         this.duracion = duracion;
@@ -20,6 +21,17 @@ public class Audio extends Publicacion{
 
     public void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Audio{" +
+                "nombre='" + getNombre() + '\'' +
+                ", fechaSubida='" + getFechaSubida() + '\'' +
+                ", cantidadMG=" + getCantidadMG() +
+                ", duracion=" + duracion +
+                ", velocidad=" + velocidad +
+                '}';
     }
 }
 
