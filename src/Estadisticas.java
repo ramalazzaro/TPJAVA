@@ -15,18 +15,25 @@ public class Estadisticas{
     public SortedSet<Publicacion> getListaPublicacionesPorFecha(){return listaPublicacionesPorFecha;}
     public void LikesPorAño(SortedSet<Publicacion> listaPublicaciones)
     {
-        int CantLikesAño = 0;
+        HashMap<String,Integer> MapCantLikesAño = new HashMap<String, Integer>();
+        int CantLikesAño;
         int año;
         Iterator<Publicacion> publicacionIterator = listaPublicaciones.iterator();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        for(Publicacion publicacion : listaPublicaciones) {
-            LocalDate Date = LocalDate.parse(publicacion.getFechaSubida(), formatter);
+        LocalDate Date;
+        Publicacion publicacion = publicacionIterator.next();
+        while(publicacionIterator.hasNext()) {
+            CantLikesAño=0;
+            CantLikesAño += publicacion.getCantidadMG();
+            Date = LocalDate.parse(publicacion.getFechaSubida(),formatter);
             año = Date.getYear();
-            do {
+            publicacion = publicacionIterator.next();
+            while(publicacionIterator.hasNext() && año == Date.getYear()){
+                publicacion = publicacionIterator.next();
                 CantLikesAño += publicacion.getCantidadMG();
-                Date = LocalDate.parse(publicacionIterator.next().getFechaSubida(),formatter);
-            }while(año == Date.getYear() && publicacionIterator.hasNext());
-            System.out.println("Cantidad de MeGustas en el mes "+ año +": "+ CantLikesAño);
+                Date = LocalDate.parse(publicacion.getFechaSubida(),formatter);
+            }
+            System.out.println("Cantidad de MeGustas en el año "+ año +": "+ CantLikesAño)
         }
     }
     public void cantPublicacionesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)

@@ -12,10 +12,10 @@ public class Main {
         // Se crea una lista ordenada por fechas solo para calcular estadísticas que lo requeriran (Ej: LikesPorMes)
         Estadisticas.creaListaPorFecha(perfilInstagram.getListaPublicaciones());
 
-        // Estadisticas.mostrarPublicacionesPorFecha();
-        //Estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
-        Estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
-        Estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
+        Estadisticas.mostrarPublicacionesPorFecha();
+        Estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
+        //Estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
+        //Estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
     }
 }
 
