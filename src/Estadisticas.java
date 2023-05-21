@@ -24,16 +24,16 @@ public class Estadisticas{
         Publicacion publicacion = publicacionIterator.next();
         while(publicacionIterator.hasNext()) {
             CantLikesAño=0;
-            CantLikesAño += publicacion.getCantidadMG();
             Date = LocalDate.parse(publicacion.getFechaSubida(),formatter);
             año = Date.getYear();
-            publicacion = publicacionIterator.next();
             while(publicacionIterator.hasNext() && año == Date.getYear()){
-                publicacion = publicacionIterator.next();
                 CantLikesAño += publicacion.getCantidadMG();
+                publicacion = publicacionIterator.next();
                 Date = LocalDate.parse(publicacion.getFechaSubida(),formatter);
             }
-            System.out.println("Cantidad de MeGustas en el año "+ año +": "+ CantLikesAño)
+            if(!publicacionIterator.hasNext())
+                CantLikesAño += publicacion.getCantidadMG();
+            System.out.println("Cantidad de MeGustas en el año "+ año +": "+ CantLikesAño);
         }
     }
     public void cantPublicacionesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)
