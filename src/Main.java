@@ -8,14 +8,17 @@ public class Main {
         //Luego de agregar las publicaciones, puedes llamar a los métodos en la instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
         //perfilInstagram.mostrarPublicaciones();
 
-        Estadisticas Estadisticas = new Estadisticas();
+        Estadisticas estadisticas = new Estadisticas();
         // Se crea una lista ordenada por fechas solo para calcular estadísticas que lo requeriran (Ej: LikesPorMes)
-        Estadisticas.creaListaPorFecha(perfilInstagram.getListaPublicaciones());
+        estadisticas.creaListaPorFecha(perfilInstagram.getListaPublicaciones());
 
-        Estadisticas.mostrarPublicacionesPorFecha();
-        Estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
-        //Estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
-        //Estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
+        estadisticas.mostrarPublicaciones(estadisticas.getListaPublicacionesPorFecha());
+        //estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
+        //estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
+        //estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
+        estadisticas.publicacionesConMasLikes(perfilInstagram.getListaPublicaciones());
+        System.out.println("Pub mas likes:");
+        estadisticas.mostrarPublicaciones(estadisticas.getLista5PublicacionesMasLikes());
     }
 }
 

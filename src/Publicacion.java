@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public abstract class Publicacion implements Comparable<Publicacion>  {
-
     private String nombre;
     private String fechaSubida;
     private int cantidadMG;

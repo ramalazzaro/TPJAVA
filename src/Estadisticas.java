@@ -1,23 +1,24 @@
-import java.sql.SQLOutput;
 import java.util.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
 public class Estadisticas{
-    private SortedSet<Publicacion> listaPublicacionesPorFecha = new TreeSet<>(new FechaComparator());
+    private static SortedSet<Publicacion> listaPublicacionesPorFecha = new TreeSet<>(new FechaComparator());
+    private SortedSet<Publicacion> lista5PublicacionesMasLikes = new TreeSet<>(new MeGustaComparator());
     public void creaListaPorFecha(SortedSet<Publicacion> listaPub){listaPublicacionesPorFecha.addAll(listaPub);}
-    public void mostrarPublicacionesPorFecha() {
-        for (Publicacion publicacion : listaPublicacionesPorFecha) {
+    public void mostrarPublicaciones(SortedSet<Publicacion> lista) {
+        for (Publicacion publicacion : lista) {
             System.out.println(publicacion.toString());
         }
     }
     public SortedSet<Publicacion> getListaPublicacionesPorFecha(){return listaPublicacionesPorFecha;}
+    public SortedSet<Publicacion> getLista5PublicacionesMasLikes(){return lista5PublicacionesMasLikes;}
     public void LikesPorAño(SortedSet<Publicacion> listaPublicaciones)
     {
-        HashMap<String,Integer> MapCantLikesAño = new HashMap<String, Integer>();
-        int CantLikesAño;
-        int año;
+        HashMap<Integer,Integer> MapCantLikesAño = new HashMap<Integer, Integer>();
+        int CantLikesAño=0;
+        int año=0;
         Iterator<Publicacion> publicacionIterator = listaPublicaciones.iterator();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate Date;
@@ -31,10 +32,10 @@ public class Estadisticas{
                 publicacion = publicacionIterator.next();
                 Date = LocalDate.parse(publicacion.getFechaSubida(),formatter);
             }
-            if(!publicacionIterator.hasNext())
-                CantLikesAño += publicacion.getCantidadMG();
-            System.out.println("Cantidad de MeGustas en el año "+ año +": "+ CantLikesAño);
+            MapCantLikesAño.put(año,CantLikesAño);
         }
+        MapCantLikesAño.put(año,CantLikesAño + publicacion.getCantidadMG());
+        for(Integer clave:MapCantLikesAño.keySet()){System.out.println(clave+" "+MapCantLikesAño.get(clave));}
     }
     public void cantPublicacionesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)
     {
@@ -76,5 +77,25 @@ public class Estadisticas{
         System.out.println("Video: "+vecCantL[1]);
         System.out.println("Audio: "+vecCantL[2]);
         System.out.println("Texto: "+vecCantL[3]);
+    }
+    public void publicacionesConMasLikes(SortedSet<Publicacion> listaPublicaciones)
+    {
+        int likesMax = 0;
+        Iterator<Publicacion> publicacionIterator = listaPublicaciones.iterator();
+        int i = 0;
+        int cantPublicacionesConMasLikes=5;
+        while (publicacionIterator.hasNext() && i < cantPublicacionesConMasLikes) {
+            lista5PublicacionesMasLikes.add(publicacionIterator.next());
+            i++;
+        }
+        Iterator<Publicacion> publicacionLikesIterator = lista5PublicacionesMasLikes.iterator();
+        Publicacion publicacion;
+        while (publicacionIterator.hasNext()) {
+            publicacion = publicacionIterator.next();
+            if (publicacion.getCantidadMG() > lista5PublicacionesMasLikes.last().getCantidadMG()) {
+                lista5PublicacionesMasLikes.add(publicacion);
+                lista5PublicacionesMasLikes.remove(lista5PublicacionesMasLikes.last());
+            }
+        }
     }
 }
