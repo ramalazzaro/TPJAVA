@@ -40,5 +40,21 @@ public class Album {
     public String getNombre() {
         return this.nombre;
     }
+
+    public List<Publicacion> getPublicaciones() {
+        return publicaciones;
+    }
+
+    public List<Album> getSubAlbumes() {
+        return subAlbumes;
+    }
+
+    public int[] getCantTipo() {
+        return cantTipo;
+    }
+
+    public int getCantTotal() {
+        return cantTotal;
+    }
 }
 

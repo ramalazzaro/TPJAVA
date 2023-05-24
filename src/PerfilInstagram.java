@@ -15,6 +15,5 @@ public class PerfilInstagram {
         }
     }
     public SortedSet<Publicacion> getListaPublicaciones(){return listaPublicaciones;}
-
     public SortedSet<Album> getListaAlbumes() {return listaAlbumes;}
 }

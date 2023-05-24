@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public abstract class Publicacion implements Comparable<Publicacion>  {
-
     private String nombre;
     private String fechaSubida;
     private int cantidadMG;
@@ -53,6 +52,10 @@ public abstract class Publicacion implements Comparable<Publicacion>  {
         for (Comentario comentario: listaComentarios) {
             System.out.println(comentario.toString());
         }
+    }
+
+    public ArrayList<Comentario> getListaComentarios() {
+        return listaComentarios;
     }
 
     @Override
