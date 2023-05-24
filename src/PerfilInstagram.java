@@ -2,6 +2,7 @@ import java.util.*;
 
 public class PerfilInstagram {
     private SortedSet<Publicacion> listaPublicaciones = new TreeSet<>();
+    private SortedSet<Album> listaAlbumes = new TreeSet<>();
     Iterator<Publicacion> it = listaPublicaciones.iterator();
 
     public void addPublicacion(Publicacion nuevaPublicacion) {

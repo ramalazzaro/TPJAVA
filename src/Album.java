@@ -14,7 +14,7 @@ public class Album {
         this.publicaciones = new ArrayList<>();
         this.subAlbumes = new ArrayList<>();
         for (int i = 0; i < cantTipo.length; i++) {
-            cantTipo[i] = 0;
+            this.cantTipo[i] = 0;
         }
     }
     public void addCantTipo (Publicacion publicacion) {
@@ -32,6 +32,9 @@ public class Album {
     }
     public void agregarSubAlbum(Album subAlbum) {
         subAlbumes.add(subAlbum);
+    }
+    public void eliminarSubAlbum(Album subAlbum) {
+        subAlbumes.remove(subAlbum);
     }
 
 }
