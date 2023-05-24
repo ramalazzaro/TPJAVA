@@ -7,7 +7,6 @@ public class Main {
 
         //Luego de agregar las publicaciones, puedes llamar a los métodos en la instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
         //perfilInstagram.mostrarPublicaciones();
-
         Estadisticas estadisticas = new Estadisticas();
         // Se crea una lista ordenada por fechas solo para calcular estadísticas que lo requeriran (Ej: LikesPorMes)
         estadisticas.creaListaPorFecha(perfilInstagram.getListaPublicaciones());
