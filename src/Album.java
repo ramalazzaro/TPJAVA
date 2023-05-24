@@ -37,5 +37,8 @@ public class Album {
         subAlbumes.remove(subAlbum);
     }
 
+    public String getNombre() {
+        return this.nombre;
+    }
 }
 

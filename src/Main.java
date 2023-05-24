@@ -7,20 +7,20 @@ public class Main {
         // Luego de agregar las publicaciones, puedes llamar a los métodos en la instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
         //perfilInstagram.mostrarPublicaciones();
 
-        ListadoPublicaciones listadoPublicaciones = new ListadoPublicaciones();
-        listadoPublicaciones.creaListadoPublicaciones(perfilInstagram);
-        listadoPublicaciones.muestraCantPublicacionesAudio();
-        listadoPublicaciones.muestraPromMGAudio();
-        listadoPublicaciones.muestraListaAudio();
-        listadoPublicaciones.muestraCantPublicacionesTexto();
-        listadoPublicaciones.muestraPromMGTexto();
-        listadoPublicaciones.muestraListaTexto();
-        listadoPublicaciones.muestraCantPublicacionesImagen();
-        listadoPublicaciones.muestraPromMGImagen();
-        listadoPublicaciones.muestraListaImagen();
-        listadoPublicaciones.muestraCantPublicacionesVideo();
-        listadoPublicaciones.muestraPromMGVideo();
-        listadoPublicaciones.muestraListaVideo();
+        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
+        reportesPublicaciones.creaListadoPublicaciones(perfilInstagram);
+        reportesPublicaciones.muestraCantPublicacionesAudio();
+        reportesPublicaciones.muestraPromMGAudio();
+        reportesPublicaciones.muestraListaAudio();
+        reportesPublicaciones.muestraCantPublicacionesTexto();
+        reportesPublicaciones.muestraPromMGTexto();
+        reportesPublicaciones.muestraListaTexto();
+        reportesPublicaciones.muestraCantPublicacionesImagen();
+        reportesPublicaciones.muestraPromMGImagen();
+        reportesPublicaciones.muestraListaImagen();
+        reportesPublicaciones.muestraCantPublicacionesVideo();
+        reportesPublicaciones.muestraPromMGVideo();
+        reportesPublicaciones.muestraListaVideo();
     }
 }
 
