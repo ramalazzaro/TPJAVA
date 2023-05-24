@@ -6,7 +6,9 @@ import java.util.HashMap;
 public class Estadisticas{
     private static SortedSet<Publicacion> listaPublicacionesPorFecha = new TreeSet<>(new FechaComparator());
     private SortedSet<Publicacion> lista5PublicacionesMasLikes = new TreeSet<>(new MeGustaComparator());
-    public void creaListaPorFecha(SortedSet<Publicacion> listaPub){listaPublicacionesPorFecha.addAll(listaPub);}
+    public void creaListaPorFecha(PerfilInstagram perfilInstagram){
+        listaPublicacionesPorFecha.addAll(perfilInstagram.getListaPublicaciones());
+    }
     public void mostrarPublicaciones(SortedSet<Publicacion> lista) {
         for (Publicacion publicacion : lista) {
             System.out.println(publicacion.toString());

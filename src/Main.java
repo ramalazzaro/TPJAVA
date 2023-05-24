@@ -9,7 +9,7 @@ public class Main {
         //perfilInstagram.mostrarPublicaciones();
         Estadisticas estadisticas = new Estadisticas();
         // Se crea una lista ordenada por fechas solo para calcular estadísticas que lo requeriran (Ej: LikesPorMes)
-        estadisticas.creaListaPorFecha(perfilInstagram.getListaPublicaciones());
+        estadisticas.creaListaPorFecha(perfilInstagram);
 
         estadisticas.mostrarPublicaciones(estadisticas.getListaPublicacionesPorFecha());
         //estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
