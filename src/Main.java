@@ -5,9 +5,7 @@ public class Main {
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
         readXMLFile.parseXML("./datos.xml");
 
-        ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
 
-        reportesAlbumes.creaReporteAlbumes(perfilInstagram);
     }
 }
 
