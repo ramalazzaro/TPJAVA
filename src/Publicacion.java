@@ -56,7 +56,7 @@ public abstract class Publicacion implements Comparable<Publicacion>  {
     }
 
     public string getTipo(){
-        return Publicacion.getClass.getName;
+        return Publicacion.getClass().getName();
     } 
 
     @Override
