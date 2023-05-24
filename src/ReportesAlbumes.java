@@ -1,13 +1,16 @@
+import java.util.TreeSet;
+
 public class ReportesAlbumes {
     private static Estadisticas estadisticas = new Estadisticas();
 
-    private static String fechaMinima = estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida();
-    private static String fechaMaxima = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
 
     public void creaReporteAlbumes(PerfilInstagram perfilInstagram) {
         String fecha;
         int cantPub;
         int cantComen;
+
+        String fechaMaxima = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
+        String fechaMinima = estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida();
 
         for (Album album : perfilInstagram.getListaAlbumes()) {
             cantPub = 0;

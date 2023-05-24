@@ -3,11 +3,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
-public class Estadisticas{
+public class Estadisticas {
     private static SortedSet<Publicacion> listaPublicacionesPorFecha = new TreeSet<>(new FechaComparator());
     private SortedSet<Publicacion> lista5PublicacionesMasLikes = new TreeSet<>(new MeGustaComparator());
 
-    public void creaListaPorFecha(PerfilInstagram perfilInstagram){
+    public  void creaListaPorFecha(PerfilInstagram perfilInstagram){
         listaPublicacionesPorFecha.addAll(perfilInstagram.getListaPublicaciones());
     }
     public void mostrarPublicaciones(SortedSet<Publicacion> lista) {

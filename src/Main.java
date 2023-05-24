@@ -4,8 +4,10 @@ public class Main {
         PerfilInstagram perfilInstagram = new PerfilInstagram();
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
         readXMLFile.parseXML("./datos.xml");
+        Estadisticas estadisticas = new Estadisticas();
 
-
+        ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
+        reportesAlbumes.creaReporteAlbumes(perfilInstagram);
     }
 }
 
