@@ -5,7 +5,22 @@ public class Main {
         readXMLFile.parseXML("./datos.xml");
 
         // Luego de agregar las publicaciones, puedes llamar a los métodos en la instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
-        perfilInstagram.mostrarPublicaciones();
+        //perfilInstagram.mostrarPublicaciones();
+
+        ListadoPublicaciones listadoPublicaciones = new ListadoPublicaciones();
+        listadoPublicaciones.creaListadoPublicaciones(perfilInstagram);
+        listadoPublicaciones.muestraCantPublicacionesAudio();
+        listadoPublicaciones.muestraPromMGAudio();
+        listadoPublicaciones.muestraListaAudio();
+        listadoPublicaciones.muestraCantPublicacionesTexto();
+        listadoPublicaciones.muestraPromMGTexto();
+        listadoPublicaciones.muestraListaTexto();
+        listadoPublicaciones.muestraCantPublicacionesImagen();
+        listadoPublicaciones.muestraPromMGImagen();
+        listadoPublicaciones.muestraListaImagen();
+        listadoPublicaciones.muestraCantPublicacionesVideo();
+        listadoPublicaciones.muestraPromMGVideo();
+        listadoPublicaciones.muestraListaVideo();
     }
 }
 
