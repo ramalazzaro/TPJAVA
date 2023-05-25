@@ -14,6 +14,9 @@ public class PerfilInstagram {
             System.out.println(publicacion.toString());
         }
     }
+
     public SortedSet<Publicacion> getListaPublicaciones(){return listaPublicaciones;}
+
     public SortedSet<Album> getListaAlbumes() {return listaAlbumes;}
 }
+

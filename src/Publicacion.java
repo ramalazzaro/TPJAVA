@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 
-public abstract class Publicacion implements Comparable<Publicacion>  {
+
+public abstract class Publicacion implements Comparable<Publicacion> {
+
     private String nombre;
     private String fechaSubida;
     private int cantidadMG;
     private ArrayList<Etiqueta> listaEtiquetas = new ArrayList<>();
     private ArrayList<Comentario> listaComentarios = new ArrayList<>();
+
     public Publicacion(String nombre, String fechaSubida, int cantidadMG) {
         this.nombre = nombre;
         this.fechaSubida = fechaSubida;
@@ -39,20 +42,26 @@ public abstract class Publicacion implements Comparable<Publicacion>  {
     public void addEtiqueta(Etiqueta nuevaEtiqueta) {
         listaEtiquetas.add(nuevaEtiqueta);
     }
-    public void addComentario(Comentario nuevoComentario){
+
+    public void addComentario(Comentario nuevoComentario) {
         listaComentarios.add(nuevoComentario);
     }
 
-    public void mostrarEtiquetas(){
-        for(Etiqueta etiqueta: listaEtiquetas) {
+    public void mostrarEtiquetas() {
+        for (Etiqueta etiqueta : listaEtiquetas) {
             System.out.println(etiqueta.toString());
         }
     }
-    public void mostrarComentarios(){
-        for (Comentario comentario: listaComentarios) {
+
+    public void mostrarComentarios() {
+        for (Comentario comentario : listaComentarios) {
             System.out.println(comentario.toString());
         }
     }
+
+    public String getTipo(){
+        return this.getClass().getName();
+    } 
 
     public ArrayList<Comentario> getListaComentarios() {
         return listaComentarios;

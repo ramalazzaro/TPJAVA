@@ -1,16 +1,18 @@
+import java.util.SortedSet;
 import java.util.TreeSet;
 
+
 public class ReportesAlbumes {
-    private static Estadisticas estadisticas = new Estadisticas();
+//    private static Estadisticas estadisticas = new Estadisticas();
+    private StringBuilder salida = new StringBuilder();
 
-
-    public void creaReporteAlbumes(PerfilInstagram perfilInstagram) {
+    public void creaReporteAlbumes(PerfilInstagram perfilInstagram,Estadisticas estadisticas) {
         String fecha;
         int cantPub;
         int cantComen;
 
-        String fechaMaxima = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
         String fechaMinima = estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida();
+        String fechaMaxima = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
 
         for (Album album : perfilInstagram.getListaAlbumes()) {
             cantPub = 0;
@@ -18,7 +20,9 @@ public class ReportesAlbumes {
 
             recorrerAlbum(album, fechaMinima, fechaMaxima, cantPub, cantComen);
 
-            System.out.println("Album: " + album.getNombre() + "\tCantidad de publicaciones: " + cantPub + " Cantidad de comentarios totales: " + cantComen);
+            salida.append("Album: ").append(album.getNombre()).append("\tCantidad de publicaciones: ").append(cantPub).append("\tCantidad de comentarios totales: ").append(cantComen).append("\n");
+            //System.out.println("Album: " + album.getNombre() + "\tCantidad de publicaciones: " + cantPub + " Cantidad de comentarios totales: " + cantComen);
+            System.out.println(salida.toString());
         }
     }
 
