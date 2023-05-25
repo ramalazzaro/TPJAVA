@@ -47,5 +47,14 @@ public class Album {
     public List<Album> getSubAlbumes() {
         return subAlbumes;
     }
+
+    public int[] getCantTipo() {
+        return cantTipo;
+    }
+
+    public int getCantTotal() {
+        return cantTotal;
+    }
+
 }
 
