@@ -63,6 +63,10 @@ public abstract class Publicacion implements Comparable<Publicacion> {
         return this.getClass().getName();
     } 
 
+    public ArrayList<Comentario> getListaComentarios() {
+        return listaComentarios;
+    }
+
     @Override
     public int compareTo(Publicacion o) {
         return this.nombre.compareTo(o.nombre);

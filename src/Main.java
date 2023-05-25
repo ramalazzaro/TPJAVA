@@ -6,24 +6,20 @@ public class Main {
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
         readXMLFile.parseXML("./datos.xml");
 
-//<<<<<<< HEAD
         //Luego de agregar las publicaciones, puedes llamar a los métodos en la instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
         //perfilInstagram.mostrarPublicaciones();
-        Estadisticas estadisticas = new Estadisticas();
-        // Se crea una lista ordenada por fechas solo para calcular estadísticas que lo requeriran (Ej: LikesPorMes)
-        estadisticas.creaListaPorFecha(perfilInstagram.getListaPublicaciones());
 
-        estadisticas.mostrarPublicaciones(estadisticas.getListaPublicacionesPorFecha());
+        Estadisticas estadisticas = new Estadisticas();
+
+        estadisticas.creaListaPorFecha(perfilInstagram);
+        //estadisticas.mostrarPublicaciones(estadisticas.getListaPublicacionesPorFecha());
         //estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
         //estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
         //estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
-        estadisticas.publicacionesConMasLikes(perfilInstagram.getListaPublicaciones());
-        System.out.println("Pub mas likes:");
-        estadisticas.mostrarPublicaciones(estadisticas.getLista5PublicacionesMasLikes());
-//=======
-        // Luego de agregar las publicaciones, puedes llamar a los métodos en la
-        // instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
-        perfilInstagram.mostrarPublicaciones();
+        //estadisticas.publicacionesConMasLikes(perfilInstagram.getListaPublicaciones());
+        //System.out.println("Pub mas likes:");
+        //estadisticas.mostrarPublicaciones(estadisticas.getLista5PublicacionesMasLikes());
+
 
         /*
          * ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
@@ -44,10 +40,19 @@ public class Main {
 
         // Luego de generar reportes, se lanza la interfaz gráfica con la instancia de
         // PerfilInstagram
-        SwingUtilities.invokeLater(() -> {
-            InstagramGUI gui = new InstagramGUI(perfilInstagram);
-            gui.setVisible(true);
-        });
-//>>>>>>> 8fb1b35daf893df2b9ae42116d24d5c1d16531fe
+//        SwingUtilities.invokeLater(() -> {
+//            InstagramGUI gui = new InstagramGUI(perfilInstagram);
+//            gui.setVisible(true);
+//        });
+
+        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
+        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
+        reportesPublicaciones.muestraListaAudio();
+        reportesPublicaciones.muestraCantPublicacionesAudio();
+        reportesPublicaciones.muestraPromMGAudio();
+
+//        ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
+//        reportesAlbumes.creaReporteAlbumes(perfilInstagram,estadisticas);
+
     }
 }
