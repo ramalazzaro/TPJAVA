@@ -7,12 +7,12 @@ public class Main {
         readXMLFile.parseXML("./datos.xml");
 
         //Luego de agregar las publicaciones, puedes llamar a los métodos en la instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
-        //perfilInstagram.mostrarPublicaciones();
+        perfilInstagram.mostrarPublicaciones();
 
         Estadisticas estadisticas = new Estadisticas();
 
         estadisticas.creaListaPorFecha(perfilInstagram);
-        //estadisticas.mostrarPublicaciones(estadisticas.getListaPublicacionesPorFecha());
+        //estadisticas.mostrarPublicaciones(perfilInstagram);
         //estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
         //estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
         //estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
@@ -45,14 +45,21 @@ public class Main {
 //            gui.setVisible(true);
 //        });
 
+        System.out.println("aaaaaaaaaa");
         ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
         reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
         reportesPublicaciones.muestraListaAudio();
         reportesPublicaciones.muestraCantPublicacionesAudio();
         reportesPublicaciones.muestraPromMGAudio();
+        System.out.println("aaaaaaaaaa");
+        reportesPublicaciones.muestraListaTexto();
+        reportesPublicaciones.muestraCantPublicacionesTexto();
+        System.out.println("aaaaaaaaaa");
+        reportesPublicaciones.muestraListaImagen();
+        reportesPublicaciones.muestraCantPublicacionesImagen();
 
 //        ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
 //        reportesAlbumes.creaReporteAlbumes(perfilInstagram,estadisticas);
-
+        
     }
 }
