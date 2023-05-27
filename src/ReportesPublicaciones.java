@@ -1,124 +1,150 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class ReportesPublicaciones {
 
-    private SortedSet<Publicacion> listaAudio = new TreeSet<>(new MGComparator());
-    private SortedSet<Publicacion> listaImagen = new TreeSet<>(new MGComparator());
-    private SortedSet<Publicacion> listaTexto = new TreeSet<>(new MGComparator());
-    private SortedSet<Publicacion> listaVideo = new TreeSet<>(new MGComparator());
+    private SortedSet<Audio> listaAudio = new TreeSet<>(new MGComparator());
+    private SortedSet<Imagen> listaImagen = new TreeSet<>(new MGComparator());
+    private SortedSet<Texto> listaTexto = new TreeSet<>(new MGComparator());
+    private SortedSet<Video> listaVideo = new TreeSet<>(new MGComparator());
 
     private StringBuilder salida = new StringBuilder();
 
-    public void creaReportePublicaciones(PerfilInstagram perfilInstagram) { // no guarda todas
-        for (Publicacion publicacion: perfilInstagram.getListaPublicaciones()) {
-            switch (publicacion.getClass().getName()) {
-                case "Imagen" -> listaImagen.add(publicacion);
-                case "Video" -> listaVideo.add(publicacion);
-                case "Texto" -> listaTexto.add(publicacion);
-                case "Audio" -> listaAudio.add(publicacion);
+    public void creaReportePublicaciones(PerfilInstagram perfilInstagram) {
+        for (Publicacion publicacion : perfilInstagram.getListaPublicaciones()) {
+            if (publicacion instanceof Imagen) {
+                listaImagen.add((Imagen) publicacion);
+            } else if (publicacion instanceof Video) {
+                listaVideo.add((Video) publicacion);
+            } else if (publicacion instanceof Texto) {
+                listaTexto.add((Texto) publicacion);
+            } else if (publicacion instanceof Audio) {
+                listaAudio.add((Audio) publicacion);
             }
         }
     }
-    public void muestraListaTexto () {
+
+    private StringBuilder getListaTexto () {
+        salida.setLength(0);
         for (Publicacion publicacion: listaTexto) {
-            salida.setLength(0);
-            salida.append(publicacion.toString());
-            System.out.println(salida.toString());
-            //System.out.println(publicacion.toString());
+            salida.append("\t" + publicacion.toString() + "\n");
         }
+        return salida;
     }
-    public void muestraListaAudio (){
+    private StringBuilder getListaAudio (){
+        salida.setLength(0);
         for (Publicacion publicacion: listaAudio) {
-            salida.setLength(0);
-            salida.append(publicacion.toString());
-            System.out.println(salida.toString());
-            //System.out.println(publicacion.toString());
+            salida.append("\t" + publicacion.toString() + "\n");
         }
+        return salida;
     }
-    public void muestraListaImagen (){
+    private StringBuilder getListaImagen (){
+        salida.setLength(0);
         for (Publicacion publicacion: listaImagen) {
-            salida.setLength(0);
-            salida.append(publicacion.toString());
-            System.out.println(salida.toString());
-            //System.out.println(publicacion.toString());
+            salida.append("\t" + publicacion.toString() + "\n");
         }
+        return salida;
     }
-    public void muestraListaVideo (){
+    private StringBuilder getListaVideo (){
+        salida.setLength(0);
         for (Publicacion publicacion: listaVideo) {
-            salida.setLength(0);
-            salida.append(publicacion.toString());
-            System.out.println(salida.toString());
-            //System.out.println(publicacion.toString());
+            salida.append("\t" + publicacion.toString() + "\n");
         }
+        return salida;
     }
 
-    public void muestraCantPublicacionesAudio () {
+    private StringBuilder getCantPublicacionesAudio () {
         salida.setLength(0);
         salida.append("CANTIDAD DE AUDIOS: ").append(listaAudio.size());
-        System.out.println(salida.toString());
-        //System.out.println("CANTIDAD DE AUDIOS: " + listaAudio.size());
+        return salida;
     }
-    public void muestraCantPublicacionesImagen () {
+    private StringBuilder getCantPublicacionesImagen () {
         salida.setLength(0);
         salida.append("CANTIDAD DE IMAGENES: ").append(listaImagen.size());
-        System.out.println(salida.toString());
-        //System.out.println("CANTIDAD DE iMAGENES: " + listaImagen.size());
+        return salida;
     }
-    public void muestraCantPublicacionesTexto () {
+    private StringBuilder getCantPublicacionesTexto () {
         salida.setLength(0);
         salida.append("CANTIDAD DE TEXTOS: ").append(listaTexto.size());
-        System.out.println(salida.toString());
-        //System.out.println("CANTIDAD DE TEXTOS: " + listaTexto.size());
+        return salida;
     }
-    public void muestraCantPublicacionesVideo () {
+    private StringBuilder getCantPublicacionesVideo () {
         salida.setLength(0);
         salida.append("CANTIDAD DE VIDEOS: ").append(listaVideo.size());
-        System.out.println(salida.toString());
-        //System.out.println("CANTIDAD DE VIDEOS: " + listaVideo.size());
+        return salida;
     }
 
-    public void muestraPromMGAudio () {
+    private StringBuilder getPromMGAudio () {
+        salida.setLength(0);
         int i = 0;
         for (Publicacion publicacion: listaAudio) {
             i += publicacion.getCantidadMG();
         }
-        salida.setLength(0);
-        salida.append("PROMEDIO ME GUSTA: ").append(i/listaAudio.size());
-        System.out.println(salida.toString());
-        //System.out.println("PROMEDIO ME GUSTA: " + i/listaAudio.size());
+        salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
+        return salida;
     }
-    public void muestraPromMGTexto () {
+    private StringBuilder getPromMGTexto () {
+        salida.setLength(0);
         int i = 0;
         for (Publicacion publicacion: listaTexto) {
             i += publicacion.getCantidadMG();
         }
-        salida.setLength(0);
-        salida.append("PROMEDIO ME GUSTA: ").append(i/listaTexto.size());
-        System.out.println(salida.toString());
-        //System.out.println("PROMEDIO ME GUSTA: " + i/listaTexto.size());
+        salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
+        return salida;
     }
-    public void muestraPromMGImagen () {
+    private StringBuilder getPromMGImagen () {
+        salida.setLength(0);
         int i = 0;
         for (Publicacion publicacion: listaImagen) {
             i += publicacion.getCantidadMG();
         }
-        salida.setLength(0);
-        salida.append("PROMEDIO ME GUSTA: ").append(i/listaImagen.size());
-        System.out.println(salida.toString());
-        //System.out.println("PROMEDIO ME GUSTA: " + i/listaImagen.size());
+        salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
+        return salida;
     }
-    public void muestraPromMGVideo () {
+    private StringBuilder getPromMGVideo () {
+        salida.setLength(0);
         int i = 0;
         for (Publicacion publicacion: listaVideo) {
             i += publicacion.getCantidadMG();
         }
-        salida.setLength(0);
         salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
-        System.out.println(salida.toString());
-        //System.out.println("PROMEDIO ME GUSTA: " + i/listaVideo.size());
+        return salida;
     }
 
+    public void reporteEnPantalla () {
+        System.out.println("\nIMAGENES:\n");
+        System.out.println(getListaImagen() + "\n" + getCantPublicacionesImagen() + "\n" + getPromMGImagen());
+        System.out.println("\nVIDEOS:\n");
+        System.out.println(getListaVideo() + "\n" + getCantPublicacionesVideo()+ "\n" + getPromMGVideo());
+        System.out.println("\nAUDIOS:\n");
+        System.out.println(getListaAudio() + "\n" + getCantPublicacionesAudio()+ "\n" + getPromMGAudio());
+        System.out.println("\nTEXTOS:\n");
+        System.out.println(getListaTexto() + "\n" + getCantPublicacionesTexto()+ "\n" + getPromMGTexto());
+    }
+
+    public void reporteTXT() {
+        try {
+            String ruta = "C:/Intelli Programs/Reporte/Reportes.txt";
+            File file = new File(ruta);
+            if(!file.exists())
+                file.createNewFile();
+            FileWriter fichero = new FileWriter(file);
+            fichero.write("IMAGENES:\n");
+            fichero.write(getListaImagen() + "\n" + getCantPublicacionesImagen() + "\n" + getPromMGImagen() + "\n");
+            fichero.write("\nVIDEOS:\n");
+            fichero.write(getListaVideo() + "\n" + getCantPublicacionesVideo() + "\n" + getPromMGVideo() + "\n");
+            fichero.write("\nAUDIOS:\n");
+            fichero.write(getListaAudio() + "\n" + getCantPublicacionesAudio() + "\n" + getPromMGAudio() + "\n");
+            fichero.write("\nTEXTOS:\n");
+            fichero.write(getListaTexto() + "\n" + getCantPublicacionesTexto() + "\n" + getPromMGTexto() + "\n");
+            fichero.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 

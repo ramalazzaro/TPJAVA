@@ -8,7 +8,6 @@ public class Album {
     int[] cantTipo = new int[4]; // Índice 0: Imagen, Índice 1: Video, Índice 2: Texto, Índice 3: Audio
     int cantTotal = 0;
 
-
     public Album(String nombre) {
         this.nombre = nombre;
         this.publicaciones = new ArrayList<>();
@@ -56,5 +55,6 @@ public class Album {
     public int getCantTotal() {
         return cantTotal;
     }
+
 }
 
