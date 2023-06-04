@@ -1,0 +1,63 @@
+IMAGENES:
+	Imagen{nombre='Puesta de sol en la playa', fechaSubida='2023/04/10', cantidadMG=142, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Atardecer en las montañas', fechaSubida='2023/09/10', cantidadMG=137, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Desayuno saludable', fechaSubida='2023/02/10', cantidadMG=112, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Postre casero', fechaSubida='2023/05/15', cantidadMG=110, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Colorido atardecer en la playa', fechaSubida='2024/09/05', cantidadMG=105, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Paisaje invernal', fechaSubida='2024/05/20', cantidadMG=104, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Ruta de senderismo', fechaSubida='2022/11/10', cantidadMG=103, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Explorando la montaña', fechaSubida='2024/10/10', cantidadMG=99, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Aventura en la selva', fechaSubida='2023/10/20', cantidadMG=98, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Día de campo', fechaSubida='2023/03/15', cantidadMG=97, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Estilo urbano', fechaSubida='2024/03/10', cantidadMG=97, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Flores en primavera', fechaSubida='2023/12/05', cantidadMG=95, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Arte urbano en la calle', fechaSubida='2023/08/05', cantidadMG=93, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Capturando momentos', fechaSubida='2022/12/20', cantidadMG=93, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Arte callejero', fechaSubida='2024/07/05', cantidadMG=92, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Explorando la ciudad', fechaSubida='2022/09/15', cantidadMG=92, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Rascacielos de la ciudad', fechaSubida='2024/02/20', cantidadMG=88, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Atardecer en el parque', fechaSubida='2022/08/10', cantidadMG=87, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Retrato en blanco y negro', fechaSubida='2023/06/20', cantidadMG=82, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Tarde en la playa', fechaSubida='2022/02/02', cantidadMG=65, resolucion='0', ancho=1920, alto=1080}
+	Imagen{nombre='Estudiando', fechaSubida='2022/04/20', cantidadMG=41, resolucion='0', ancho=1920, alto=1350}
+
+CANTIDAD DE IMAGENES: 21
+PROMEDIO ME GUSTA: 203
+
+VIDEOS:
+	Video{nombre='Bromas en la oficina', fechaSubida='2023/05/05', cantidadMG=185, duracion=90, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Presentación de baile', fechaSubida='2023/10/05', cantidadMG=182, duracion=120, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Concierto en vivo', fechaSubida='2022/12/05', cantidadMG=178, duracion=60, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Receta de cocina: Pastel de chocolate', fechaSubida='2024/04/05', cantidadMG=178, duracion=150, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Entrenamiento de artes marciales', fechaSubida='2024/08/10', cantidadMG=158, duracion=120, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Entrenamiento en el gimnasio', fechaSubida='2023/03/05', cantidadMG=135, duracion=45, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Viaje a la playa', fechaSubida='2024/01/10', cantidadMG=135, duracion=90, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Recorriendo la ciudad en bicicleta', fechaSubida='2023/07/10', cantidadMG=125, duracion=80, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Bailando con amigos', fechaSubida='2022/09/05', cantidadMG=120, duracion=30, resolucion='1080*720', cantidadCuadros=0}
+	Video{nombre='Jugando con mis perritos', fechaSubida='2022/04/14', cantidadMG=102, duracion=15, resolucion='1080*720', cantidadCuadros=0}
+
+CANTIDAD DE VIDEOS: 10
+PROMEDIO ME GUSTA: 149
+
+AUDIOS:
+	Audio{nombre='Meditación guiada', fechaSubida='2024/06/10', cantidadMG=124, duracion=180, velocidad=1}
+	Audio{nombre='Canciones de los 80', fechaSubida='2023/11/10', cantidadMG=120, duracion=240, velocidad=1}
+	Audio{nombre='Playlist de música relajante', fechaSubida='2023/06/03', cantidadMG=92, duracion=360, velocidad=1}
+	Audio{nombre='Canción relajante', fechaSubida='2022/10/03', cantidadMG=74, duracion=180, velocidad=1}
+	Audio{nombre='Charlas de oficina CAP2', fechaSubida='2022/06/18', cantidadMG=67, duracion=720, velocidad=1}
+	Audio{nombre='Podcast informativo', fechaSubida='2023/01/05', cantidadMG=67, duracion=480, velocidad=1}
+	Audio{nombre='Charlas de oficina', fechaSubida='2022/06/05', cantidadMG=55, duracion=636, velocidad=1}
+
+CANTIDAD DE AUDIOS: 7
+PROMEDIO ME GUSTA: 59
+
+TEXTOS:
+	Texto{nombre='SC', fechaSubida='2023/10/10', cantidadMG=60, contenido='¡Feliz cumpleaños a mi mejor amiga!', caracteres=41, fuente='Arial', tamaño='20px'}
+	Texto{nombre='Economia en Australia', fechaSubida='2023/03/13', cantidadMG=57, contenido='En Australia esta bajando la inflacion y mejorando la calidad de vida', caracteres=66, fuente='Arial', tamaño='30px'}
+	Texto{nombre='Dia de la amistad', fechaSubida='2025/10/10', cantidadMG=50, contenido='¡Feliz día de la amistad! Celebremos juntos.', caracteres=48, fuente='Arial', tamaño='20px'}
+	Texto{nombre='FC amiga', fechaSubida='2021/10/10', cantidadMG=50, contenido='¡Feliz cumpleaños a mi mejor amiga! Te quiero mucho.', caracteres=56, fuente='Calibri', tamaño='24px'}
+	Texto{nombre='Viernes!!', fechaSubida='2023/04/10', cantidadMG=34, contenido='¡Feliz viernes a todos! Disfruten del fin de semana.', caracteres=50, fuente='Verdana', tamaño='18px'}
+	Texto{nombre='Frases', fechaSubida='2021/05/10', cantidadMG=26, contenido='Frases motivadoras para el día', caracteres=32, fuente='Arial', tamaño='24px'}
+
+CANTIDAD DE TEXTOS: 6
+PROMEDIO ME GUSTA: 27

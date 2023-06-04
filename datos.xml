@@ -119,6 +119,9 @@
         <velocidad>1</velocidad>
     </Audio>
     <Texto>
+        <nombre>Economia en Australia</nombre>
+        <fechaSubida>2023/03/13</fechaSubida>
+        <cantMG>57</cantMG>
         <contenido>En Australia esta bajando la inflacion y mejorando la calidad de vida</contenido>
         <caracteres>66</caracteres>
         <fuente>Arial</fuente>
@@ -176,158 +179,6 @@
         <resolucion>1080*720</resolucion>
         <cuadros>60</cuadros>
     </Video>
-    <Imagen>
-        <nombre>Explorando la ciudad</nombre>
-        <fechaSubida>2022/09/15</fechaSubida>
-        <cantMG>92</cantMG>
-        <etiqueta>Viaje</etiqueta>
-        <etiqueta>Aventura</etiqueta>
-        <etiqueta>Ciudad</etiqueta>
-        <comentario>
-            <usuario>JuanPerez</usuario>
-            <contenido>Qué lindos recuerdos</contenido>
-            <fecha>2022/09/15</fecha>
-        </comentario>
-        <comentario>
-            <usuario>SabriGomez</usuario>
-            <contenido>Me encanta esa ciudad</contenido>
-            <fecha>2022/09/16</fecha>
-        </comentario>
-        <comentario>
-            <usuario>BoquitaPasion</usuario>
-            <contenido>¡Quiero visitarla!</contenido>
-            <fecha>2022/09/18</fecha>
-        </comentario>
-        <resolucion>1920*1080</resolucion>
-        <Ancho>1920</Ancho>
-        <Alto>1080</Alto>
-    </Imagen>
-    <Audio>
-        <nombre>Canción relajante</nombre>
-        <fechaSubida>2022/10/03</fechaSubida>
-        <cantMG>74</cantMG>
-        <etiqueta>Música</etiqueta>
-        <etiqueta>Relajación</etiqueta>
-        <comentario>
-            <usuario>BoquitaPasion</usuario>
-            <contenido>Me ayuda a desconectar</contenido>
-            <fecha>2022/10/04</fecha>
-        </comentario>
-        <comentario>
-            <usuario>SabriGomez</usuario>
-            <contenido>¡Qué hermosa melodía!</contenido>
-            <fecha>2022/10/05</fecha>
-        </comentario>
-        <duracion>180</duracion>
-        <velocidad>1</velocidad>
-    </Audio>
-    <Texto>
-        <contenido>¡Feliz cumpleaños a mi mejor amiga! Te quiero mucho.</contenido>
-        <caracteres>56</caracteres>
-        <fuente>Calibri</fuente>
-        <tamaño>24px</tamaño>
-    </Texto>
-    <Imagen>
-        <nombre>Ruta de senderismo</nombre>
-        <fechaSubida>2022/11/10</fechaSubida>
-        <cantMG>103</cantMG>
-        <etiqueta>Naturaleza</etiqueta>
-        <etiqueta>AireLibre</etiqueta>
-        <etiqueta>Aventura</etiqueta>
-        <comentario>
-            <usuario>SabriGomez</usuario>
-            <contenido>Qué hermoso paisaje</contenido>
-            <fecha>2022/11/11</fecha>
-        </comentario>
-        <comentario>
-            <usuario>BoquitaPasion</usuario>
-            <contenido>Me encanta el senderismo</contenido>
-            <fecha>2022/11/12</fecha>
-        </comentario>
-        <resolucion>1920*1080</resolucion>
-        <Ancho>1920</Ancho>
-        <Alto>1080</Alto>
-    </Imagen>
-    <Video>
-        <nombre>Concierto en vivo</nombre>
-        <fechaSubida>2022/12/05</fechaSubida>
-        <cantMG>178</cantMG>
-        <etiqueta>Música</etiqueta>
-        <etiqueta>Concierto</etiqueta>
-        <etiqueta>Emoción</etiqueta>
-        <comentario>
-            <usuario>JuanPerez</usuario>
-            <contenido>¡Increíble presentación!</contenido>
-            <fecha>2022/12/06</fecha>
-        </comentario>
-        <comentario>
-            <usuario>BoquitaPasion</usuario>
-            <contenido>Quiero volver a verlos en vivo</contenido>
-            <fecha>2022/12/07</fecha>
-        </comentario>
-        <duracion>60</duracion>
-        <resolucion>1080*720</resolucion>
-        <cuadros>60</cuadros>
-    </Video>
-    <Imagen>
-        <nombre>Capturando momentos</nombre>
-        <fechaSubida>2022/12/20</fechaSubida>
-        <cantMG>93</cantMG>
-        <etiqueta>Fotografía</etiqueta>
-        <etiqueta>Recuerdos</etiqueta>
-        <comentario>
-            <usuario>JuanPerez</usuario>
-            <contenido>Qué buena toma</contenido>
-            <fecha>2022/12/20</fecha>
-        </comentario>
-        <comentario>
-            <usuario>SabriGomez</usuario>
-            <contenido>Me encanta la composición</contenido>
-            <fecha>2022/12/21</fecha>
-        </comentario>
-        <resolucion>1920*1080</resolucion>
-        <Ancho>1920</Ancho>
-        <Alto>1080</Alto>
-    </Imagen>
-    <Audio>
-        <nombre>Podcast informativo</nombre>
-        <fechaSubida>2023/01/05</fechaSubida>
-        <cantMG>67</cantMG>
-        <etiqueta>Podcast</etiqueta>
-        <etiqueta>Información</etiqueta>
-        <comentario>
-            <usuario>SabriGomez</usuario>
-            <contenido>¡Muy interesante!</contenido>
-            <fecha>2023/01/06</fecha>
-        </comentario>
-        <comentario>
-            <usuario>JuanPerez</usuario>
-            <contenido>Me gusta escucharlo mientras trabajo</contenido>
-            <fecha>2023/01/07</fecha>
-        </comentario>
-        <duracion>480</duracion>
-        <velocidad>1</velocidad>
-    </Audio>
-    <Imagen>
-        <nombre>Desayuno saludable</nombre>
-        <fechaSubida>2023/02/10</fechaSubida>
-        <cantMG>112</cantMG>
-        <etiqueta>Desayuno</etiqueta>
-        <etiqueta>VidaSaludable</etiqueta>
-        <comentario>
-            <usuario>SabriGomez</usuario>
-            <contenido>¡Se ve delicioso!</contenido>
-            <fecha>2023/02/11</fecha>
-        </comentario>
-        <comentario>
-            <usuario>JuanPerez</usuario>
-            <contenido>Comer bien es importante</contenido>
-            <fecha>2023/02/12</fecha>
-        </comentario>
-        <resolucion>1920*1080</resolucion>
-        <Ancho>1920</Ancho>
-        <Alto>1080</Alto>
-    </Imagen>
     <Video>
         <nombre>Entrenamiento en el gimnasio</nombre>
         <fechaSubida>2023/03/05</fechaSubida>
@@ -366,6 +217,9 @@
         <Alto>1080</Alto>
     </Imagen>
     <Texto>
+        <nombre>Viernes!!</nombre>
+        <fechaSubida>2023/04/10</fechaSubida>
+        <cantMG>34</cantMG>
         <contenido>¡Feliz viernes a todos! Disfruten del fin de semana.</contenido>
         <caracteres>50</caracteres>
         <fuente>Verdana</fuente>
@@ -508,6 +362,9 @@
         <Alto>1080</Alto>
     </Imagen>
     <Texto>
+        <nombre>Dia de la amistad</nombre>
+        <fechaSubida>2025/10/10</fechaSubida>
+        <cantMG>50</cantMG>
         <contenido>¡Feliz día de la amistad! Celebremos juntos.</contenido>
         <caracteres>48</caracteres>
         <fuente>Arial</fuente>
@@ -571,7 +428,7 @@
             <usuario>JuanPerez</usuario>
             <contenido>La naturaleza nos sorprende</contenido>
             <fecha>2023/10/22</fecha>
-       </comentario>
+        </comentario>
         <resolucion>1920*1080</resolucion>
         <Ancho>1920</Ancho>
         <Alto>1080</Alto>
@@ -657,7 +514,11 @@
         <Alto>1080</Alto>
     </Imagen>
     <Texto>
+        <nombre>SC</nombre>
+        <fechaSubida>2023/10/10</fechaSubida>
+        <cantMG>60</cantMG>
         <contenido>¡Feliz cumpleaños a mi mejor amiga!</contenido>
+        <fechaSubida>2020/10/10</fechaSubida>
         <caracteres>41</caracteres>
         <fuente>Arial</fuente>
         <tamaño>20px</tamaño>
@@ -805,7 +666,11 @@
         <Alto>1080</Alto>
     </Imagen>
     <Texto>
+        <nombre>Frases</nombre>
+        <fechaSubida>2021/05/10</fechaSubida>
+        <cantMG>26</cantMG>
         <contenido>Frases motivadoras para el día</contenido>
+        <fechaSubida>2022/10/10</fechaSubida>
         <caracteres>32</caracteres>
         <fuente>Arial</fuente>
         <tamaño>24px</tamaño>
@@ -865,6 +730,161 @@
             <usuario>SabriGomez</usuario>
             <contenido>La expresión capturada es asombrosa</contenido>
             <fecha>2024/12/12</fecha>
+        </comentario>
+        <resolucion>1920*1080</resolucion>
+        <Ancho>1920</Ancho>
+        <Alto>1080</Alto>
+    </Imagen>
+    <Imagen>
+        <nombre>Explorando la ciudad</nombre>
+        <fechaSubida>2022/09/15</fechaSubida>
+        <cantMG>92</cantMG>
+        <etiqueta>Viaje</etiqueta>
+        <etiqueta>Aventura</etiqueta>
+        <etiqueta>Ciudad</etiqueta>
+        <comentario>
+            <usuario>JuanPerez</usuario>
+            <contenido>Qué lindos recuerdos</contenido>
+            <fecha>2022/09/15</fecha>
+        </comentario>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>Me encanta esa ciudad</contenido>
+            <fecha>2022/09/16</fecha>
+        </comentario>
+        <comentario>
+            <usuario>BoquitaPasion</usuario>
+            <contenido>¡Quiero visitarla!</contenido>
+            <fecha>2022/09/18</fecha>
+        </comentario>
+        <resolucion>1920*1080</resolucion>
+        <Ancho>1920</Ancho>
+        <Alto>1080</Alto>
+    </Imagen>
+    <Audio>
+        <nombre>Canción relajante</nombre>
+        <fechaSubida>2022/10/03</fechaSubida>
+        <cantMG>74</cantMG>
+        <etiqueta>Música</etiqueta>
+        <etiqueta>Relajación</etiqueta>
+        <comentario>
+            <usuario>BoquitaPasion</usuario>
+            <contenido>Me ayuda a desconectar</contenido>
+            <fecha>2022/10/04</fecha>
+        </comentario>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>¡Qué hermosa melodía!</contenido>
+            <fecha>2022/10/05</fecha>
+        </comentario>
+        <duracion>180</duracion>
+        <velocidad>1</velocidad>
+    </Audio>
+    <Texto>
+        <nombre>FC amiga</nombre>
+        <fechaSubida>2021/10/10</fechaSubida>
+        <cantMG>50</cantMG>
+        <contenido>¡Feliz cumpleaños a mi mejor amiga! Te quiero mucho.</contenido>
+        <caracteres>56</caracteres>
+        <fuente>Calibri</fuente>
+        <tamaño>24px</tamaño>
+    </Texto>
+    <Imagen>
+        <nombre>Ruta de senderismo</nombre>
+        <fechaSubida>2022/11/10</fechaSubida>
+        <cantMG>103</cantMG>
+        <etiqueta>Naturaleza</etiqueta>
+        <etiqueta>AireLibre</etiqueta>
+        <etiqueta>Aventura</etiqueta>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>Qué hermoso paisaje</contenido>
+            <fecha>2022/11/11</fecha>
+        </comentario>
+        <comentario>
+            <usuario>BoquitaPasion</usuario>
+            <contenido>Me encanta el senderismo</contenido>
+            <fecha>2022/11/12</fecha>
+        </comentario>
+        <resolucion>1920*1080</resolucion>
+        <Ancho>1920</Ancho>
+        <Alto>1080</Alto>
+    </Imagen>
+    <Video>
+        <nombre>Concierto en vivo</nombre>
+        <fechaSubida>2022/12/05</fechaSubida>
+        <cantMG>178</cantMG>
+        <etiqueta>Música</etiqueta>
+        <etiqueta>Concierto</etiqueta>
+        <etiqueta>Emoción</etiqueta>
+        <comentario>
+            <usuario>JuanPerez</usuario>
+            <contenido>¡Increíble presentación!</contenido>
+            <fecha>2022/12/06</fecha>
+        </comentario>
+        <comentario>
+            <usuario>BoquitaPasion</usuario>
+            <contenido>Quiero volver a verlos en vivo</contenido>
+            <fecha>2022/12/07</fecha>
+        </comentario>
+        <duracion>60</duracion>
+        <resolucion>1080*720</resolucion>
+        <cuadros>60</cuadros>
+    </Video>
+    <Imagen>
+        <nombre>Capturando momentos</nombre>
+        <fechaSubida>2022/12/20</fechaSubida>
+        <cantMG>93</cantMG>
+        <etiqueta>Fotografía</etiqueta>
+        <etiqueta>Recuerdos</etiqueta>
+        <comentario>
+            <usuario>JuanPerez</usuario>
+            <contenido>Qué buena toma</contenido>
+            <fecha>2022/12/20</fecha>
+        </comentario>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>Me encanta la composición</contenido>
+            <fecha>2022/12/21</fecha>
+        </comentario>
+        <resolucion>1920*1080</resolucion>
+        <Ancho>1920</Ancho>
+        <Alto>1080</Alto>
+    </Imagen>
+    <Audio>
+        <nombre>Podcast informativo</nombre>
+        <fechaSubida>2023/01/05</fechaSubida>
+        <cantMG>67</cantMG>
+        <etiqueta>Podcast</etiqueta>
+        <etiqueta>Información</etiqueta>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>¡Muy interesante!</contenido>
+            <fecha>2023/01/06</fecha>
+        </comentario>
+        <comentario>
+            <usuario>JuanPerez</usuario>
+            <contenido>Me gusta escucharlo mientras trabajo</contenido>
+            <fecha>2023/01/07</fecha>
+        </comentario>
+        <duracion>480</duracion>
+        <velocidad>1</velocidad>
+    </Audio>
+    <Imagen>
+        <nombre>Desayuno saludable</nombre>
+        <fechaSubida>2023/02/10</fechaSubida>
+        <cantMG>112</cantMG>
+        <etiqueta>Desayuno</etiqueta>
+        <etiqueta>VidaSaludable</etiqueta>
+        <comentario>
+            <usuario>SabriGomez</usuario>
+            <contenido>¡Se ve delicioso!</contenido>
+            <fecha>2023/02/11</fecha>
+        </comentario>
+        <comentario>
+            <usuario>JuanPerez</usuario>
+            <contenido>Comer bien es importante</contenido>
+            <fecha>2023/02/12</fecha>
         </comentario>
         <resolucion>1920*1080</resolucion>
         <Ancho>1920</Ancho>
