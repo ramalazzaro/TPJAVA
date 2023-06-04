@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public abstract class Publicacion implements Comparable<Publicacion> {
 
     private String nombre;
@@ -61,6 +62,10 @@ public abstract class Publicacion implements Comparable<Publicacion> {
     public String getTipo(){
         return this.getClass().getName();
     } 
+
+    public ArrayList<Comentario> getListaComentarios() {
+        return listaComentarios;
+    }
 
     @Override
     public int compareTo(Publicacion o) {
