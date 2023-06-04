@@ -1,4 +1,4 @@
-public class Imagen extends Publicacion {
+public class Imagen extends Publicacion implements Filtrable{
     private String resolucion;
     private int ancho;
     private int alto;
@@ -9,6 +9,7 @@ public class Imagen extends Publicacion {
         this.ancho = ancho;
         this.alto = alto;
     }
+
     public String getResolucion() {
         return resolucion;
     }
@@ -45,8 +46,6 @@ public class Imagen extends Publicacion {
                     ", alto=" + alto +
                     '}';
         }
-    
-    
 }
 
 

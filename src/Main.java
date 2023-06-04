@@ -15,7 +15,7 @@ public class Main {
         Estadisticas estadisticas = new Estadisticas();
 
         estadisticas.creaListaPorFecha(perfilInstagram);
-        //estadisticas.mostrarPublicaciones(estadisticas.getListaPublicacionesPorFecha());
+        //estadisticas.mostrarPublicaciones(perfilInstagram);
         //estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
         //estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
         //estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
@@ -24,22 +24,6 @@ public class Main {
         //estadisticas.mostrarPublicaciones(estadisticas.getLista5PublicacionesMasLikes());
 
 
-        /*
-         * ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
-         * reportesPublicaciones.creaListadoPublicaciones(perfilInstagram);
-         * reportesPublicaciones.muestraCantPublicacionesAudio();
-         * reportesPublicaciones.muestraPromMGAudio();
-         * reportesPublicaciones.muestraListaAudio();
-         * reportesPublicaciones.muestraCantPublicacionesTexto();
-         * reportesPublicaciones.muestraPromMGTexto();
-         * reportesPublicaciones.muestraListaTexto();
-         * reportesPublicaciones.muestraCantPublicacionesImagen();
-         * reportesPublicaciones.muestraPromMGImagen();
-         * reportesPublicaciones.muestraListaImagen();
-         * reportesPublicaciones.muestraCantPublicacionesVideo();
-         * reportesPublicaciones.muestraPromMGVideo();
-         * reportesPublicaciones.muestraListaVideo();
-         */
 
         // Luego de generar reportes, se lanza la interfaz gráfica con la instancia de
         // PerfilInstagram
@@ -47,10 +31,15 @@ public class Main {
 //            InstagramGUI gui = new InstagramGUI(perfilInstagram);
 //            gui.setVisible(true);
 //        });
+
+
         ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
+
         reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
         reportesPublicaciones.reporteEnPantalla();
         reportesPublicaciones.reporteTXT();
 
+        ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
+//        reportesAlbumes.creaReporteAlbumes(perfilInstagram,estadisticas);
     }
 }

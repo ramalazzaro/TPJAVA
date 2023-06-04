@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.SortedSet;
@@ -12,7 +13,7 @@ public class ReportesPublicaciones {
 
     private StringBuilder salida = new StringBuilder();
 
-    public void creaReportePublicaciones(PerfilInstagram perfilInstagram) { // no guarda todas
+    public void creaReportePublicaciones(PerfilInstagram perfilInstagram) {
         for (Publicacion publicacion : perfilInstagram.getListaPublicaciones()) {
             if (publicacion instanceof Imagen) {
                 listaImagen.add((Imagen) publicacion);
@@ -125,7 +126,12 @@ public class ReportesPublicaciones {
     }
 
     public void reporteTXT() {
-        try (FileWriter fichero = new FileWriter("Reporte publicaciones.txt")) {
+        try {
+            String ruta = "C:/Intelli Programs/Reporte/Reportes.txt";
+            File file = new File(ruta);
+            if(!file.exists())
+                file.createNewFile();
+            FileWriter fichero = new FileWriter(file);
             fichero.write("IMAGENES:\n");
             fichero.write(getListaImagen() + "\n" + getCantPublicacionesImagen() + "\n" + getPromMGImagen() + "\n");
             fichero.write("\nVIDEOS:\n");
@@ -134,6 +140,7 @@ public class ReportesPublicaciones {
             fichero.write(getListaAudio() + "\n" + getCantPublicacionesAudio() + "\n" + getPromMGAudio() + "\n");
             fichero.write("\nTEXTOS:\n");
             fichero.write(getListaTexto() + "\n" + getCantPublicacionesTexto() + "\n" + getPromMGTexto() + "\n");
+            fichero.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
