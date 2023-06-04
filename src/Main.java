@@ -27,15 +27,6 @@ public class Main {
 //
 //        estadisticas.creaListaPorFecha(perfilInstagram);
 
-//
-//
-//        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
-//        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
-//        reportesPublicaciones.reporteEnPantalla();
-//        reportesPublicaciones.reporteTXT();
-
-
-        //estadisticas.creaListaPorFecha(perfilInstagram);
         //estadisticas.mostrarPublicaciones(perfilInstagram);
         //estadisticas.LikesPorAño(Estadisticas.getListaPublicacionesPorFecha());
         //estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones());
@@ -45,6 +36,12 @@ public class Main {
         //estadisticas.mostrarPublicaciones(estadisticas.getLista5PublicacionesMasLikes());
 
 
+//        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
+
+//        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
+//        reportesPublicaciones.reporteEnPantalla();
+//        reportesPublicaciones.reporteTXT();
+
         // Luego de generar reportes, se lanza la interfaz gráfica con la instancia de
         // PerfilInstagram
 //        SwingUtilities.invokeLater(() -> {
@@ -52,10 +49,5 @@ public class Main {
 //            gui.setVisible(true);
 //        });
 
-//        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
-
-//        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
-//        reportesPublicaciones.reporteEnPantalla();
-//        reportesPublicaciones.reporteTXT();
     }
 }
