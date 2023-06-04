@@ -1,4 +1,4 @@
-public class Video extends Publicacion {
+public class Video extends Publicacion{
     private int duracion;
     private String resolucion;
     private int cantidadCuadros;

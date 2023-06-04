@@ -1,4 +1,4 @@
-public class Audio extends Publicacion {
+public class Audio extends Publicacion{
     private int duracion; 
     private int velocidad;
 

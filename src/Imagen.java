@@ -1,4 +1,4 @@
-public class Imagen extends Publicacion implements Filtrable{
+public class Imagen extends Publicacion{
     private String resolucion;
     private int ancho;
     private int alto;
