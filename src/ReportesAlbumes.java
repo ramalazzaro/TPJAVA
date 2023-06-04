@@ -3,10 +3,9 @@ import java.util.TreeSet;
 
 
 public class ReportesAlbumes {
-//    private static Estadisticas estadisticas = new Estadisticas();
     private StringBuilder salida = new StringBuilder();
 
-    public void creaReporteAlbumes(PerfilInstagram perfilInstagram,Estadisticas estadisticas) {
+    public void creaReporteAlbumes(PerfilInstagram perfilInstagram,Estadisticas estadisticas) { //Se reutiliza la lista de publicaciones por fecha de la clase Estadisticas para poder validar las fechas ingresadas por el usuario
         String fecha;
         int cantPub;
         int cantComen;

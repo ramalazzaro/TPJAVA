@@ -5,7 +5,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class ReportesPublicaciones {
-
+    // Se crean una lista para cada tipo de publicacion para desarrollar sus respectivos reportes de manera individual.
     private SortedSet<Audio> listaAudio = new TreeSet<>(new MGComparator());
     private SortedSet<Imagen> listaImagen = new TreeSet<>(new MGComparator());
     private SortedSet<Texto> listaTexto = new TreeSet<>(new MGComparator());
