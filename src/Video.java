@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+
 public class Video extends Publicacion {
     private int duracion;
     private String resolucion;
     private int cantidadCuadros;
-    
 
-    public Video(String nombre, String fechaSubida, int cantidadMG, int duracion,String resolucion,int cantidadCuadros) {
-        super(nombre, fechaSubida, cantidadMG);
+
+    public Video(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios, ArrayList<Etiqueta> etiquetas, int duracion, String resolucion, int cantidadCuadros) {
+        super(nombre, fechaSubida, cantidadMG, comentarios, etiquetas);
         this.duracion = duracion;
         this.resolucion = resolucion;
         this.cantidadCuadros = cantidadCuadros;

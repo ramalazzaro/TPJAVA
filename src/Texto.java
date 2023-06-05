@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+
 public class Texto extends Publicacion {
     private String contenido;
     private int caracteres;
     private String fuente;
     private String tamaño;
 
-    public Texto(String nombre, String fechaSubida, int cantidadMG, String contenido, int caracteres, String fuente, String tamaño) {
-        super(nombre, fechaSubida, cantidadMG);
+    public Texto(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios, ArrayList<Etiqueta> etiquetas, String contenido, int caracteres, String fuente, String tamaño) {
+        super(nombre, fechaSubida, cantidadMG, comentarios, etiquetas);
         this.contenido = contenido;
         this.caracteres = caracteres;
         this.fuente = fuente;

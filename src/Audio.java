@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class Audio extends Publicacion {
     private int duracion; 
     private int velocidad;
 
-    public Audio(String nombre, String fechaSubida, int cantidadMG, int duracion, int velocidad) {
-        super(nombre, fechaSubida, cantidadMG);
+    public Audio(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios, ArrayList<Etiqueta> etiquetas, int duracion, int velocidad) {
+        super(nombre, fechaSubida, cantidadMG, comentarios, etiquetas);
         this.duracion = duracion;
         this.velocidad = velocidad;
     }

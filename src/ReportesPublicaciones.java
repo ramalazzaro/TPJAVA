@@ -58,22 +58,22 @@ public class ReportesPublicaciones {
 
     private StringBuilder getCantPublicacionesAudio () {
         salida.setLength(0);
-        salida.append("CANTIDAD DE AUDIOS: ").append(listaAudio.size());
+        salida.append("CANTIDAD DE AUDIOS: "+listaAudio.size());
         return salida;
     }
     private StringBuilder getCantPublicacionesImagen () {
         salida.setLength(0);
-        salida.append("CANTIDAD DE IMAGENES: ").append(listaImagen.size());
+        salida.append("CANTIDAD DE IMAGENES: "+listaImagen.size());
         return salida;
     }
     private StringBuilder getCantPublicacionesTexto () {
         salida.setLength(0);
-        salida.append("CANTIDAD DE TEXTOS: ").append(listaTexto.size());
+        salida.append("CANTIDAD DE TEXTOS: "+listaTexto.size());
         return salida;
     }
     private StringBuilder getCantPublicacionesVideo () {
         salida.setLength(0);
-        salida.append("CANTIDAD DE VIDEOS: ").append(listaVideo.size());
+        salida.append("CANTIDAD DE VIDEOS: "+listaVideo.size());
         return salida;
     }
 
@@ -83,7 +83,7 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion: listaAudio) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
+        salida.append("PROMEDIO ME GUSTA: "+i/listaAudio.size());
         return salida;
     }
     private StringBuilder getPromMGTexto () {
@@ -92,7 +92,7 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion: listaTexto) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
+        salida.append("PROMEDIO ME GUSTA: "+i/listaTexto.size());
         return salida;
     }
     private StringBuilder getPromMGImagen () {
@@ -101,7 +101,7 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion: listaImagen) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
+        salida.append("PROMEDIO ME GUSTA: "+i/listaImagen.size());
         return salida;
     }
     private StringBuilder getPromMGVideo () {
@@ -110,7 +110,7 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion: listaVideo) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: ").append(i/listaVideo.size());
+        salida.append("PROMEDIO ME GUSTA: "+i/listaVideo.size());
         return salida;
     }
 

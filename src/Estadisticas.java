@@ -10,13 +10,17 @@ public class Estadisticas {
     public void creaListaPorFecha(PerfilInstagram perfilInstagram){
         listaPublicacionesPorFecha.addAll(perfilInstagram.getListaPublicaciones());
     }
-    public void mostrarPublicaciones(PerfilInstagram perfilInstagram) {
+
+    public void showPublicaciones(PerfilInstagram perfilInstagram) {
         for (Publicacion publicacion : perfilInstagram.getListaPublicaciones()) {
             System.out.println(publicacion.toString());
         }
     }
+
     public SortedSet<Publicacion> getListaPublicacionesPorFecha(){return listaPublicacionesPorFecha;}
+
     public SortedSet<Publicacion> getLista5PublicacionesMasLikes(){return lista5PublicacionesMasLikes;}
+
     public void LikesPorAño(SortedSet<Publicacion> listaPublicaciones)
     {
         HashMap<Integer,Integer> MapCantLikesAño = new HashMap<Integer, Integer>();
@@ -40,6 +44,7 @@ public class Estadisticas {
         MapCantLikesAño.put(año,CantLikesAño + publicacion.getCantidadMG());
         for(Integer clave:MapCantLikesAño.keySet()){System.out.println(clave+" "+MapCantLikesAño.get(clave));}
     }
+
     public void cantPublicacionesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)
     {
         System.out.println("Cant de publicaciones por tipo: ");
@@ -60,6 +65,7 @@ public class Estadisticas {
         }
         for(String clave:MapCant.keySet()){System.out.println(clave+" "+MapCant.get(clave));}
     }
+
     public void cantLikesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)
     {
         System.out.println("Cant Likes por cada tipo: ");
@@ -81,6 +87,7 @@ public class Estadisticas {
         System.out.println("Audio: "+vecCantL[2]);
         System.out.println("Texto: "+vecCantL[3]);
     }
+
     public void publicacionesConMasLikes(SortedSet<Publicacion> listaPublicaciones)
     {
         int likesMax = 0;

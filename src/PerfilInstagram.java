@@ -13,7 +13,7 @@ public class PerfilInstagram {
         return listaAlbumes;
     }
 
-    public void eliminarAlbum(String nombre) {
+    public void deleteAlbum(String nombre) {
         Album albumAEliminar = null;
         for (Album album : listaAlbumes) {
             if (album.getNombre().equals(nombre)) {
@@ -30,7 +30,7 @@ public class PerfilInstagram {
         listaPublicaciones.add(nuevaPublicacion);
     }
 
-    public void mostrarPublicaciones() {
+    public void showPublicaciones() {
         for (Publicacion publicacion : listaPublicaciones) {
             System.out.println(publicacion.toString());
         }

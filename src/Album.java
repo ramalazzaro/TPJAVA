@@ -25,15 +25,15 @@ public class Album {
             case "Audio" -> cantTipo[3]++;
         }
     }
-    public void agregarPublicacion(Publicacion publicacion) {
+    public void addPublicacion(Publicacion publicacion) {
         publicaciones.add(publicacion);
         addCantTipo(publicacion);
         cantTotal++;
     }
-    public void agregarSubAlbum(Album subAlbum) {
+    public void addSubAlbum(Album subAlbum) {
         subAlbumes.add(subAlbum);
     }
-    public void eliminarSubAlbum(Album subAlbum) {
+    public void deleteSubAlbum(Album subAlbum) {
         subAlbumes.remove(subAlbum);
     }
 
@@ -57,7 +57,7 @@ public class Album {
         return cantTotal;
     }
 
-    public String muestraPublicaciones() {
+    public String publicacionesToString() {
         StringBuilder temp = new StringBuilder();
         for (Publicacion publicacion: publicaciones) {
              temp.append(publicacion.getNombre());
@@ -65,11 +65,11 @@ public class Album {
         return temp.toString();
     }
 
-    public String muestraSubAlbumes () {
+    public String subAlbumesToString () {
         StringBuilder temp = new StringBuilder();
         for (Album album: subAlbumes) {
             temp.append(album.nombre +
-                    ", Publicaciones = " + album.muestraPublicaciones() +
+                    ", Publicaciones = " + album.publicacionesToString() +
                     ", Imagenes=" + album.getCantTipo(0) +
                     ", Videos=" + album.getCantTipo(1) +
                     ", Textos=" + album.getCantTipo(2) +
@@ -82,13 +82,13 @@ public class Album {
     @Override
     public String toString() {
         return "Album " + nombre +
-                ", Publicaciones = " + muestraPublicaciones() +
+                ", Publicaciones = " + publicacionesToString() +
                 ", Imagenes=" + getCantTipo(0) +
                 ", Videos=" + getCantTipo(1) +
                 ", Textos=" + getCantTipo(2) +
                 ", Videos=" + getCantTipo(3) +
                 ", Cantidad Total=" + cantTotal +
-                ", SubAlbum = " + muestraSubAlbumes();
+                ", SubAlbum = " + subAlbumesToString();
     }
 
 }
