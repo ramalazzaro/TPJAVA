@@ -118,13 +118,22 @@ public class ReadXMLFile {
         if (textoNode.getNodeType() == Node.ELEMENT_NODE) {
             Element textoElement = (Element) textoNode;
 
+            // Leer las propiedades del Texto
+            String nombre = getElementValue(textoElement, "nombre");
+            String fechaSubida = getElementValue(textoElement, "fechaSubida");
+            int cantMG = parseInt(getElementValue(textoElement, "cantMG"), 0);
             String contenido = getElementValue(textoElement, "contenido");
             int caracteres = parseInt(getElementValue(textoElement, "caracteres"), 0);
             String fuente = getElementValue(textoElement, "fuente");
             String tamaño = getElementValue(textoElement, "tamaño");
 
-            Texto texto = new Texto(contenido, caracteres, fuente, tamaño);
+            // Crear el objeto Texto y establecer las propiedades
+            Texto texto = new Texto(nombre, fechaSubida, cantMG, contenido, caracteres, fuente, tamaño);
+            texto.setNombre(nombre);
+            texto.setFechaSubida(fechaSubida);
+            texto.setCantidadMG(cantMG);
 
+            // Agregar el objeto Texto a la lista de publicaciones del perfil de Instagram
             perfilInstagram.addPublicacion(texto);
         }
     }

@@ -33,35 +33,14 @@ public class InstagramGUI extends JFrame {
         System.out.println("Número de publicaciones: " + this.perfilInstagram.getListaPublicaciones().size());
         for (Publicacion publicacion : this.perfilInstagram.getListaPublicaciones()) {
             String publicacionTexto = "<html><body style='width: 200px'>" +
-                    "<b style='font-size:14px; color:#1b95e0'>Clase:</b> " + publicacion.getClass().getSimpleName();
+                    "<b style='font-size:14px; color:#1b95e0'>Clase:</b> " + publicacion.getClass().getSimpleName() +
+                    "<br><b style='font-size:14px; color:#1b95e0'>Fecha Subida:</b> " + publicacion.getFechaSubida() +
+                    "<br><b style='font-size:14px; color:#1b95e0'>Cantidad MG:</b> " + publicacion.getCantidadMG();
 
             if (publicacion instanceof Texto) {
                 Texto texto = (Texto) publicacion;
                 publicacionTexto += "<br><b style='font-size:14px; color:#1b95e0'>Contenido:</b> "
                         + texto.getContenido();
-            } else if (publicacion instanceof Audio) {
-                Audio audio = (Audio) publicacion;
-
-                publicacionTexto += "<br><b style='font-size:14px; color:#1b95e0'>Nombre:</b> "
-                        + audio.getNombre() +
-                        "<br><b style='font-size:14px; color:#1b95e0'>FechaSubida:</b> " + audio.getFechaSubida() +
-                        "<br><b style='font-size:14px; color:#1b95e0'>CantidadMG:</b> " + audio.getCantidadMG();
-
-            } else if (publicacion instanceof Video) {
-                Video video = (Video) publicacion;
-
-                publicacionTexto += "<br><b style='font-size:14px; color:#1b95e0'>Contenido:</b> "
-                        + video.getNombre() +
-                        "<br><b style='font-size:14px; color:#1b95e0'>FechaSubida:</b> " + video.getFechaSubida() +
-                        "<br><b style='font-size:14px; color:#1b95e0'>CantidadMG:</b> " + video.getCantidadMG();
-
-            } else if (publicacion instanceof Imagen) {
-                Imagen imagen = (Imagen) publicacion;
-
-                publicacionTexto += "<br><b style='font-size:14px; color:#1b95e0'>Contenido:</b> "
-                        + imagen.getNombre() +
-                        "<br><b style='font-size:14px; color:#1b95e0'>FechaSubida:</b> " + imagen.getFechaSubida() +
-                        "<br><b style='font-size:14px; color:#1b95e0'>CantidadMG:</b> " + imagen.getCantidadMG();
             }
 
             publicacionTexto += "<br>...</body></html>";

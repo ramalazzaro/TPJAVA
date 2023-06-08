@@ -8,8 +8,9 @@ public class Texto extends Publicacion {
     private String tamaño;
     private List<Comentario> comentarios;
 
-    public Texto(String contenido, int caracteres, String fuente, String tamaño) {
-        super("nombrePredeterminado", "fechaPredeterminada", 0);
+    public Texto(String nombre, String fechaSubida, int cantMG, String contenido, int caracteres, String fuente,
+            String tamaño) {
+        super(nombre, fechaSubida, cantMG);
         this.contenido = contenido;
         this.caracteres = caracteres;
         this.fuente = fuente;
