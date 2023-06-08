@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 public class InstagramGUI extends JFrame {
     private PerfilInstagram perfilInstagram;
     private JPanel publicacionesPanel;
-    private JButton logoutButton; // Añade esto en la lista de componentes de la clase
-    private ActionListener logoutListener; // Añade esto para gestionar el evento de cierre de sesión
+    private JButton logoutButton;
+    private ActionListener logoutListener;
 
     public InstagramGUI(PerfilInstagram perfilInstagram) {
         this.perfilInstagram = perfilInstagram;
@@ -16,14 +16,12 @@ public class InstagramGUI extends JFrame {
     }
 
     private void createUI() {
-        // configuración de la ventana principal
+
         setTitle("Instagram Profile");
-        setSize(800, 600); // tamaño de la ventana
+        setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // creamos un panel de desplazamiento en caso de que las publicaciones sean
-        // demasiadas
         JScrollPane scrollPane = new JScrollPane();
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
@@ -35,16 +33,15 @@ public class InstagramGUI extends JFrame {
     private void createLogoutButton() {
         logoutButton = new JButton("Cerrar sesión");
         logoutButton.addActionListener(e -> {
-            // Esto se ejecutará cuando se haga clic en el botón de cierre de sesión
+
             if (logoutListener != null) {
                 logoutListener.actionPerformed(e);
             }
-            dispose(); // Cierra la ventana actual
+            dispose();
         });
 
-        // Layout para el botón
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT)); // Alinea el botón a la derecha
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.add(logoutButton);
 
         getContentPane().add(buttonPanel, BorderLayout.NORTH);

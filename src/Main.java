@@ -71,12 +71,10 @@ public class Main {
             e.printStackTrace();
         }
 
-        // Create a Runnable that encapsulates the code for logging in and launching the
-        // Instagram GUI
         loginAndLaunchInstagram = () -> {
             LoginGUI login = new LoginGUI();
             login.setListener(() -> {
-                // After successful login, load the profile data and launch the Instagram GUI
+
                 PerfilInstagram perfilInstagram = new PerfilInstagram();
                 ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
                 readXMLFile.parseXML("./TPJAVA/datos.xml");
@@ -86,18 +84,17 @@ public class Main {
                 SwingUtilities.invokeLater(() -> {
                     InstagramGUI gui = new InstagramGUI(perfilInstagram);
                     gui.setLogoutListener(e -> {
-                        // When logging out, dispose the current Instagram GUI and start a new login
+
                         gui.dispose();
                         SwingUtilities.invokeLater(loginAndLaunchInstagram);
                     });
                     gui.setVisible(true);
                 });
-                login.dispose(); // dispose the login window after logging in
+                login.dispose();
             });
             login.setVisible(true);
         };
 
-        // Initially start with the login GUI
         SwingUtilities.invokeLater(loginAndLaunchInstagram);
     }
 }
