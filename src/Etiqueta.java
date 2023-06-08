@@ -1,4 +1,4 @@
-import java.util.Objects;
+//import java.util.Objects;
 
 public class Etiqueta {
     private String contenido;

@@ -90,7 +90,7 @@ public class Estadisticas {
 
     public void publicacionesConMasLikes(SortedSet<Publicacion> listaPublicaciones)
     {
-        int likesMax = 0;
+        //int likesMax = 0;
         Iterator<Publicacion> publicacionIterator = listaPublicaciones.iterator();
         int i = 0;
         int cantPublicacionesConMasLikes=5;
@@ -98,7 +98,7 @@ public class Estadisticas {
             lista5PublicacionesMasLikes.add(publicacionIterator.next());
             i++;
         }
-        Iterator<Publicacion> publicacionLikesIterator = lista5PublicacionesMasLikes.iterator();
+        //Iterator<Publicacion> publicacionLikesIterator = lista5PublicacionesMasLikes.iterator();
         Publicacion publicacion;
         while (publicacionIterator.hasNext()) {
             publicacion = publicacionIterator.next();
