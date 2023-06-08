@@ -8,10 +8,10 @@ import java.io.*;
 import java.util.Scanner;
 
 public class LoginGUI extends JFrame {
-    private JTextField usernameField; // TextField for username input
-    private JPasswordField passwordField; // PasswordField for password input
+    private JTextField usernameField;
+    private JPasswordField passwordField;
     private LoginListener listener;
-    private String password; // The original password
+    private String password;
 
     public LoginGUI() {
         loadPassword();
@@ -54,13 +54,12 @@ public class LoginGUI extends JFrame {
 
         JLabel usernameLabel = new JLabel("Username:");
         JLabel passwordLabel = new JLabel("Password:");
-        usernameField = new JTextField(); // Initialize username field
-        passwordField = new JPasswordField(); // Initialize password field
+        usernameField = new JTextField();
+        passwordField = new JPasswordField();
         JButton loginButton = new JButton("Login");
         JButton resetButton = new JButton("Reset Password");
         JCheckBox showPasswordCheckBox = new JCheckBox("Show password");
 
-        // Adding components to the panel with GridBagLayout
         c.gridx = 0;
         c.gridy = 0;
         formPanel.add(usernameLabel, c);
@@ -114,9 +113,9 @@ public class LoginGUI extends JFrame {
         showPasswordCheckBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    passwordField.setEchoChar((char) 0); // Show password
+                    passwordField.setEchoChar((char) 0);
                 } else {
-                    passwordField.setEchoChar('*'); // Hide password
+                    passwordField.setEchoChar('*');
                 }
             }
         });
@@ -129,7 +128,7 @@ public class LoginGUI extends JFrame {
         String inputPassword = new String(passwordField.getPassword());
 
         if (username.equals("admin") && inputPassword.equals(password)) {
-            // If there is a listener assigned, notify it about the successful login
+
             if (listener != null) {
                 listener.onLoginSuccessful();
             }
