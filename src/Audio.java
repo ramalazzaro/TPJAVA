@@ -6,8 +6,8 @@ public class Audio extends Publicacion {
     private int velocidad;
     private List<Comentario> comentarios;
 
-    public Audio(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios, ArrayList<Etiqueta> etiquetas, int duracion, int velocidad) {
-        super(nombre, fechaSubida, cantidadMG, comentarios, etiquetas);
+    public Audio(String nombre, String fechaSubida, int cantidadMG, int duracion, int velocidad) {
+        super(nombre, fechaSubida, cantidadMG);
         this.duracion = duracion;
         this.velocidad = velocidad;
         this.comentarios = new ArrayList<>();

@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 public abstract class Publicacion implements Comparable<Publicacion> {
 
     private String nombre;
@@ -9,12 +8,10 @@ public abstract class Publicacion implements Comparable<Publicacion> {
     private ArrayList<Etiqueta> listaEtiquetas = new ArrayList<>();
     private ArrayList<Comentario> listaComentarios = new ArrayList<>();
 
-    public Publicacion(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios,ArrayList<Etiqueta> etiquetas) {
+    public Publicacion(String nombre, String fechaSubida, int cantidadMG) {
         this.nombre = nombre;
         this.fechaSubida = fechaSubida;
         this.cantidadMG = cantidadMG;
-        this.listaComentarios = comentarios;
-        this.listaEtiquetas = etiquetas;
     }
 
     public String getNombre() {
@@ -49,24 +46,16 @@ public abstract class Publicacion implements Comparable<Publicacion> {
         listaComentarios.add(nuevoComentario);
     }
 
-    public void showEtiquetas() {
+    public void mostrarEtiquetas() {
         for (Etiqueta etiqueta : listaEtiquetas) {
             System.out.println(etiqueta.toString());
         }
     }
 
-    public void showComentarios() {
+    public void mostrarComentarios() {
         for (Comentario comentario : listaComentarios) {
             System.out.println(comentario.toString());
         }
-    }
-
-    public String getTipo(){
-        return this.getClass().getName();
-    } 
-
-    public ArrayList<Comentario> getListaComentarios() {
-        return listaComentarios;
     }
 
     @Override
