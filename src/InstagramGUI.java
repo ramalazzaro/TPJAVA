@@ -1,14 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class InstagramGUI extends JFrame {
     private PerfilInstagram perfilInstagram;
     private JPanel publicacionesPanel;
+    private JButton logoutButton; // Añade esto en la lista de componentes de la clase
+    private ActionListener logoutListener; // Añade esto para gestionar el evento de cierre de sesión
 
     public InstagramGUI(PerfilInstagram perfilInstagram) {
         this.perfilInstagram = perfilInstagram;
         createUI();
         addPublicaciones();
+        createLogoutButton();
     }
 
     private void createUI() {
@@ -24,9 +28,30 @@ public class InstagramGUI extends JFrame {
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
         this.publicacionesPanel = new JPanel();
-        this.publicacionesPanel.setLayout(new GridLayout(0, 6, 10, 10)); // the last two parameters are hgap (horizontal
-                                                                         // gap) and vgap (vertical gap) respectively
+        this.publicacionesPanel.setLayout(new GridLayout(0, 6, 10, 10));
         scrollPane.setViewportView(this.publicacionesPanel);
+    }
+
+    private void createLogoutButton() {
+        logoutButton = new JButton("Cerrar sesión");
+        logoutButton.addActionListener(e -> {
+            // Esto se ejecutará cuando se haga clic en el botón de cierre de sesión
+            if (logoutListener != null) {
+                logoutListener.actionPerformed(e);
+            }
+            dispose(); // Cierra la ventana actual
+        });
+
+        // Layout para el botón
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT)); // Alinea el botón a la derecha
+        buttonPanel.add(logoutButton);
+
+        getContentPane().add(buttonPanel, BorderLayout.NORTH);
+    }
+
+    public void setLogoutListener(ActionListener listener) {
+        this.logoutListener = listener;
     }
 
     private void addPublicaciones() {

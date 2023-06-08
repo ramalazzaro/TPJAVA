@@ -60,9 +60,10 @@ public class Main {
 
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-//import javax.swing.*;
 
 public class Main {
+    private static Runnable loginAndLaunchInstagram;
+
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
@@ -70,8 +71,9 @@ public class Main {
             e.printStackTrace();
         }
 
-        // First display the Login GUI
-        SwingUtilities.invokeLater(() -> {
+        // Create a Runnable that encapsulates the code for logging in and launching the
+        // Instagram GUI
+        loginAndLaunchInstagram = () -> {
             LoginGUI login = new LoginGUI();
             login.setListener(() -> {
                 // After successful login, load the profile data and launch the Instagram GUI
@@ -79,35 +81,23 @@ public class Main {
                 ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
                 readXMLFile.parseXML("./TPJAVA/datos.xml");
 
-                // Luego de agregar las publicaciones, puedes llamar a los métodos en la
-                // instancia de PerfilInstagram, por ejemplo, para mostrar las publicaciones:
                 perfilInstagram.mostrarPublicaciones();
 
-                /*
-                 * ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
-                 * reportesPublicaciones.creaListadoPublicaciones(perfilInstagram);
-                 * reportesPublicaciones.muestraCantPublicacionesAudio();
-                 * reportesPublicaciones.muestraPromMGAudio();
-                 * reportesPublicaciones.muestraListaAudio();
-                 * reportesPublicaciones.muestraCantPublicacionesTexto();
-                 * reportesPublicaciones.muestraPromMGTexto();
-                 * reportesPublicaciones.muestraListaTexto();
-                 * reportesPublicaciones.muestraCantPublicacionesImagen();
-                 * reportesPublicaciones.muestraPromMGImagen();
-                 * reportesPublicaciones.muestraListaImagen();
-                 * reportesPublicaciones.muestraCantPublicacionesVideo();
-                 * reportesPublicaciones.muestraPromMGVideo();
-                 * reportesPublicaciones.muestraListaVideo();
-                 */
-
-                // Luego de generar reportes, se lanza la interfaz gráfica con la instancia de
-                // PerfilInstagram
                 SwingUtilities.invokeLater(() -> {
                     InstagramGUI gui = new InstagramGUI(perfilInstagram);
+                    gui.setLogoutListener(e -> {
+                        // When logging out, dispose the current Instagram GUI and start a new login
+                        gui.dispose();
+                        SwingUtilities.invokeLater(loginAndLaunchInstagram);
+                    });
                     gui.setVisible(true);
                 });
+                login.dispose(); // dispose the login window after logging in
             });
             login.setVisible(true);
-        });
+        };
+
+        // Initially start with the login GUI
+        SwingUtilities.invokeLater(loginAndLaunchInstagram);
     }
 }
