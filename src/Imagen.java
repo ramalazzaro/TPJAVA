@@ -7,13 +7,14 @@ public class Imagen extends Publicacion {
     private int alto;
     private List<Comentario> comentarios;
 
-    public Imagen(String nombre, String fechaSubida, int cantidadMG, String resolucion, int ancho, int alto) {
-        super(nombre, fechaSubida, cantidadMG);
+    public Imagen(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios, ArrayList<Etiqueta> etiquetas, String resolucion, int ancho, int alto) {
+        super(nombre, fechaSubida, cantidadMG, comentarios, etiquetas);
         this.resolucion = resolucion;
         this.ancho = ancho;
         this.alto = alto;
         this.comentarios = new ArrayList<>();
     }
+
 
     public String getResolucion() {
         return resolucion;
