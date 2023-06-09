@@ -58,8 +58,8 @@ public class Main {
     }
 }*/
 
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import javax.swing.*;
+import java.awt.*;
 
 public class Main {
     private static Runnable loginAndLaunchInstagram;
@@ -81,13 +81,17 @@ public class Main {
 
                 perfilInstagram.mostrarPublicaciones();
 
+                ReportesPublicaciones reporte = new ReportesPublicaciones();
+                reporte.creaReportePublicaciones(perfilInstagram);
+
                 SwingUtilities.invokeLater(() -> {
-                    InstagramGUI gui = new InstagramGUI(perfilInstagram);
+                    InstagramGUI gui = new InstagramGUI(perfilInstagram, reporte);
                     gui.setLogoutListener(e -> {
 
                         gui.dispose();
                         SwingUtilities.invokeLater(loginAndLaunchInstagram);
                     });
+                    gui.setMinimumSize(new Dimension(800, 600));
                     gui.setVisible(true);
                 });
                 login.dispose();
