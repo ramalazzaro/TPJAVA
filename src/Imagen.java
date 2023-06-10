@@ -39,16 +39,7 @@ public class Imagen extends Publicacion {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\nImagen\n")
-                .append(super.toString())
-                .append("\tResolucion: ").append(resolucion).append('\'')
-                .append(", Ancho: ").append(ancho)
-                .append(", Alto: ").append(alto);
-
-        builder.append('\n');
-
-        return builder.toString();
+        return "Imagen\n" + super.toString() + "\tResolucion: " + resolucion + ", Ancho: " + ancho + ", Alto: " + alto + "\n";
     }
 
 }

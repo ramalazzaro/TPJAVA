@@ -72,21 +72,19 @@ public abstract class Publicacion implements Comparable<Publicacion> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("\tNombre: ").append(getNombre()).append('\'')
-                .append(", Fecha de Subida: ").append(getFechaSubida()).append('\'')
-                .append(", Cantidad de me gusta: ").append(getCantidadMG());
+        builder.append("\tNombre: " + getNombre() + ", Fecha de Subida: " + getFechaSubida() + ", Cantidad de me gusta: " + getCantidadMG());
 
         if (getComentarios() != null && !getComentarios().isEmpty()) {
-            builder.append("\tComentarios:\n");
+            builder.append("\n\tComentarios:\n");
             for (Comentario comentario : getComentarios()) {
-                builder.append("\t\t" + comentario.toString()).append('\n');
+                builder.append("\t\t" + comentario.toString() + '\n');
             }
         }
 
         if (getEtiquetas() != null && !getEtiquetas().isEmpty()) {
             builder.append("\tEtiquetas:\n");
             for (Etiqueta etiqueta : getEtiquetas()) {
-                builder.append("\t\t" + etiqueta).append('\n');
+                builder.append("\t\t" + etiqueta + '\n');
             }
         }
 

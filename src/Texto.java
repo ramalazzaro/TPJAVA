@@ -50,16 +50,7 @@ public class Texto extends Publicacion {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\nTexto\n")
-                .append(super.toString())
-                .append("\tContenido: ").append(contenido).append('\'')
-                .append(", Caracteres: ").append(caracteres)
-                .append(", Fuente: ").append(fuente).append('\'')
-                .append(", Tamaño:").append(tamaño).append('\'');
-
-        builder.append('\n');
-        return builder.toString();
+        return "Texto\n" + super.toString() + "\n\tContenido: " + contenido + ", Caracteres: " + caracteres + ", Fuente: " + fuente + ", Tamaño: " + tamaño + "\n";
     }
 
 }

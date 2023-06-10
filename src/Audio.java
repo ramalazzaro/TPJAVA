@@ -29,15 +29,7 @@ public class Audio extends Publicacion {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-
-        builder.append("\nAudio\n")
-                .append(super.toString())
-                .append("\tDuracion: ").append(duracion)
-                .append(", Velocidad: ").append(velocidad);
-
-        builder.append('\n');
-        return builder.toString();
+        return "Audio\n" + super.toString() + "\tDuracion: " + duracion + ", Velocidad: " + velocidad+ "\n";
     }
 
 }

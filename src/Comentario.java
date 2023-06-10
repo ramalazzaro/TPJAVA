@@ -35,6 +35,6 @@ public class Comentario {
 
     @Override
     public String toString() {
-        return fecha + " " + usuario + " comentó: " + comentario;
+        return fecha + " " + usuario + " comento: " + comentario;
     }
 }

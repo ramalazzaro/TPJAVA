@@ -123,29 +123,10 @@ public class ReportesPublicaciones {
     }
 
     public String getReporte() {
-        StringBuilder reporte = new StringBuilder();
-
-        reporte.append("IMAGENES:\n");
-        reporte.append(getListaImagen()).append("\n");
-        reporte.append(getCantPublicacionesImagen()).append("\n");
-        reporte.append(getPromMGImagen()).append("\n");
-
-        reporte.append("\nVIDEOS:\n");
-        reporte.append(getListaVideo()).append("\n");
-        reporte.append(getCantPublicacionesVideo()).append("\n");
-        reporte.append(getPromMGVideo()).append("\n");
-
-        reporte.append("\nAUDIOS:\n");
-        reporte.append(getListaAudio()).append("\n");
-        reporte.append(getCantPublicacionesAudio()).append("\n");
-        reporte.append(getPromMGAudio()).append("\n");
-
-        reporte.append("\nTEXTOS:\n");
-        reporte.append(getListaTexto()).append("\n");
-        reporte.append(getCantPublicacionesTexto()).append("\n");
-        reporte.append(getPromMGTexto()).append("\n");
-
-        return reporte.toString();
+        return "IMAGENES:\n" + getListaImagen() + getCantPublicacionesImagen() + "\n" + getPromMGImagen() + "\n" +
+                "\nVIDEOS:\n" + getListaVideo() + getCantPublicacionesVideo() + "\n" + getPromMGVideo() + "\n" +
+                "\nAUDIOS:\n" + getListaAudio() + getCantPublicacionesAudio() + "\n" + getPromMGAudio() + "\n" +
+                "\nTEXTOS:\n" + getListaTexto() + getCantPublicacionesTexto() + "\n" + getPromMGTexto() + "\n";
     }
 
     public void reporteTXT() {
@@ -154,14 +135,10 @@ public class ReportesPublicaciones {
             if (!file.exists())
                 file.createNewFile();
             FileWriter fichero = new FileWriter(file);
-            fichero.write("IMAGENES:\n");
-            fichero.write(getListaImagen() + "\n" + getCantPublicacionesImagen() + "\n" + getPromMGImagen() + "\n");
-            fichero.write("\nVIDEOS:\n");
-            fichero.write(getListaVideo() + "\n" + getCantPublicacionesVideo() + "\n" + getPromMGVideo() + "\n");
-            fichero.write("\nAUDIOS:\n");
-            fichero.write(getListaAudio() + "\n" + getCantPublicacionesAudio() + "\n" + getPromMGAudio() + "\n");
-            fichero.write("\nTEXTOS:\n");
-            fichero.write(getListaTexto() + "\n" + getCantPublicacionesTexto() + "\n" + getPromMGTexto() + "\n");
+            fichero.write("IMAGENES:\n" + getListaImagen() + getCantPublicacionesImagen() + "\n" + getPromMGImagen() + "\n");
+            fichero.write("\nVIDEOS:\n" + getListaVideo() + getCantPublicacionesVideo() + "\n" + getPromMGVideo() + "\n");
+            fichero.write("\nAUDIOS:\n" + getListaAudio() + getCantPublicacionesAudio() + "\n" + getPromMGAudio() + "\n");
+            fichero.write("\nTEXTOS:\n" + getListaTexto() + getCantPublicacionesTexto() + "\n" + getPromMGTexto() + "\n");
             fichero.close();
         } catch (IOException e) {
             e.printStackTrace();

@@ -40,15 +40,7 @@ public class Video extends Publicacion {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\nVideo\n")
-                .append(super.toString())
-                .append("/tDuracion: ").append(duracion)
-                .append(", Resolucion: ").append(resolucion).append('\'')
-                .append(", Cantidad de Cuadros: ").append(cantidadCuadros);
-
-        builder.append('\n');
-        return builder.toString();
+        return "Video\n" + super.toString() + "\tDuracion: " + duracion + ", Resolucion: " + resolucion + ", Cantidad de Cuadros: " + cantidadCuadros + "\n";
     }
 
 }
