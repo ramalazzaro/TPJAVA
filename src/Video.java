@@ -43,9 +43,9 @@ public class Video extends Publicacion {
         StringBuilder builder = new StringBuilder();
         builder.append("\nVideo\n")
                 .append(super.toString())
-                .append(", duracion=").append(duracion)
-                .append(", resolucion='").append(resolucion).append('\'')
-                .append(", cantidadCuadros=").append(cantidadCuadros);
+                .append("/tDuracion: ").append(duracion)
+                .append(", Resolucion: ").append(resolucion).append('\'')
+                .append(", Cantidad de Cuadros: ").append(cantidadCuadros);
 
         builder.append('\n');
         return builder.toString();

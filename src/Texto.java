@@ -53,10 +53,10 @@ public class Texto extends Publicacion {
         StringBuilder builder = new StringBuilder();
         builder.append("\nTexto\n")
                 .append(super.toString())
-                .append("contenido='").append(contenido).append('\'')
-                .append(", caracteres=").append(caracteres)
-                .append(", fuente='").append(fuente).append('\'')
-                .append(", tamaño='").append(tamaño).append('\'');
+                .append("\tContenido: ").append(contenido).append('\'')
+                .append(", Caracteres: ").append(caracteres)
+                .append(", Fuente: ").append(fuente).append('\'')
+                .append(", Tamaño:").append(tamaño).append('\'');
 
         builder.append('\n');
         return builder.toString();

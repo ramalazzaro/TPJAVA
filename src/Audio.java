@@ -33,8 +33,8 @@ public class Audio extends Publicacion {
 
         builder.append("\nAudio\n")
                 .append(super.toString())
-                .append(", duracion=").append(duracion)
-                .append(", velocidad=").append(velocidad);
+                .append("\tDuracion: ").append(duracion)
+                .append(", Velocidad: ").append(velocidad);
 
         builder.append('\n');
         return builder.toString();

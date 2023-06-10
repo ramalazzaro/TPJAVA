@@ -42,9 +42,9 @@ public class Imagen extends Publicacion {
         StringBuilder builder = new StringBuilder();
         builder.append("\nImagen\n")
                 .append(super.toString())
-                .append(" resolucion=").append(resolucion).append('\'')
-                .append(", ancho=").append(ancho)
-                .append(", alto=").append(alto);
+                .append("\tResolucion: ").append(resolucion).append('\'')
+                .append(", Ancho: ").append(ancho)
+                .append(", Alto: ").append(alto);
 
         builder.append('\n');
 
