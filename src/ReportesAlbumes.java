@@ -1,59 +1,60 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class ReportesAlbumes {
-    private StringBuilder salida = new StringBuilder();
+    private StringBuilder reporte = new StringBuilder();
 
-    public void creaReporteAlbumes(PerfilInstagram perfilInstagram, Estadisticas estadisticas) {
+    public void creaReporte (ArrayList<Album> listaAlbumes, String fechaMinima, String fechaMaxima) {
+        if (!listaAlbumes.isEmpty()) {
+            int cantPub = 0;
+            int cantComen = 0;
 
-        String fecha;
-        int cantPub;
-        int cantComen = 0;
-
-        String fechaMinima = new String();
-        fechaMinima = estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida();
-        String fechaMaxima = new String();
-        fechaMaxima = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
-
-        // Ingresa fechas a recorrer desde interfaz grafica HAY QUE VALIDARLAS
-
-        for (Album album : perfilInstagram.getListaAlbumes()) {
-            cantPub = album.getPublicaciones().size();
-            for (Publicacion publicacion : album.getPublicaciones()) {
-                String fechaSubida = publicacion.getFechaSubida();
-                if (fechaSubida.compareTo(fechaMinima) > 0 && fechaSubida.compareTo(fechaMaxima) < 0) {
-                    cantComen += publicacion.getComentarios().size();
-                    System.out.println(publicacion.toString());
+            for (Album album : listaAlbumes) {
+                cantPub = album.getPublicaciones().size();
+                reporte.append("\nAlbum: " + album.getNombre() + "\n\n");
+                for (Publicacion publicacion : album.getPublicaciones()) {
+                    String fechaSubida = publicacion.getFechaSubida();
+                    if (fechaSubida.compareTo(fechaMinima) >= 0 && fechaSubida.compareTo(fechaMaxima) <= 0) {
+                        cantComen += publicacion.getComentarios().size();
+                        reporte.append(publicacion.toString());
+                    }
                 }
+                reporte.append("\nCantidad de publicaciones: " + cantPub + "\tCantidad de comentarios totales: " + cantComen + "\n");
+                creaReporte(album.getSubAlbumes(), fechaMinima, fechaMaxima);
             }
-
-            // recorrerAlbum(album, fechaMinima, fechaMaxima, cantPub, cantComen);
-
-            salida.append("Album: " + album.getNombre() + "\tCantidad de publicaciones: " + cantPub
-                    + "\tCantidad de comentarios totales: " + cantComen + "\n");
-            System.out.println(salida);
-
-            for (Album subAlbum : album.getSubAlbumes()) {
-                recorrerAlbum(subAlbum, fechaMinima, fechaMaxima, cantPub, cantComen);
-            }
-        }
-
-    }
-
-    private void recorrerAlbum(Album album, String fechaMinima, String fechaMaxima, int cantPub, int cantComen) {
-        for (Publicacion publicacion : album.getPublicaciones()) {
-            String fecha = publicacion.getFechaSubida();
-            if ((fecha.compareTo(fechaMinima) > 0) && (fecha.compareTo(fechaMaxima) < 0)) {
-                cantPub++;
-            }
-            for (Comentario comentario : publicacion.getComentarios()) {
-                cantComen++;
-            }
-        }
-
-        for (Album subAlbum : album.getSubAlbumes()) {
-            recorrerAlbum(subAlbum, fechaMinima, fechaMaxima, cantPub, cantComen);
         }
     }
 
+    public boolean validaFechaMinima(Estadisticas estadisticas, String fMin) {
+        String fechaMinima = new String();
+        fechaMinima = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
+        return (fMin.compareTo(fechaMinima)>=0);
+
+    }
+    public boolean validaFechaMaxima(Estadisticas estadisticas, String fMax) {
+        String fechaMaxima = new String();
+        fechaMaxima = estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida();
+        return (fMax.compareTo(fechaMaxima)<=0);
+    }
+
+    public void reportePantalla () {
+        System.out.println(reporte.toString());
+    }
+
+    public void reporteTXT() {
+        try {
+            File file = new File("Reporte Albumes.txt");
+            if (!file.exists())
+                file.createNewFile();
+            FileWriter fichero = new FileWriter(file);
+            fichero.write(reporte.toString());
+            fichero.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

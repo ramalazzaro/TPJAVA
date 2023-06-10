@@ -40,7 +40,7 @@ public class Video extends Publicacion {
 
     @Override
     public String toString() {
-        return "Video\n" + super.toString() + "\tDuracion: " + duracion + ", Resolucion: " + resolucion + ", Cantidad de Cuadros: " + cantidadCuadros + "\n";
+        return "VIDEO\n" + super.toString() + "\tDuracion: " + duracion + ", Resolucion: " + resolucion + ", Cantidad de Cuadros: " + cantidadCuadros + "\n";
     }
 
 }

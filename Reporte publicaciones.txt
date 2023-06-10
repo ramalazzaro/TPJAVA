@@ -1,5 +1,5 @@
 IMAGENES:
-	Imagen
+	IMAGEN
 	Nombre: Puesta de sol en la playa, Fecha de Subida: 2023/04/10, Cantidad de me gusta: 142
 	Comentarios:
 		2023/04/11 SabriGomez comento: Increíblemente hermoso
@@ -10,7 +10,7 @@ IMAGENES:
 		Etiqueta: PuestaDeSol
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Atardecer en las montañas, Fecha de Subida: 2023/09/10, Cantidad de me gusta: 137
 	Comentarios:
 		2023/09/11 SabriGomez comento: Un paisaje de ensueño
@@ -21,7 +21,7 @@ IMAGENES:
 		Etiqueta: Atardecer
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Postre casero, Fecha de Subida: 2023/05/15, Cantidad de me gusta: 110
 	Comentarios:
 		2023/05/16 SabriGomez comento: ¡Qué delicia!
@@ -31,7 +31,7 @@ IMAGENES:
 		Etiqueta: Postre
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Colorido atardecer en la playa, Fecha de Subida: 2024/09/05, Cantidad de me gusta: 105
 	Comentarios:
 		2024/09/06 SabriGomez comento: El cielo se tiñe de colores al caer el sol
@@ -42,7 +42,7 @@ IMAGENES:
 		Etiqueta: Atardecer
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Paisaje invernal, Fecha de Subida: 2024/05/20, Cantidad de me gusta: 104
 	Comentarios:
 		2024/05/21 SabriGomez comento: La belleza helada del invierno
@@ -52,7 +52,7 @@ IMAGENES:
 		Etiqueta: Invierno
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Ruta de senderismo, Fecha de Subida: 2022/11/10, Cantidad de me gusta: 103
 	Comentarios:
 		2022/11/11 SabriGomez comento: Qué hermoso paisaje
@@ -63,7 +63,7 @@ IMAGENES:
 		Etiqueta: Aventura
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Explorando la montaña, Fecha de Subida: 2024/10/10, Cantidad de me gusta: 99
 	Comentarios:
 		2024/10/11 JuanPerez comento: Aire fresco y paisajes impresionantes
@@ -73,7 +73,7 @@ IMAGENES:
 		Etiqueta: Aventura
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Aventura en la selva, Fecha de Subida: 2023/10/20, Cantidad de me gusta: 98
 	Comentarios:
 		2023/10/21 SabriGomez comento: ¡Qué experiencia tan emocionante!
@@ -84,7 +84,7 @@ IMAGENES:
 		Etiqueta: Naturaleza
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Día de campo, Fecha de Subida: 2023/03/15, Cantidad de me gusta: 97
 	Comentarios:
 		2023/03/16 SabriGomez comento: ¡Qué hermoso día
@@ -94,7 +94,7 @@ IMAGENES:
 		Etiqueta: AireLibre
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Estilo urbano, Fecha de Subida: 2024/03/10, Cantidad de me gusta: 97
 	Comentarios:
 		2024/03/11 SabriGomez comento: Un look moderno y audaz
@@ -105,7 +105,7 @@ IMAGENES:
 		Etiqueta: Urbano
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Flores en primavera, Fecha de Subida: 2023/12/05, Cantidad de me gusta: 95
 	Comentarios:
 		2023/12/06 SabriGomez comento: La naturaleza en su máxima expresión
@@ -115,7 +115,7 @@ IMAGENES:
 		Etiqueta: Flores
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Arte urbano en la calle, Fecha de Subida: 2023/08/05, Cantidad de me gusta: 93
 	Comentarios:
 		2023/08/06 SabriGomez comento: Increíbles talentos
@@ -124,7 +124,7 @@ IMAGENES:
 		Etiqueta: Calle
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Capturando momentos, Fecha de Subida: 2022/12/20, Cantidad de me gusta: 93
 	Comentarios:
 		2022/12/20 JuanPerez comento: Qué buena toma
@@ -134,7 +134,7 @@ IMAGENES:
 		Etiqueta: Recuerdos
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Arte callejero, Fecha de Subida: 2024/07/05, Cantidad de me gusta: 92
 	Comentarios:
 		2024/07/06 SabriGomez comento: El arte está en todas partes
@@ -145,7 +145,7 @@ IMAGENES:
 		Etiqueta: Expresión
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Explorando la ciudad, Fecha de Subida: 2022/09/15, Cantidad de me gusta: 92
 	Comentarios:
 		2022/09/15 JuanPerez comento: Qué lindos recuerdos
@@ -157,7 +157,7 @@ IMAGENES:
 		Etiqueta: Ciudad
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Rascacielos de la ciudad, Fecha de Subida: 2024/02/20, Cantidad de me gusta: 88
 	Comentarios:
 		2024/02/21 SabriGomez comento: Impresionante panorama urbano
@@ -167,7 +167,7 @@ IMAGENES:
 		Etiqueta: Arquitectura
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Atardecer en el parque, Fecha de Subida: 2022/08/10, Cantidad de me gusta: 87
 	Comentarios:
 		2022/08/10 JuanPerez comento: Impresionante!
@@ -179,7 +179,7 @@ IMAGENES:
 		Etiqueta: Atardecer
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Retrato en blanco y negro, Fecha de Subida: 2023/06/20, Cantidad de me gusta: 82
 	Comentarios:
 		2023/06/21 SabriGomez comento: Me encanta la expresión capturada
@@ -189,7 +189,7 @@ IMAGENES:
 		Etiqueta: Retrato
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Tarde en la playa, Fecha de Subida: 2022/02/02, Cantidad de me gusta: 65
 	Comentarios:
 		2022/02/02 JuanPerez comento: Que lindo x dios
@@ -201,7 +201,7 @@ IMAGENES:
 		Etiqueta: Familia
 	Resolucion: 1920*1080, Ancho: 1920, Alto: 1080
 
-	Imagen
+	IMAGEN
 	Nombre: Estudiando, Fecha de Subida: 2022/04/20, Cantidad de me gusta: 41
 	Comentarios:
 		2022/04/20 LolaLoCelso comento: Es para el parcial de algoritmos, no?
@@ -217,7 +217,7 @@ CANTIDAD DE IMAGENES: 20
 PROMEDIO ME GUSTA: 96
 
 VIDEOS:
-	Video
+	VIDEO
 	Nombre: Bromas en la oficina, Fecha de Subida: 2023/05/05, Cantidad de me gusta: 185
 	Comentarios:
 		2023/05/06 JuanPerez comento: No puedo parar de reír
@@ -227,7 +227,7 @@ VIDEOS:
 		Etiqueta: Comedia
 	Duracion: 90, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Presentación de baile, Fecha de Subida: 2023/10/05, Cantidad de me gusta: 182
 	Comentarios:
 		2023/10/06 JuanPerez comento: ¡Increíble talento!
@@ -238,7 +238,7 @@ VIDEOS:
 		Etiqueta: Expresión
 	Duracion: 120, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Concierto en vivo, Fecha de Subida: 2022/12/05, Cantidad de me gusta: 178
 	Comentarios:
 		2022/12/06 JuanPerez comento: ¡Increíble presentación!
@@ -249,7 +249,7 @@ VIDEOS:
 		Etiqueta: Emoción
 	Duracion: 60, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Receta de cocina: Pastel de chocolate, Fecha de Subida: 2024/04/05, Cantidad de me gusta: 178
 	Comentarios:
 		2024/04/06 JuanPerez comento: Se ve delicioso, ¡comparte la receta!
@@ -259,7 +259,7 @@ VIDEOS:
 		Etiqueta: Postre
 	Duracion: 150, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Entrenamiento de artes marciales, Fecha de Subida: 2024/08/10, Cantidad de me gusta: 158
 	Comentarios:
 		2024/08/11 JuanPerez comento: Impresionante habilidad y disciplina
@@ -269,7 +269,7 @@ VIDEOS:
 		Etiqueta: Deporte
 	Duracion: 120, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Entrenamiento en el gimnasio, Fecha de Subida: 2023/03/05, Cantidad de me gusta: 135
 	Comentarios:
 		2023/03/06 JuanPerez comento: ¡Dándole duro al entrenamiento!
@@ -280,7 +280,7 @@ VIDEOS:
 		Etiqueta: Fitness
 	Duracion: 45, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Viaje a la playa, Fecha de Subida: 2024/01/10, Cantidad de me gusta: 135
 	Comentarios:
 		2024/01/11 JuanPerez comento: Disfrutando del sol y el mar
@@ -291,7 +291,7 @@ VIDEOS:
 		Etiqueta: Viaje
 	Duracion: 90, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Recorriendo la ciudad en bicicleta, Fecha de Subida: 2023/07/10, Cantidad de me gusta: 125
 	Comentarios:
 		2023/07/11 JuanPerez comento: ¡Qué buena forma de ejercitarse!
@@ -302,7 +302,7 @@ VIDEOS:
 		Etiqueta: Ciudad
 	Duracion: 80, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Bailando con amigos, Fecha de Subida: 2022/09/05, Cantidad de me gusta: 120
 	Comentarios:
 		2022/09/06 SabriGomez comento: ¡Qué ritmo!
@@ -314,7 +314,7 @@ VIDEOS:
 		Etiqueta: Diversión
 	Duracion: 30, Resolucion: 1080*720, Cantidad de Cuadros: 0
 
-	Video
+	VIDEO
 	Nombre: Jugando con mis perritos, Fecha de Subida: 2022/04/14, Cantidad de me gusta: 102
 	Comentarios:
 		2022/04/15 JuanPerez comento: Esta grandote che!
@@ -330,7 +330,7 @@ CANTIDAD DE VIDEOS: 10
 PROMEDIO ME GUSTA: 149
 
 AUDIOS:
-	Audio
+	AUDIO
 	Nombre: Meditación guiada, Fecha de Subida: 2024/06/10, Cantidad de me gusta: 124
 	Comentarios:
 		2024/06/11 JuanPerez comento: Perfecto para encontrar paz interior
@@ -340,7 +340,7 @@ AUDIOS:
 		Etiqueta: Relajación
 	Duracion: 180, Velocidad: 1
 
-	Audio
+	AUDIO
 	Nombre: Canciones de los 80, Fecha de Subida: 2023/11/10, Cantidad de me gusta: 120
 	Comentarios:
 		2023/11/11 JuanPerez comento: Reviviendo la nostalgia
@@ -350,7 +350,7 @@ AUDIOS:
 		Etiqueta: Clásicos
 	Duracion: 240, Velocidad: 1
 
-	Audio
+	AUDIO
 	Nombre: Playlist de música relajante, Fecha de Subida: 2023/06/03, Cantidad de me gusta: 92
 	Comentarios:
 		2023/06/04 JuanPerez comento: Me ayuda a desconectar del estrés
@@ -360,7 +360,7 @@ AUDIOS:
 		Etiqueta: Relajación
 	Duracion: 360, Velocidad: 1
 
-	Audio
+	AUDIO
 	Nombre: Canción relajante, Fecha de Subida: 2022/10/03, Cantidad de me gusta: 74
 	Comentarios:
 		2022/10/04 BoquitaPasion comento: Me ayuda a desconectar
@@ -370,7 +370,7 @@ AUDIOS:
 		Etiqueta: Relajación
 	Duracion: 180, Velocidad: 1
 
-	Audio
+	AUDIO
 	Nombre: Charlas de oficina CAP2, Fecha de Subida: 2022/06/18, Cantidad de me gusta: 67
 	Comentarios:
 		200/06/19 LeoMessi comento: Buenisimo
@@ -380,7 +380,7 @@ AUDIOS:
 		Etiqueta: Actualidad
 	Duracion: 720, Velocidad: 1
 
-	Audio
+	AUDIO
 	Nombre: Podcast informativo, Fecha de Subida: 2023/01/05, Cantidad de me gusta: 67
 	Comentarios:
 		2023/01/06 SabriGomez comento: ¡Muy interesante!
@@ -390,7 +390,7 @@ AUDIOS:
 		Etiqueta: Información
 	Duracion: 480, Velocidad: 1
 
-	Audio
+	AUDIO
 	Nombre: Charlas de oficina, Fecha de Subida: 2022/06/05, Cantidad de me gusta: 55
 	Comentarios:
 		2022/06/05 SabriGomez comento: Interesantisimo
@@ -406,27 +406,27 @@ CANTIDAD DE AUDIOS: 7
 PROMEDIO ME GUSTA: 85
 
 TEXTOS:
-	Texto
+	TEXTO
 	Nombre: SC, Fecha de Subida: 2023/10/10, Cantidad de me gusta: 60
 	Contenido: ¡Feliz cumpleaños a mi mejor amiga!, Caracteres: 41, Fuente: Arial, Tamaño: 20px
 
-	Texto
+	TEXTO
 	Nombre: Economia en Australia, Fecha de Subida: 2023/03/13, Cantidad de me gusta: 57
 	Contenido: En Australia esta bajando la inflacion y mejorando la calidad de vida, Caracteres: 66, Fuente: Arial, Tamaño: 30px
 
-	Texto
+	TEXTO
 	Nombre: Dia de la amistad, Fecha de Subida: 2025/10/10, Cantidad de me gusta: 50
 	Contenido: ¡Feliz día de la amistad! Celebremos juntos., Caracteres: 48, Fuente: Arial, Tamaño: 20px
 
-	Texto
+	TEXTO
 	Nombre: FC amiga, Fecha de Subida: 2021/10/10, Cantidad de me gusta: 50
 	Contenido: ¡Feliz cumpleaños a mi mejor amiga! Te quiero mucho., Caracteres: 56, Fuente: Calibri, Tamaño: 24px
 
-	Texto
+	TEXTO
 	Nombre: Viernes!!, Fecha de Subida: 2023/04/10, Cantidad de me gusta: 34
 	Contenido: ¡Feliz viernes a todos! Disfruten del fin de semana., Caracteres: 50, Fuente: Verdana, Tamaño: 18px
 
-	Texto
+	TEXTO
 	Nombre: Frases, Fecha de Subida: 2021/05/10, Cantidad de me gusta: 26
 	Contenido: Frases motivadoras para el día, Caracteres: 32, Fuente: Arial, Tamaño: 24px
 

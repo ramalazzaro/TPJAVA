@@ -39,7 +39,7 @@ public class Imagen extends Publicacion {
 
     @Override
     public String toString() {
-        return "Imagen\n" + super.toString() + "\tResolucion: " + resolucion + ", Ancho: " + ancho + ", Alto: " + alto + "\n";
+        return "IMAGEN\n" + super.toString() + "\tResolucion: " + resolucion + ", Ancho: " + ancho + ", Alto: " + alto + "\n";
     }
 
 }

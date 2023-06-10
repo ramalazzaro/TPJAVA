@@ -50,7 +50,7 @@ public class Texto extends Publicacion {
 
     @Override
     public String toString() {
-        return "Texto\n" + super.toString() + "\n\tContenido: " + contenido + ", Caracteres: " + caracteres + ", Fuente: " + fuente + ", Tamaño: " + tamaño + "\n";
+        return "TEXTO\n" + super.toString() + "\n\tContenido: " + contenido + ", Caracteres: " + caracteres + ", Fuente: " + fuente + ", Tamaño: " + tamaño + "\n";
     }
 
 }

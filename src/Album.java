@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Album {
     private String nombre;
-    private List<Publicacion> publicaciones;
-    private List<Album> subAlbumes;
+    private ArrayList<Publicacion> publicaciones;
+    private ArrayList<Album> subAlbumes;
     int[] cantTipo = new int[4]  ; // Índice 0: Imagen, Índice 1: Video, Índice 2: Texto, Índice 3: Audio
     int cantTotal = 0;
 
@@ -41,11 +41,11 @@ public class Album {
         return this.nombre;
     }
 
-    public List<Publicacion> getPublicaciones() {
+    public ArrayList<Publicacion> getPublicaciones() {
         return publicaciones;
     }
 
-    public List<Album> getSubAlbumes() {
+    public ArrayList<Album> getSubAlbumes() {
         return subAlbumes;
     }
 

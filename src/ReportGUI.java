@@ -23,26 +23,7 @@ public class ReportGUI extends JFrame {
                 });
                 getContentPane().add(btnBack, BorderLayout.SOUTH);
 
-                // Generate the report string
-                StringBuilder sb = new StringBuilder();
-                sb.append("IMAGENES:\n");
-                sb.append(reporte.getListaImagen()).append("\n")
-                                .append(reporte.getCantPublicacionesImagen()).append("\n")
-                                .append(reporte.getPromMGImagen()).append("\n");
-                sb.append("\nVIDEOS:\n");
-                sb.append(reporte.getListaVideo()).append("\n")
-                                .append(reporte.getCantPublicacionesVideo()).append("\n")
-                                .append(reporte.getPromMGVideo()).append("\n");
-                sb.append("\nAUDIOS:\n");
-                sb.append(reporte.getListaAudio()).append("\n")
-                                .append(reporte.getCantPublicacionesAudio()).append("\n")
-                                .append(reporte.getPromMGAudio()).append("\n");
-                sb.append("\nTEXTOS:\n");
-                sb.append(reporte.getListaTexto()).append("\n")
-                                .append(reporte.getCantPublicacionesTexto()).append("\n")
-                                .append(reporte.getPromMGTexto()).append("\n");
-
-                // Set the report string to the text area
-                textArea.setText(sb.toString());
+                // Set the report to the text area
+                textArea.setText(reporte.getReporte());
         }
 }

@@ -4,8 +4,7 @@ public class Audio extends Publicacion {
     private int duracion;
     private int velocidad;
 
-    public Audio(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios,
-            ArrayList<Etiqueta> etiquetas, int duracion, int velocidad) {
+    public Audio(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios, ArrayList<Etiqueta> etiquetas, int duracion, int velocidad) {
         super(nombre, fechaSubida, cantidadMG, comentarios, etiquetas);
         this.duracion = duracion;
         this.velocidad = velocidad;
@@ -29,7 +28,7 @@ public class Audio extends Publicacion {
 
     @Override
     public String toString() {
-        return "Audio\n" + super.toString() + "\tDuracion: " + duracion + ", Velocidad: " + velocidad+ "\n";
+        return "AUDIO\n" + super.toString() + "\tDuracion: " + duracion + ", Velocidad: " + velocidad+ "\n";
     }
 
 }
