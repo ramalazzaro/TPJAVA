@@ -868,24 +868,4 @@
         <duracion>480</duracion>
         <velocidad>1</velocidad>
     </Audio>
-    <Imagen>
-        <nombre>Desayuno saludable</nombre>
-        <fechaSubida>2023/02/10</fechaSubida>
-        <cantMG>112</cantMG>
-        <etiqueta>Desayuno</etiqueta>
-        <etiqueta>VidaSaludable</etiqueta>
-        <comentario>
-            <usuario>SabriGomez</usuario>
-            <contenido>¡Se ve delicioso!</contenido>
-            <fecha>2023/02/11</fecha>
-        </comentario>
-        <comentario>
-            <usuario>JuanPerez</usuario>
-            <contenido>Comer bien es importante</contenido>
-            <fecha>2023/02/12</fecha>
-        </comentario>
-        <resolucion>1920*1080</resolucion>
-        <Ancho>1920</Ancho>
-        <Alto>1080</Alto>
-    </Imagen>
 </PerfilInstagram>

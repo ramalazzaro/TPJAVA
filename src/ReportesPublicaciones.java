@@ -5,8 +5,6 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class ReportesPublicaciones {
-    // Se crean una lista para cada tipo de publicacion para desarrollar sus
-    // respectivos reportes de manera individual.
     private SortedSet<Audio> listaAudio = new TreeSet<>(new MGComparator());
     private SortedSet<Imagen> listaImagen = new TreeSet<>(new MGComparator());
     private SortedSet<Texto> listaTexto = new TreeSet<>(new MGComparator());
@@ -148,5 +146,25 @@ public class ReportesPublicaciones {
         reporte.append(getPromMGTexto()).append("\n");
 
         return reporte.toString();
+    }
+
+    public void reporteTXT() {
+        try {
+            File file = new File("Reporte publicaciones.txt");
+            if (!file.exists())
+                file.createNewFile();
+            FileWriter fichero = new FileWriter(file);
+            fichero.write("IMAGENES:\n");
+            fichero.write(getListaImagen() + "\n" + getCantPublicacionesImagen() + "\n" + getPromMGImagen() + "\n");
+            fichero.write("\nVIDEOS:\n");
+            fichero.write(getListaVideo() + "\n" + getCantPublicacionesVideo() + "\n" + getPromMGVideo() + "\n");
+            fichero.write("\nAUDIOS:\n");
+            fichero.write(getListaAudio() + "\n" + getCantPublicacionesAudio() + "\n" + getPromMGAudio() + "\n");
+            fichero.write("\nTEXTOS:\n");
+            fichero.write(getListaTexto() + "\n" + getCantPublicacionesTexto() + "\n" + getPromMGTexto() + "\n");
+            fichero.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

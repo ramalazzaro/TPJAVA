@@ -8,10 +8,13 @@ public abstract class Publicacion implements Comparable<Publicacion> {
     private ArrayList<Etiqueta> listaEtiquetas = new ArrayList<>();
     private ArrayList<Comentario> listaComentarios = new ArrayList<>();
 
-    public Publicacion(String nombre, String fechaSubida, int cantidadMG) {
+    public Publicacion(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios,
+            ArrayList<Etiqueta> etiquetas) {
         this.nombre = nombre;
         this.fechaSubida = fechaSubida;
         this.cantidadMG = cantidadMG;
+        this.listaEtiquetas = etiquetas;
+        this.listaComentarios = comentarios;
     }
 
     public String getNombre() {
@@ -56,6 +59,38 @@ public abstract class Publicacion implements Comparable<Publicacion> {
         for (Comentario comentario : listaComentarios) {
             System.out.println(comentario.toString());
         }
+    }
+
+    public ArrayList<Comentario> getComentarios() {
+        return this.listaComentarios;
+    }
+
+    public ArrayList<Etiqueta> getEtiquetas() {
+        return this.listaEtiquetas;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("nombre='").append(getNombre()).append('\'')
+                .append(", fechaSubida='").append(getFechaSubida()).append('\'')
+                .append(", cantidadMG=").append(getCantidadMG());
+
+        if (getComentarios() != null && !getComentarios().isEmpty()) {
+            builder.append("\nComentarios:\n");
+            for (Comentario comentario : getComentarios()) {
+                builder.append("\t" + comentario.toString()).append('\n');
+            }
+        }
+
+        if (getEtiquetas() != null && !getEtiquetas().isEmpty()) {
+            builder.append("\nEtiquetas:\n");
+            for (Etiqueta etiqueta : getEtiquetas()) {
+                builder.append("\t" + etiqueta).append('\n');
+            }
+        }
+
+        return builder.toString();
     }
 
     @Override

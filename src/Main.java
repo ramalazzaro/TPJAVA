@@ -65,6 +65,15 @@ public class Main {
     private static Runnable loginAndLaunchInstagram;
 
     public static void main(String[] args) {
+
+        PerfilInstagram perfilInstagram = new PerfilInstagram();
+        ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
+        readXMLFile.parseXML("./TPJAVA/datos.xml");
+
+        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
+        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
+        reportesPublicaciones.reporteTXT();
+
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
@@ -74,10 +83,6 @@ public class Main {
         loginAndLaunchInstagram = () -> {
             LoginGUI login = new LoginGUI();
             login.setListener(() -> {
-
-                PerfilInstagram perfilInstagram = new PerfilInstagram();
-                ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
-                readXMLFile.parseXML("./TPJAVA/datos.xml");
 
                 perfilInstagram.mostrarPublicaciones();
 

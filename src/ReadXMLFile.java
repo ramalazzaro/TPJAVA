@@ -5,7 +5,6 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
-import java.util.List;
 import java.util.ArrayList;
 
 public class ReadXMLFile {
@@ -56,14 +55,16 @@ public class ReadXMLFile {
             String nombre = getElementValue(imagenElement, "nombre");
             String fechaSubida = getElementValue(imagenElement, "fechaSubida");
             int cantMG = parseInt(getElementValue(imagenElement, "cantMG"), 0);
+            String resolucion = getElementValue(imagenElement, "resolucion");
             int ancho = parseInt(getElementValue(imagenElement, "Ancho"), 0);
             int alto = parseInt(getElementValue(imagenElement, "Alto"), 0);
-            String formato = getElementValue(imagenElement, "formato");
-
-            Imagen imagen = new Imagen(nombre, fechaSubida, cantMG, formato, ancho, alto);
 
             NodeList commentNodes = imagenElement.getElementsByTagName("comentario");
-            List<Comentario> comentarios = new ArrayList<>();
+            ArrayList<Comentario> comentarios = new ArrayList<>();
+
+            NodeList etiquetaNodes = imagenElement.getElementsByTagName("etiqueta");
+            ArrayList<Etiqueta> etiquetas = new ArrayList<>();
+
             for (int j = 0; j < commentNodes.getLength(); j++) {
                 Node commentNode = commentNodes.item(j);
                 if (commentNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -75,8 +76,17 @@ public class ReadXMLFile {
                     comentarios.add(comentario);
                 }
             }
-            imagen.setComentarios(comentarios);
 
+            for (int j = 0; j < etiquetaNodes.getLength(); j++) {
+                Node etiquetaNode = etiquetaNodes.item(j);
+                if (etiquetaNode.getNodeType() == Node.ELEMENT_NODE) {
+                    String contenido = etiquetaNode.getTextContent();
+                    Etiqueta etiqueta = new Etiqueta(contenido);
+                    etiquetas.add(etiqueta);
+                }
+            }
+
+            Imagen imagen = new Imagen(nombre, fechaSubida, cantMG, comentarios, etiquetas, resolucion, ancho, alto);
             perfilInstagram.addPublicacion(imagen);
         }
     }
@@ -92,7 +102,35 @@ public class ReadXMLFile {
             String resolucion = getElementValue(videoElement, "resolucion");
             int cantidadCuadros = parseInt(getElementValue(videoElement, "cantidadCuadros"), 0);
 
-            Video video = new Video(nombre, fechaSubida, cantMG, duracion, resolucion, cantidadCuadros);
+            NodeList commentNodes = videoElement.getElementsByTagName("comentario");
+            ArrayList<Comentario> comentarios = new ArrayList<>();
+
+            NodeList etiquetaNodes = videoElement.getElementsByTagName("etiqueta");
+            ArrayList<Etiqueta> etiquetas = new ArrayList<>();
+
+            for (int j = 0; j < commentNodes.getLength(); j++) {
+                Node commentNode = commentNodes.item(j);
+                if (commentNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element commentElement = (Element) commentNode;
+                    String usuario = getElementValue(commentElement, "usuario");
+                    String contenido = getElementValue(commentElement, "contenido");
+                    String fecha = getElementValue(commentElement, "fecha");
+                    Comentario comentario = new Comentario(usuario, contenido, fecha);
+                    comentarios.add(comentario);
+                }
+            }
+
+            for (int j = 0; j < etiquetaNodes.getLength(); j++) {
+                Node etiquetaNode = etiquetaNodes.item(j);
+                if (etiquetaNode.getNodeType() == Node.ELEMENT_NODE) {
+                    String contenido = etiquetaNode.getTextContent();
+                    Etiqueta etiqueta = new Etiqueta(contenido);
+                    etiquetas.add(etiqueta);
+                }
+            }
+
+            Video video = new Video(nombre, fechaSubida, cantMG, comentarios, etiquetas, duracion, resolucion,
+                    cantidadCuadros);
 
             perfilInstagram.addPublicacion(video);
         }
@@ -108,7 +146,34 @@ public class ReadXMLFile {
             int duracion = parseInt(getElementValue(audioElement, "duracion"), 0);
             int velocidad = parseInt(getElementValue(audioElement, "velocidad"), 0);
 
-            Audio audio = new Audio(nombre, fechaSubida, cantMG, duracion, velocidad);
+            NodeList commentNodes = audioElement.getElementsByTagName("comentario");
+            ArrayList<Comentario> comentarios = new ArrayList<>();
+
+            NodeList etiquetaNodes = audioElement.getElementsByTagName("etiqueta");
+            ArrayList<Etiqueta> etiquetas = new ArrayList<>();
+
+            for (int j = 0; j < commentNodes.getLength(); j++) {
+                Node commentNode = commentNodes.item(j);
+                if (commentNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element commentElement = (Element) commentNode;
+                    String usuario = getElementValue(commentElement, "usuario");
+                    String contenido = getElementValue(commentElement, "contenido");
+                    String fecha = getElementValue(commentElement, "fecha");
+                    Comentario comentario = new Comentario(usuario, contenido, fecha);
+                    comentarios.add(comentario);
+                }
+            }
+
+            for (int j = 0; j < etiquetaNodes.getLength(); j++) {
+                Node etiquetaNode = etiquetaNodes.item(j);
+                if (etiquetaNode.getNodeType() == Node.ELEMENT_NODE) {
+                    String contenido = etiquetaNode.getTextContent();
+                    Etiqueta etiqueta = new Etiqueta(contenido);
+                    etiquetas.add(etiqueta);
+                }
+            }
+
+            Audio audio = new Audio(nombre, fechaSubida, cantMG, comentarios, etiquetas, duracion, velocidad);
 
             perfilInstagram.addPublicacion(audio);
         }
@@ -118,7 +183,6 @@ public class ReadXMLFile {
         if (textoNode.getNodeType() == Node.ELEMENT_NODE) {
             Element textoElement = (Element) textoNode;
 
-            // Leer las propiedades del Texto
             String nombre = getElementValue(textoElement, "nombre");
             String fechaSubida = getElementValue(textoElement, "fechaSubida");
             int cantMG = parseInt(getElementValue(textoElement, "cantMG"), 0);
@@ -127,13 +191,39 @@ public class ReadXMLFile {
             String fuente = getElementValue(textoElement, "fuente");
             String tamaño = getElementValue(textoElement, "tamaño");
 
-            // Crear el objeto Texto y establecer las propiedades
-            Texto texto = new Texto(nombre, fechaSubida, cantMG, contenido, caracteres, fuente, tamaño);
+            NodeList commentNodes = textoElement.getElementsByTagName("comentario");
+            ArrayList<Comentario> comentarios = new ArrayList<>();
+
+            NodeList etiquetaNodes = textoElement.getElementsByTagName("etiqueta");
+            ArrayList<Etiqueta> etiquetas = new ArrayList<>();
+
+            for (int j = 0; j < commentNodes.getLength(); j++) {
+                Node commentNode = commentNodes.item(j);
+                if (commentNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element commentElement = (Element) commentNode;
+                    String usuario = getElementValue(commentElement, "usuario");
+                    String contenidoComentario = getElementValue(commentElement, "contenido");
+                    String fecha = getElementValue(commentElement, "fecha");
+                    Comentario comentario = new Comentario(usuario, contenidoComentario, fecha);
+                    comentarios.add(comentario);
+                }
+            }
+
+            for (int j = 0; j < etiquetaNodes.getLength(); j++) {
+                Node etiquetaNode = etiquetaNodes.item(j);
+                if (etiquetaNode.getNodeType() == Node.ELEMENT_NODE) {
+                    String contenidoEtiqueta = etiquetaNode.getTextContent();
+                    Etiqueta etiqueta = new Etiqueta(contenidoEtiqueta);
+                    etiquetas.add(etiqueta);
+                }
+            }
+
+            Texto texto = new Texto(nombre, fechaSubida, cantMG, comentarios, etiquetas, contenido, caracteres, fuente,
+                    tamaño);
             texto.setNombre(nombre);
             texto.setFechaSubida(fechaSubida);
             texto.setCantidadMG(cantMG);
 
-            // Agregar el objeto Texto a la lista de publicaciones del perfil de Instagram
             perfilInstagram.addPublicacion(texto);
         }
     }
