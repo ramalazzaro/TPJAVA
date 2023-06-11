@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
-
-public abstract class Publicacion implements Comparable<Publicacion> {
+import java.io.Serializable;
+public abstract class Publicacion implements Comparable<Publicacion>, Serializable {
 
     private String nombre;
     private String fechaSubida;

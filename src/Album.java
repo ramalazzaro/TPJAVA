@@ -1,8 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
-//import java.util.Arrays;
-import java.util.List;
-
-public class Album {
+import java.io.Serializable;
+public class Album implements Serializable {
     private String nombre;
     private ArrayList<Publicacion> publicaciones;
     private ArrayList<Album> subAlbumes;

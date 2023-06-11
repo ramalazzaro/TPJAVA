@@ -1,4 +1,4 @@
-/*
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,7 +9,7 @@ public class Main {
 
         PerfilInstagram perfilInstagram = new PerfilInstagram();
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
-        readXMLFile.parseXML("datos.xml");
+        readXMLFile.parseXML("TPJAVA/datos.xml");
 
         ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
         reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
@@ -48,8 +48,9 @@ public class Main {
         SwingUtilities.invokeLater(loginAndLaunchInstagram);
     }
 }
-*/
 
+
+/*
 public class Main {
 
     public static void main(String[] args){
@@ -86,10 +87,12 @@ public class Main {
             reportesAlbumes.reportePantalla();
             reportesAlbumes.reporteTXT();
         }
-        */
 
-        reportesPublicaciones.listaVideo.first().reproduce();
 
+//        reportesPublicaciones.listaVideo.first().reproduce();
+
+        estadisticas.graficos();
     }
 
 }
+*/

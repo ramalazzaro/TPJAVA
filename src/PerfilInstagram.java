@@ -1,6 +1,7 @@
+import java.io.*;
 import java.util.*;
-
-public class PerfilInstagram {
+import java.io.Serializable;
+public class PerfilInstagram implements Serializable{
     private SortedSet<Publicacion> listaPublicaciones = new TreeSet<>();
     private ArrayList<Album> listaAlbumes = new ArrayList<>();
 
@@ -40,4 +41,24 @@ public class PerfilInstagram {
         return listaPublicaciones;
     }
 
+    public void guardarPerfil(PerfilInstagram PI){
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("datoscuentasbancarias.dat"))){
+            oos.writeObject(PI);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void recuperarPerfil(PerfilInstagram PI){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("datoscuentasbancarias.dat"))){
+            PI = (PerfilInstagram) ois.readObject();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

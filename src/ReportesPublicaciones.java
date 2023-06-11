@@ -64,7 +64,10 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion : listaAudio) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaAudio.size());
+        if(listaAudio.size()>0)
+            salida.append("PROMEDIO ME GUSTA: " + i / listaAudio.size());
+        else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
 
@@ -74,7 +77,10 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion : listaTexto) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaTexto.size());
+        if(listaTexto.size()>0)
+            salida.append("PROMEDIO ME GUSTA: " + i / listaTexto.size());
+        else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
 
@@ -84,7 +90,10 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion : listaImagen) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaImagen.size());
+        if(listaImagen.size()>0)
+            salida.append("PROMEDIO ME GUSTA: " + i / listaImagen.size());
+        else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
 
@@ -94,7 +103,10 @@ public class ReportesPublicaciones {
         for (Publicacion publicacion : listaVideo) {
             i += publicacion.getCantidadMG();
         }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaVideo.size());
+        if(listaVideo.size()>0)
+            salida.append("PROMEDIO ME GUSTA: " + i / listaVideo.size());
+        else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
 

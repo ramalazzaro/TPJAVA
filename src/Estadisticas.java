@@ -1,7 +1,12 @@
+import java.awt.*;
 import java.util.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import org.jfree.chart.*;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import javax.swing.JFrame;
 
 public class Estadisticas {
     private SortedSet<Publicacion> listaPublicacionesPorFecha = new TreeSet<>(new FechaComparator());
@@ -21,7 +26,7 @@ public class Estadisticas {
 
     public SortedSet<Publicacion> getLista5PublicacionesMasLikes(){return lista5PublicacionesMasLikes;}
 
-    public void LikesPorAño(SortedSet<Publicacion> listaPublicaciones)
+    public HashMap<Integer,Integer> LikesPorAño(SortedSet<Publicacion> listaPublicaciones)
     {
         HashMap<Integer,Integer> MapCantLikesAño = new HashMap<Integer, Integer>();
         int CantLikesAño=0;
@@ -43,6 +48,7 @@ public class Estadisticas {
         }
         MapCantLikesAño.put(año,CantLikesAño + publicacion.getCantidadMG());
         for(Integer clave:MapCantLikesAño.keySet()){System.out.println(clave+" "+MapCantLikesAño.get(clave));}
+        return MapCantLikesAño;
     }
 
     public void cantPublicacionesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)
@@ -107,5 +113,33 @@ public class Estadisticas {
                 lista5PublicacionesMasLikes.remove(lista5PublicacionesMasLikes.last());
             }
         }
+    }
+
+    public void graficos(){
+        DefaultCategoryDataset datos = new DefaultCategoryDataset();
+        HashMap<Integer,Integer> MapLikesPorAño = LikesPorAño(listaPublicacionesPorFecha);
+        for(Integer clave:MapLikesPorAño.keySet()){
+            datos.setValue(MapLikesPorAño.get(clave),"Likes",clave);
+        }
+        LikesPorAño(listaPublicacionesPorFecha);
+        JFreeChart graficoBarrasLikesPoraño = ChartFactory.createBarChart3D(
+                "Likes por año",
+                "Año",
+                "Likes",
+                datos,
+                PlotOrientation.VERTICAL,
+                true,
+                true,
+                false
+        );
+        ChartPanel panel = new ChartPanel(graficoBarrasLikesPoraño);
+        panel.setMouseWheelEnabled(true);
+        panel.setPreferredSize(new Dimension(400,200));
+
+        Panel panel1 = new Panel();
+        panel1.setLayout(new BorderLayout());
+        panel1.add(panel,BorderLayout.NORTH);
+//        pack();
+//        repaint();
     }
 }
