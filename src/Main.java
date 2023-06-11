@@ -49,8 +49,8 @@ public class Main {
     }
 }
 
-
 /*
+
 public class Main {
 
     public static void main(String[] args){
@@ -74,9 +74,9 @@ public class Main {
 
         ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
         reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
-//        reportesPublicaciones.reporteTXT();
+        reportesPublicaciones.reporteTXT();
 //        System.out.println(reportesPublicaciones.getReporte());
-/*
+
         ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
         String fechaMax = estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida();
         String fechaMin = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
@@ -91,7 +91,7 @@ public class Main {
 
 //        reportesPublicaciones.listaVideo.first().reproduce();
 
-        estadisticas.graficos();
+//        estadisticas.graficos();
     }
 
 }

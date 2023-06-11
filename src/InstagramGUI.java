@@ -13,6 +13,8 @@ public class InstagramGUI extends JFrame {
     private JPanel mainPanel;
     private JTextArea reporteArea;
 
+    private JPanel graphsPanel;
+
     public InstagramGUI(PerfilInstagram perfilInstagram, ReportesPublicaciones reporte) {
         this.perfilInstagram = perfilInstagram;
         this.reporte = reporte;

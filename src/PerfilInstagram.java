@@ -42,7 +42,7 @@ public class PerfilInstagram implements Serializable{
     }
 
     public void guardarPerfil(PerfilInstagram PI){
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("datoscuentasbancarias.dat"))){
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("PerfilInstagram.dat"))){
             oos.writeObject(PI);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -51,7 +51,7 @@ public class PerfilInstagram implements Serializable{
         }
     }
     public void recuperarPerfil(PerfilInstagram PI){
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("datoscuentasbancarias.dat"))){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("PerfilInstagram.dat"))){
             PI = (PerfilInstagram) ois.readObject();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

@@ -6,8 +6,9 @@ import java.util.HashMap;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
-import javax.swing.JFrame;
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
 public class Estadisticas {
     private SortedSet<Publicacion> listaPublicacionesPorFecha = new TreeSet<>(new FechaComparator());
     private SortedSet<Publicacion> lista5PublicacionesMasLikes = new TreeSet<>(new MGComparator());
@@ -136,10 +137,11 @@ public class Estadisticas {
         panel.setMouseWheelEnabled(true);
         panel.setPreferredSize(new Dimension(400,200));
 
-        Panel panel1 = new Panel();
+        JPanel panel1 = new JPanel();
         panel1.setLayout(new BorderLayout());
         panel1.add(panel,BorderLayout.NORTH);
-//        pack();
-//        repaint();
+
+        //pack();
+        //repaint();
     }
 }
