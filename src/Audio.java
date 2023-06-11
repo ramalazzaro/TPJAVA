@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
-public class Audio extends Publicacion {
+public class Audio extends Publicacion implements Durable{
     private int duracion;
     private int velocidad;
 
@@ -10,6 +11,38 @@ public class Audio extends Publicacion {
         this.velocidad = velocidad;
     }
 
+    private static boolean pausaActivada=false;
+    private static boolean finaliza=false;
+    private static boolean pausa=false;
+    @Override
+    public void reproduce(){
+        int segundos = 0;
+        try {
+            while(segundos<=duracion&&!finaliza){
+                if(!pausaActivada) {
+                    System.out.println("Segundos transcurridos: " + segundos);
+                    TimeUnit.SECONDS.sleep(1);
+                    segundos++;
+                }else
+                    TimeUnit.SECONDS.sleep(1);
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("\nFin de la reproduccion de l video \n");
+    }
+    @Override
+    public void pausar(){
+        pausa=true;
+    }
+    @Override
+    public void reanudar(){
+        pausa = false;
+    }
+    @Override
+    public void finalizar(){
+        finaliza = true;
+    }
     public int getDuracion() {
         return duracion;
     }

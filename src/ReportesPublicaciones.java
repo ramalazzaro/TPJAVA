@@ -8,7 +8,7 @@ public class ReportesPublicaciones {
     private SortedSet<Audio> listaAudio = new TreeSet<>(new MGComparator());
     private SortedSet<Imagen> listaImagen = new TreeSet<>(new MGComparator());
     private SortedSet<Texto> listaTexto = new TreeSet<>(new MGComparator());
-    private SortedSet<Video> listaVideo = new TreeSet<>(new MGComparator());
+    public SortedSet<Video> listaVideo = new TreeSet<>(new MGComparator());
 
     private StringBuilder salida = new StringBuilder();
 

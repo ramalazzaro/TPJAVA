@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Imagen extends Publicacion {
+public class Imagen extends Publicacion implements Filtrable{
     private String resolucion;
     private int ancho;
     private int alto;
@@ -11,6 +11,24 @@ public class Imagen extends Publicacion {
         this.resolucion = resolucion;
         this.ancho = ancho;
         this.alto = alto;
+    }
+
+    //De la interfaz Filtrable
+    private static boolean filtro=false;
+    @Override
+    public void poneFiltro() {
+        filtro = true;
+    }
+    @Override
+    public void sacaFiltro() {
+        filtro = false;
+    }
+    @Override
+    public String cansultaFiltro(){
+        if(filtro)
+            return "Filtro aplicado \n";
+        else
+            return "Filtro no aplicado \n";
     }
 
     public String getResolucion() {

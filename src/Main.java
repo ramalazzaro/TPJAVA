@@ -52,11 +52,11 @@ public class Main {
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         PerfilInstagram perfilInstagram = new PerfilInstagram();
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
-        readXMLFile.parseXML("datos.xml");
+        readXMLFile.parseXML("TPJAVA/datos.xml");
 
         Estadisticas estadisticas = new Estadisticas();
         estadisticas.creaListaPorFecha(perfilInstagram);
@@ -71,11 +71,11 @@ public class Main {
         perfilInstagram.getListaAlbumes().add(album);
 
 
-//        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
-//        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
+        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
+        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
 //        reportesPublicaciones.reporteTXT();
 //        System.out.println(reportesPublicaciones.getReporte());
-
+/*
         ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
         String fechaMax = estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida();
         String fechaMin = estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida();
@@ -86,6 +86,9 @@ public class Main {
             reportesAlbumes.reportePantalla();
             reportesAlbumes.reporteTXT();
         }
+        */
+
+        reportesPublicaciones.listaVideo.first().reproduce();
 
     }
 
