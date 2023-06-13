@@ -92,7 +92,7 @@ public class AlbumGUI extends JFrame {
             for (Publicacion publicacion : selectedPublications) {
                 album.addPublicacion(publicacion);
             }
-            updateAlbumList(perfilInstagram); // Update the album list after adding publications
+            updateAlbumList(perfilInstagram); // Update the album list after saving
             dialog.dispose();
         });
         dialog.add(saveButton, BorderLayout.SOUTH);
@@ -206,6 +206,9 @@ public class AlbumGUI extends JFrame {
 
             albumEntryPanel.add(publicationsPanel, BorderLayout.SOUTH);
             albumPanel.add(albumEntryPanel);
+
+            addSubAlbumsToPanel(album, albumEntryPanel, perfilInstagram);
+
         }
 
         albumPanel.revalidate(); // Update the albumPanel
@@ -251,6 +254,68 @@ public class AlbumGUI extends JFrame {
         dialog.add(saveButton, BorderLayout.SOUTH);
 
         dialog.setVisible(true);
+    }
+
+    public void addSubAlbumsToPanel(Album album, JPanel parentPanel, PerfilInstagram perfilInstagram) {
+        for (Album subAlbum : album.getSubAlbumes()) {
+            JLabel subAlbumLabel = new JLabel(subAlbum.toString());
+
+            subAlbumLabel.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+
+            subAlbumLabel.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+
+            JButton addPublicationsButton = new JButton("Agregar Publicaciones");
+            addPublicationsButton.addActionListener(e -> addPublicationsToAlbum(subAlbum, perfilInstagram));
+
+            JButton createSubAlbumButton = new JButton("Crear Sub-Álbum");
+            createSubAlbumButton.addActionListener(e -> createSubAlbum(subAlbum, perfilInstagram));
+
+            JPanel subAlbumEntryPanel = new JPanel(new BorderLayout());
+
+            JButton deleteButton = new JButton("Eliminar Sub-Álbum");
+            deleteButton.addActionListener(e -> {
+                SwingUtilities.invokeLater(() -> {
+                    album.removeSubAlbum(subAlbum);
+                    parentPanel.remove(subAlbumEntryPanel);
+                    parentPanel.revalidate();
+                    parentPanel.repaint();
+                    updateAlbumList(perfilInstagram); // Update the album list after removing subalbum
+                });
+            });
+
+            subAlbumEntryPanel.add(subAlbumLabel, BorderLayout.NORTH);
+            subAlbumEntryPanel.add(addPublicationsButton, BorderLayout.WEST);
+            subAlbumEntryPanel.add(createSubAlbumButton, BorderLayout.CENTER);
+            subAlbumEntryPanel.add(deleteButton, BorderLayout.EAST);
+
+            JPanel publicationsPanel = new JPanel(new GridLayout(0, 1));
+            for (Publicacion publicacion : subAlbum.getPublicaciones()) {
+                JPanel publicationEntryPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+                JLabel publicationLabel = new JLabel(
+                        publicacion.getClass().getSimpleName() + "\t" + publicacion.getNombre());
+                JButton deletePublicationButton = new JButton("Eliminar");
+                deletePublicationButton.addActionListener(e -> {
+                    SwingUtilities.invokeLater(() -> {
+                        subAlbum.deletePublicacion(publicacion);
+                        publicationsPanel.remove(publicationEntryPanel);
+                        publicationsPanel.revalidate();
+                        publicationsPanel.repaint();
+                    });
+                });
+                publicationEntryPanel.add(publicationLabel);
+                publicationEntryPanel.add(deletePublicationButton);
+                publicationsPanel.add(publicationEntryPanel);
+            }
+
+            subAlbumEntryPanel.add(publicationsPanel, BorderLayout.SOUTH);
+            parentPanel.add(subAlbumEntryPanel);
+
+            JPanel subPanel = new JPanel(new GridLayout(0, 1));
+            subAlbumEntryPanel.add(subPanel, BorderLayout.SOUTH);
+            // Recursive call to handle nested sub-albums
+            addSubAlbumsToPanel(subAlbum, subPanel, perfilInstagram);
+
+        }
     }
 
     public void removeAlbum(Album album, PerfilInstagram perfilInstagram) {

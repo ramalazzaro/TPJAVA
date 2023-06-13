@@ -151,7 +151,7 @@ public class Album implements Serializable {
                 "<b>Textos:</b> " + getCantTipo(2) + "<br>" +
                 "<b>Audio:</b> " + getCantTipo(3) + "<br>" +
                 "<b>Cantidad Total:</b> " + cantTotal + "<br>" +
-                "<b>Sub-Álbumes:</b> <br>" + subAlbumesToString().replaceAll("\n", "<br>") +
+                // "<b>Sub-Álbumes:</b> <br>" + subAlbumesToString().replaceAll("\n", "<br>") +
                 "</html>";
     }
 
