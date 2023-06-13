@@ -93,7 +93,9 @@ public class InstagramGUI extends JFrame {
         System.out.println("Número de publicaciones: " + this.perfilInstagram.getListaPublicaciones().size());
         for (Publicacion publicacion : this.perfilInstagram.getListaPublicaciones()) {
             String publicacionTexto = "<html><body style='width: 200px'>" +
-                    "<b style='font-size:14px; color:#1b95e0'>Clase:</b> " + publicacion.getClass().getSimpleName() +
+                    "<b style='font-size:14px; color:#1b95e0'>Nombre:</b>" + publicacion.getNombre() +
+                    "<br><b style='font-size:14px; color:#1b95e0'>Clase:</b> " + publicacion.getClass().getSimpleName()
+                    +
                     "<br><b style='font-size:14px; color:#1b95e0'>Fecha Subida:</b> " + publicacion.getFechaSubida() +
                     "<br><b style='font-size:14px; color:#1b95e0'>Cantidad MG:</b> " + publicacion.getCantidadMG();
 
