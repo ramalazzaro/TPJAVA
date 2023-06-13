@@ -1,19 +1,18 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.ArrayList;
 
 public class InstagramGUI extends JFrame {
     private PerfilInstagram perfilInstagram;
     private ReportesPublicaciones reporte;
     private JPanel publicacionesPanel;
-    private JButton logoutButton, reportButton;
+    private JButton logoutButton, reportButton, albumButton;
     private ActionListener logoutListener;
     private CardLayout cardLayout;
     private JPanel mainPanel;
     private JTextArea reporteArea;
-
-    private JPanel graphsPanel;
 
     public InstagramGUI(PerfilInstagram perfilInstagram, ReportesPublicaciones reporte) {
         this.perfilInstagram = perfilInstagram;
@@ -21,6 +20,7 @@ public class InstagramGUI extends JFrame {
         createUI();
         addPublicaciones();
         createLogoutButton();
+        createAlbumButton();
         showPublicaciones();
     }
 
@@ -52,9 +52,14 @@ public class InstagramGUI extends JFrame {
             dispose();
         });
 
+        // Create the album button
+        albumButton = new JButton("Ver Álbum");
+        albumButton.addActionListener(e -> showAlbumGUI());
+
         // Create the button panel
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.add(reportButton);
+        buttonPanel.add(albumButton); // Add the album button
         buttonPanel.add(logoutButton);
 
         // Add the button panel to the JFrame
@@ -73,6 +78,11 @@ public class InstagramGUI extends JFrame {
             }
             dispose();
         });
+    }
+
+    private void createAlbumButton() {
+        albumButton = new JButton("Ver Álbum");
+        albumButton.addActionListener(e -> showAlbumGUI());
     }
 
     public void setLogoutListener(ActionListener listener) {
@@ -145,4 +155,14 @@ public class InstagramGUI extends JFrame {
         mainPanel.revalidate(); // Update the panel
         mainPanel.repaint();
     }
+
+    private void showAlbumGUI() {
+        ArrayList<Publicacion> publicacionesList = new ArrayList<>();
+        for (Album album : perfilInstagram.getListaAlbumes()) {
+            publicacionesList.addAll(album.getPublicaciones());
+        }
+        AlbumGUI albumGUI = new AlbumGUI(perfilInstagram);
+        albumGUI.updateAlbumList(perfilInstagram);
+    }
+
 }

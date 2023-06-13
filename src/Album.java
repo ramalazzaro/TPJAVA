@@ -1,11 +1,12 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.io.Serializable;
+
 public class Album implements Serializable {
     private String nombre;
     private ArrayList<Publicacion> publicaciones;
     private ArrayList<Album> subAlbumes;
-    int[] cantTipo = new int[4]  ; // Índice 0: Imagen, Índice 1: Video, Índice 2: Texto, Índice 3: Audio
+    int[] cantTipo = new int[4]; // Índice 0: Imagen, Índice 1: Video, Índice 2: Texto, Índice 3: Audio
     int cantTotal = 0;
 
     public Album(String nombre) {
@@ -16,7 +17,8 @@ public class Album implements Serializable {
             this.cantTipo[i] = 0;
         }
     }
-    private void addCantTipo (Publicacion publicacion) {
+
+    private void addCantTipo(Publicacion publicacion) {
         switch (publicacion.getClass().getName()) {
             case "Imagen" -> cantTipo[0]++;
             case "Video" -> cantTipo[1]++;
@@ -24,14 +26,17 @@ public class Album implements Serializable {
             case "Audio" -> cantTipo[3]++;
         }
     }
+
     public void addPublicacion(Publicacion publicacion) {
         publicaciones.add(publicacion);
         addCantTipo(publicacion);
         cantTotal++;
     }
+
     public void addSubAlbum(Album subAlbum) {
         subAlbumes.add(subAlbum);
     }
+
     public void deleteSubAlbum(Album subAlbum) {
         subAlbumes.remove(subAlbum);
     }
@@ -58,21 +63,22 @@ public class Album implements Serializable {
 
     public String publicacionesToString() {
         StringBuilder temp = new StringBuilder();
-        for (Publicacion publicacion: publicaciones) {
-             temp.append(publicacion.getNombre());
+        for (Publicacion publicacion : publicaciones) {
+            temp.append(publicacion.getNombre() + "\n");
         }
         return temp.toString();
     }
 
-    public String subAlbumesToString () {
+    public String subAlbumesToString() {
         StringBuilder temp = new StringBuilder();
-        for (Album album: subAlbumes) {
+        for (Album album : subAlbumes) {
             temp.append(album.nombre +
-                    ", Publicaciones = " + album.publicacionesToString() +
-                    ", Imagenes=" + album.getCantTipo(0) +
-                    ", Videos=" + album.getCantTipo(1) +
-                    ", Textos=" + album.getCantTipo(2) +
-                    ", Videos=" + album.getCantTipo(3) +
+                    "\nPublicaciones: \n" + publicacionesToString() +
+                    "Imagenes = " + getCantTipo(0) +
+                    ", Videos = " + getCantTipo(1) +
+                    ", Textos = " + getCantTipo(2) +
+                    ", Audio = " + getCantTipo(3) +
+                    ", Cantidad Total = " + cantTotal +
                     ", Cantidad Total=" + album.cantTotal);
         }
         return temp.toString();
@@ -80,15 +86,16 @@ public class Album implements Serializable {
 
     @Override
     public String toString() {
-        return "Album " + nombre +
-                ", Publicaciones = " + publicacionesToString() +
-                ", Imagenes=" + getCantTipo(0) +
-                ", Videos=" + getCantTipo(1) +
-                ", Textos=" + getCantTipo(2) +
-                ", Videos=" + getCantTipo(3) +
-                ", Cantidad Total=" + cantTotal +
-                ", SubAlbum = " + subAlbumesToString();
+        return "<html>" +
+                "<b>Album:</b> " + nombre + "<br>" +
+                "<b>Publicaciones:</b> <br>" + publicacionesToString().replaceAll("\n", "<br>") +
+                "<b>Imagenes:</b> " + getCantTipo(0) + "<br>" +
+                "<b>Videos:</b> " + getCantTipo(1) + "<br>" +
+                "<b>Textos:</b> " + getCantTipo(2) + "<br>" +
+                "<b>Audio:</b> " + getCantTipo(3) + "<br>" +
+                "<b>Cantidad Total:</b> " + cantTotal + "<br>" +
+                "<b>SubAlbum:</b> " + subAlbumesToString().replaceAll("\n", "<br>") +
+                "</html>";
     }
 
 }
-
