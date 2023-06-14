@@ -1,12 +1,13 @@
+package PrincipalClass;
+
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.io.Serializable;
 
 public class Album implements Serializable {
     private String nombre;
     private ArrayList<Publicacion> publicaciones;
     private ArrayList<Album> subAlbumes;
-    int[] cantTipo = new int[4]; // Índice 0: Imagen, Índice 1: Video, Índice 2: Texto, Índice 3: Audio
+    int[] cantTipo = new int[4]; // Índice 0: PrincipalClass.Imagen, Índice 1: PrincipalClass.Video, Índice 2: PrincipalClass.Texto, Índice 3: PrincipalClass.Audio
     int cantTotal = 0;
 
     public Album(String nombre) {
@@ -20,19 +21,19 @@ public class Album implements Serializable {
 
     private void addCantTipo(Publicacion publicacion) {
         switch (publicacion.getClass().getName()) {
-            case "Imagen" -> cantTipo[0]++;
-            case "Video" -> cantTipo[1]++;
-            case "Texto" -> cantTipo[2]++;
-            case "Audio" -> cantTipo[3]++;
+            case "PrincipalClass.Imagen" -> cantTipo[0]++;
+            case "PrincipalClass.Video" -> cantTipo[1]++;
+            case "PrincipalClass.Texto" -> cantTipo[2]++;
+            case "PrincipalClass.Audio" -> cantTipo[3]++;
         }
     }
 
     private void removeCantTipo(Publicacion publicacion) {
         switch (publicacion.getClass().getName()) {
-            case "Imagen" -> cantTipo[0]--;
-            case "Video" -> cantTipo[1]--;
-            case "Texto" -> cantTipo[2]--;
-            case "Audio" -> cantTipo[3]--;
+            case "PrincipalClass.Imagen" -> cantTipo[0]--;
+            case "PrincipalClass.Video" -> cantTipo[1]--;
+            case "PrincipalClass.Texto" -> cantTipo[2]--;
+            case "PrincipalClass.Audio" -> cantTipo[3]--;
         }
     }
 
@@ -91,25 +92,25 @@ public class Album implements Serializable {
     /*
      * public String subAlbumesToString() {
      * StringBuilder temp = new StringBuilder();
-     * for (Album album : subAlbumes) {
+     * for (PrincipalClass.Album album : subAlbumes) {
      * 
      * temp.append(album.nombre +
      * "\nPublicaciones: \n" + publicacionesToString() +
      * "Imagenes = " + getCantTipo(0) +
      * ", Videos = " + getCantTipo(1) +
      * ", Textos = " + getCantTipo(2) +
-     * ", Audio = " + getCantTipo(3) +
+     * ", PrincipalClass.Audio = " + getCantTipo(3) +
      * ", Cantidad Total = " + cantTotal +
      * ", Cantidad Total=" + album.cantTotal);
      * 
      * temp.append("<html>" +
-     * "<b>Album:</b> " + album.getNombre() + "<br>" +
+     * "<b>PrincipalClass.Album:</b> " + album.getNombre() + "<br>" +
      * "<b>Publicaciones:</b> <br>" + album.publicacionesToString().replaceAll("\n",
      * "<br>") +
      * "<b>Imagenes:</b> " + album.getCantTipo(0) + "<br>" +
      * "<b>Videos:</b> " + album.getCantTipo(1) + "<br>" +
      * "<b>Textos:</b> " + album.getCantTipo(2) + "<br>" +
-     * "<b>Audio:</b> " + album.getCantTipo(3) + "<br>" +
+     * "<b>PrincipalClass.Audio:</b> " + album.getCantTipo(3) + "<br>" +
      * "<b>Cantidad Total:</b> " + album.cantTotal + "<br>" +
      * "</html>");
      * }
@@ -119,13 +120,13 @@ public class Album implements Serializable {
      * @Override
      * public String toString() {
      * return "<html>" +
-     * "<b>Album:</b> " + nombre + "<br>" +
+     * "<b>PrincipalClass.Album:</b> " + nombre + "<br>" +
      * "<b>Publicaciones:</b> <br>" + publicacionesToString().replaceAll("\n",
      * "<br>") +
      * "<b>Imagenes:</b> " + getCantTipo(0) + "<br>" +
      * "<b>Videos:</b> " + getCantTipo(1) + "<br>" +
      * "<b>Textos:</b> " + getCantTipo(2) + "<br>" +
-     * "<b>Audio:</b> " + getCantTipo(3) + "<br>" +
+     * "<b>PrincipalClass.Audio:</b> " + getCantTipo(3) + "<br>" +
      * "<b>Cantidad Total:</b> " + cantTotal + "<br>" +
      * "<b>SubAlbum:</b> " + subAlbumesToString().replaceAll("\n", "<br>") +
      * "</html>";
@@ -144,12 +145,12 @@ public class Album implements Serializable {
     @Override
     public String toString() {
         return "<html>" +
-                "<b>Album:</b> " + nombre + "<br>" +
+                "<b>PrincipalClass.Album:</b> " + nombre + "<br>" +
                 "<b>Publicaciones:</b> <br>" + publicacionesToString().replaceAll("\n", "<br>") +
                 "<b>Imagenes:</b> " + getCantTipo(0) + "<br>" +
                 "<b>Videos:</b> " + getCantTipo(1) + "<br>" +
                 "<b>Textos:</b> " + getCantTipo(2) + "<br>" +
-                "<b>Audio:</b> " + getCantTipo(3) + "<br>" +
+                "<b>PrincipalClass.Audio:</b> " + getCantTipo(3) + "<br>" +
                 "<b>Cantidad Total:</b> " + cantTotal + "<br>" +
                 // "<b>Sub-Álbumes:</b> <br>" + subAlbumesToString().replaceAll("\n", "<br>") +
                 "</html>";

@@ -1,6 +1,8 @@
+package PrincipalClass;
+
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.io.Serializable;
+
 public abstract class Publicacion implements Comparable<Publicacion>, Serializable {
 
     private String nombre;

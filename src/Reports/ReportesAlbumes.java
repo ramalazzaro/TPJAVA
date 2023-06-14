@@ -1,11 +1,16 @@
+package Reports;
+
+import PrincipalClass.Album;
+import PrincipalClass.Publicacion;
+import Statics.Estadisticas;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.SortedSet;
-import java.util.TreeSet;
+
 /**
- * La clase ReportesAlbumes genera reportes sobre los álbumes de un perfil de Instagram.
+ * La clase Reports.ReportesAlbumes genera reportes sobre los álbumes de un perfil de Instagram.
  */
 public class ReportesAlbumes {
     private StringBuilder reporte = new StringBuilder();
@@ -23,7 +28,7 @@ public class ReportesAlbumes {
 
             for (Album album : listaAlbumes) {
                 cantPub = album.getPublicaciones().size();
-                reporte.append("\nAlbum: " + album.getNombre() + "\n\n");
+                reporte.append("\nPrincipalClass.Album: " + album.getNombre() + "\n\n");
                 for (Publicacion publicacion : album.getPublicaciones()) {
                     String fechaSubida = publicacion.getFechaSubida();
                     if (fechaSubida.compareTo(fechaMinima) >= 0 && fechaSubida.compareTo(fechaMaxima) <= 0) {
@@ -41,7 +46,7 @@ public class ReportesAlbumes {
      *
      * @return el reporte generado en formato de cadena de caracteres
      */
-    private String getReporte() {
+    public String getReporte() {
         return reporte.toString();
     }
     /**

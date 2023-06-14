@@ -1,10 +1,14 @@
+package GUI;
+
+import Reports.ReportesPublicaciones;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class ReportGUI extends JFrame {
+public class ReportPublicacionesGUI extends JFrame {
 
-        public ReportGUI(ReportesPublicaciones reporte) {
-                setTitle("Reporte");
+        public ReportPublicacionesGUI(ReportesPublicaciones reporte) {
+                setTitle("Reporte Publicaciones");
                 setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 setSize(800, 600);
                 setLocationRelativeTo(null);

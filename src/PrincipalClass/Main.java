@@ -1,18 +1,21 @@
+package PrincipalClass;
+
+import GUI.*;
+import GUI.LoginGUI;
+import Reports.ReportesPublicaciones;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Main {
     private static Runnable loginAndLaunchInstagram;
-
     public static void main(String[] args) {
 
         PerfilInstagram perfilInstagram = new PerfilInstagram();
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
         readXMLFile.parseXML("TPJAVA/datos.xml");
 
-        ReportesPublicaciones reportesPublicaciones = new ReportesPublicaciones();
-        reportesPublicaciones.creaReportePublicaciones(perfilInstagram);
-        reportesPublicaciones.reporteTXT();
+        System.out.println(perfilInstagram.getListaPublicaciones().first().toString());
 
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");

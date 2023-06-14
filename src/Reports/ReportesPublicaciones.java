@@ -1,3 +1,13 @@
+package Reports;
+
+import Comparators.MGComparator;
+import PrincipalClass.Audio;
+import PrincipalClass.PerfilInstagram;
+import PrincipalClass.Texto;
+import PrincipalClass.Video;
+import PrincipalClass.Imagen;
+import PrincipalClass.Publicacion;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -5,7 +15,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
- * La clase ReportesPublicaciones genera reportes sobre las publicaciones de un perfil de Instagram.
+ * La clase Reports.ReportesPublicaciones genera reportes sobre las publicaciones de un perfil de Instagram.
  */
 
 public class ReportesPublicaciones {
@@ -39,9 +49,9 @@ public class ReportesPublicaciones {
         }
     }
     /**
-     * Obtiene la lista de publicaciones de tipo Audio.
+     * Obtiene la lista de publicaciones de tipo PrincipalClass.Audio.
      *
-     * @return La lista de publicaciones de tipo Audio.
+     * @return La lista de publicaciones de tipo PrincipalClass.Audio.
      */
     private String getListaTexto() {
         salida.setLength(0);
@@ -59,9 +69,9 @@ public class ReportesPublicaciones {
         return salida.toString();
     }
     /**
-     * Obtiene la lista de publicaciones de tipo Imagen.
+     * Obtiene la lista de publicaciones de tipo PrincipalClass.Imagen.
      *
-     * @return La lista de publicaciones de tipo Imagen.
+     * @return La lista de publicaciones de tipo PrincipalClass.Imagen.
      */
     private String getListaImagen() {
         salida.setLength(0);
@@ -71,9 +81,9 @@ public class ReportesPublicaciones {
         return salida.toString();
     }
     /**
-     * Obtiene la lista de publicaciones de tipo Video.
+     * Obtiene la lista de publicaciones de tipo PrincipalClass.Video.
      *
-     * @return La lista de publicaciones de tipo Video.
+     * @return La lista de publicaciones de tipo PrincipalClass.Video.
      */
     private String getListaVideo() {
         salida.setLength(0);
@@ -83,59 +93,71 @@ public class ReportesPublicaciones {
         return salida.toString();
     }
     /**
-     * Obtiene el promedio de Me Gusta para las publicaciones de tipo Audio.
+     * Obtiene el promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Audio.
      *
-     * @return El promedio de Me Gusta para las publicaciones de tipo Audio.
+     * @return El promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Audio.
      */
     private String  getPromMGAudio() {
         salida.setLength(0);
-        int i = 0;
-        for (Publicacion publicacion : listaAudio) {
-            i += publicacion.getCantidadMG();
-        }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaAudio.size());
+        if(listaAudio.size()>0) {
+            int i = 0;
+            for (Publicacion publicacion : listaAudio) {
+                i += publicacion.getCantidadMG();
+            }
+            salida.append("PROMEDIO ME GUSTA: " + i / listaAudio.size());
+        }else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
     /**
-     * Obtiene el promedio de Me Gusta para las publicaciones de tipo Texto.
+     * Obtiene el promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Texto.
      *
-     * @return El promedio de Me Gusta para las publicaciones de tipo Texto.
+     * @return El promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Texto.
      */
     private String  getPromMGTexto() {
         salida.setLength(0);
-        int i = 0;
-        for (Publicacion publicacion : listaTexto) {
-            i += publicacion.getCantidadMG();
-        }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaTexto.size());
+        if(listaTexto.size()>0) {
+            int i = 0;
+            for (Publicacion publicacion : listaTexto) {
+                i += publicacion.getCantidadMG();
+            }
+            salida.append("PROMEDIO ME GUSTA: " + i / listaTexto.size());
+        }else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
     /**
-     * Obtiene el promedio de Me Gusta para las publicaciones de tipo Imagen.
+     * Obtiene el promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Imagen.
      *
-     * @return El promedio de Me Gusta para las publicaciones de tipo Imagen.
+     * @return El promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Imagen.
      */
     private String getPromMGImagen() {
         salida.setLength(0);
-        int i = 0;
-        for (Publicacion publicacion : listaImagen) {
-            i += publicacion.getCantidadMG();
-        }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaImagen.size());
+        if(listaImagen.size()>0) {
+            int i = 0;
+            for (Publicacion publicacion : listaImagen) {
+                i += publicacion.getCantidadMG();
+            }
+            salida.append("PROMEDIO ME GUSTA: " + i / listaImagen.size());
+        }else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
     /**
-     * Obtiene el promedio de Me Gusta para las publicaciones de tipo Video.
+     * Obtiene el promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Video.
      *
-     * @return El promedio de Me Gusta para las publicaciones de tipo Video.
+     * @return El promedio de Me Gusta para las publicaciones de tipo PrincipalClass.Video.
      */
     private String getPromMGVideo() {
         salida.setLength(0);
-        int i = 0;
-        for (Publicacion publicacion : listaVideo) {
-            i += publicacion.getCantidadMG();
-        }
-        salida.append("PROMEDIO ME GUSTA: " + i / listaVideo.size());
+        if(listaVideo.size()>0) {
+            int i = 0;
+            for (Publicacion publicacion : listaVideo) {
+                i += publicacion.getCantidadMG();
+            }
+            salida.append("PROMEDIO ME GUSTA: " + i / listaVideo.size());
+        }else
+            salida.append("PROMEDIO ME GUSTA: " + 0);
         return salida.toString();
     }
 

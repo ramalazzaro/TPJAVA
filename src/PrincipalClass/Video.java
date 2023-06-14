@@ -1,21 +1,27 @@
+package PrincipalClass;
+
+import PrincipalClass.Comentario;
+import Interfaces.Filtrable;
+import Interfaces.Durable;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class Video extends Publicacion implements Durable,Filtrable{
+public class Video extends Publicacion implements Durable, Filtrable {
     private int duracion;
     private String resolucion;
     private int cantidadCuadros;
 
     public Video(String nombre, String fechaSubida, int cantidadMG, ArrayList<Comentario> comentarios,
-            ArrayList<Etiqueta> etiquetas, int duracion, String resolucion,
-            int cantidadCuadros) {
+                 ArrayList<Etiqueta> etiquetas, int duracion, String resolucion,
+                 int cantidadCuadros) {
         super(nombre, fechaSubida, cantidadMG, comentarios, etiquetas);
         this.duracion = duracion;
         this.resolucion = resolucion;
 
     }
 
-    //De la interfaz Durable;
+    //De la interfaz Interfaces.Durable;
     private static boolean pausaActivada=false;
     private static boolean finaliza=false;
     private static boolean pausa=false;
@@ -49,7 +55,7 @@ public class Video extends Publicacion implements Durable,Filtrable{
         finaliza = true;
     }
 
-    //De la interfaz Filtrable
+    //De la interfaz Interfaces.Filtrable
     private static boolean filtro=false;
     @Override
     public void poneFiltro() {

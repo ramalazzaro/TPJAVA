@@ -1,3 +1,5 @@
+package PrincipalClass;
+
 public class Comentario {
     private String usuario;
     private String comentario;

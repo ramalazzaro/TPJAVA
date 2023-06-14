@@ -1,3 +1,7 @@
+package Comparators;
+
+import PrincipalClass.Publicacion;
+
 import java.util.Comparator;
 public class MGComparator implements Comparator<Publicacion> {
     @Override

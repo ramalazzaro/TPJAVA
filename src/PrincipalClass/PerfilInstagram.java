@@ -1,10 +1,10 @@
+package PrincipalClass;
+
 import java.io.*;
 import java.util.*;
 
-import javax.swing.DefaultListModel;
-
 public class PerfilInstagram implements Serializable {
-    private SortedSet<Publicacion> listaPublicaciones = new TreeSet<>();
+    final private SortedSet<Publicacion> listaPublicaciones = new TreeSet<>();
     private ArrayList<Album> listaAlbumes = new ArrayList<>();
 
     public void addAlbum(Album album) {
@@ -47,23 +47,17 @@ public class PerfilInstagram implements Serializable {
     }
 
     public void guardarPerfil(PerfilInstagram PI) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("PerfilInstagram.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("PrincipalClass.PerfilInstagram.dat"))) {
             oos.writeObject(PI);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     public void recuperarPerfil(PerfilInstagram PI) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("PerfilInstagram.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("PrincipalClass.PerfilInstagram.dat"))) {
             PI = (PerfilInstagram) ois.readObject();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException | IOException e) {
             throw new RuntimeException(e);
         }
     }

@@ -1,7 +1,11 @@
+package PrincipalClass;
+
+import Interfaces.Durable;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class Audio extends Publicacion implements Durable{
+public class Audio extends Publicacion implements Durable {
     private int duracion;
     private int velocidad;
 

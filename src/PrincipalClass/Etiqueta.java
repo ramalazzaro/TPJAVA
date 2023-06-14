@@ -1,4 +1,4 @@
-//import java.util.Objects;
+package PrincipalClass;//import java.util.Objects;
 
 public class Etiqueta {
     private String contenido;
@@ -17,7 +17,7 @@ public class Etiqueta {
 
     @Override
     public String toString() {
-        return "Etiqueta: " + contenido;
+        return "PrincipalClass.Etiqueta: " + contenido;
     }
 
 }

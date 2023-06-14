@@ -1,3 +1,9 @@
+package GUI;
+
+import PrincipalClass.PerfilInstagram;
+import PrincipalClass.Publicacion;
+import PrincipalClass.Album;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -75,7 +81,7 @@ public class IndividualAlbumGUI extends JFrame {
             JLabel publicationLabel = new JLabel(publicacion.toString());
             publicationLabel.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
 
-            JButton deleteButton = new JButton("Eliminar Publicacion");
+            JButton deleteButton = new JButton("Eliminar PrincipalClass.Publicacion");
             deleteButton.addActionListener(e -> {
                 album.deletePublicacion(publicacion);
                 refreshGUI(perfilInstagram);

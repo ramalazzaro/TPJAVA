@@ -1,6 +1,11 @@
+package GUI;
+
+import PrincipalClass.Album;
+import PrincipalClass.PerfilInstagram;
+import PrincipalClass.Publicacion;
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
 
 public class AlbumGUI extends JFrame {
     private JPanel albumPanel;

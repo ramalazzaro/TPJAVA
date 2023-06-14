@@ -1,5 +1,12 @@
+package PrincipalClass;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+
+import PrincipalClass.Audio;
+import PrincipalClass.Comentario;
+import PrincipalClass.PerfilInstagram;
+import PrincipalClass.Texto;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;

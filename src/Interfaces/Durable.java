@@ -1,3 +1,5 @@
+package Interfaces;
+
 public interface Durable {
     public void reproduce();
     public void pausar();
