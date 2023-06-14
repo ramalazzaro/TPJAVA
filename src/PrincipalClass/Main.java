@@ -4,24 +4,36 @@ import GUI.*;
 import GUI.LoginGUI;
 import Reports.ReportesPublicaciones;
 
+import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
 public class Main {
     private static Runnable loginAndLaunchInstagram;
     public static void main(String[] args) {
+        PerfilInstagram perfilIG = new PerfilInstagram();
+        try {
+            FileInputStream fileIn = new FileInputStream("datos.ser");
+            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+            perfilIG = (PerfilInstagram) objectIn.readObject();
+            objectIn.close();
+            fileIn.close();
 
-        PerfilInstagram perfilInstagram = new PerfilInstagram();
-        ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
-        readXMLFile.parseXML("TPJAVA/datos.xml");
-
-        System.out.println(perfilInstagram.getListaPublicaciones().first().toString());
+            // Realiza las operaciones necesarias con el objeto recuperado
+            System.out.println("El objeto se ha recuperado correctamente.");
+        } catch (IOException | ClassNotFoundException e) {
+            perfilIG = new PerfilInstagram();
+            ReadXMLFile readXMLFile = new ReadXMLFile(perfilIG);
+            readXMLFile.parseXML("TPJAVA/datos.xml");
+            e.printStackTrace();
+        }
 
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
             e.printStackTrace();
         }
+        PerfilInstagram perfilInstagram = perfilIG;
 
         loginAndLaunchInstagram = () -> {
             LoginGUI login = new LoginGUI();
@@ -46,7 +58,6 @@ public class Main {
             });
             login.setVisible(true);
         };
-
         SwingUtilities.invokeLater(loginAndLaunchInstagram);
     }
 }

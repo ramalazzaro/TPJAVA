@@ -1,6 +1,6 @@
 package PrincipalClass;
-
-public class Comentario {
+import java.io.Serializable;
+public class Comentario implements Serializable {
     private String usuario;
     private String comentario;
     private String fecha;

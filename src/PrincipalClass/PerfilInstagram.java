@@ -3,7 +3,8 @@ package PrincipalClass;
 import java.io.*;
 import java.util.*;
 
-public class PerfilInstagram implements Serializable {
+public class PerfilInstagram implements Serializable{
+    private static final long serialVersionUID = 1L;
     final private SortedSet<Publicacion> listaPublicaciones = new TreeSet<>();
     private ArrayList<Album> listaAlbumes = new ArrayList<>();
 
@@ -45,21 +46,4 @@ public class PerfilInstagram implements Serializable {
     public SortedSet<Publicacion> getListaPublicaciones() {
         return listaPublicaciones;
     }
-
-    public void guardarPerfil(PerfilInstagram PI) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("PrincipalClass.PerfilInstagram.dat"))) {
-            oos.writeObject(PI);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void recuperarPerfil(PerfilInstagram PI) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("PrincipalClass.PerfilInstagram.dat"))) {
-            PI = (PerfilInstagram) ois.readObject();
-        } catch (ClassNotFoundException | IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }

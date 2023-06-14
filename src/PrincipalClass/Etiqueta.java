@@ -1,6 +1,6 @@
 package PrincipalClass;//import java.util.Objects;
-
-public class Etiqueta {
+import java.io.Serializable;
+public class Etiqueta implements Serializable {
     private String contenido;
 
     public Etiqueta(String contenido) {

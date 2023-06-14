@@ -6,10 +6,14 @@ import Reports.ReportesAlbumes;
 import Reports.ReportesPublicaciones;
 import GUI.AlbumGUI;
 
-
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class InstagramGUI extends JFrame {
@@ -43,6 +47,24 @@ public class InstagramGUI extends JFrame {
         setTitle("Instagram Profile");
         setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                // Lógica personalizada para cuando se cierra la interfaz
+                System.out.println("Interfaz cerrada");
+                try {
+                    FileOutputStream fileOut = new FileOutputStream("datos.ser");
+                    ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+                    objectOut.writeObject(perfilInstagram);
+                    objectOut.close();
+                    fileOut.close();
+                    System.out.println("El objeto se ha serializado correctamente.");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                super.windowClosing(e);
+            }
+        });
         setLocationRelativeTo(null);
 
         this.mainPanel = new JPanel(new BorderLayout());
