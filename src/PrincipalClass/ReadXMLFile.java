@@ -14,13 +14,25 @@ import org.w3c.dom.Element;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * Clase que lee y analiza un archivo XML y crea publicaciones en un perfil de Instagram.
+ */
 public class ReadXMLFile {
     private PerfilInstagram perfilInstagram;
 
+    /**
+     * Constructor de la clase ReadXMLFile.
+     *
+     * @param perfilInstagram el perfil de Instagram al que se agregarán las publicaciones.
+     */
     public ReadXMLFile(PerfilInstagram perfilInstagram) {
         this.perfilInstagram = perfilInstagram;
     }
-
+    /**
+     * Analiza un archivo XML y crea las publicaciones correspondientes en el perfil de Instagram.
+     *
+     * @param xmlPath la ruta del archivo XML a analizar.
+     */
     public void parseXML(String xmlPath) {
         try {
             File fXmlFile = new File(xmlPath);
@@ -28,33 +40,36 @@ public class ReadXMLFile {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
             doc.getDocumentElement().normalize();
-
+            // Obtener nodos de imagen, video, audio y texto del archivo XML
             NodeList imagenList = doc.getElementsByTagName("Imagen");
             NodeList videoList = doc.getElementsByTagName("Video");
             NodeList audioList = doc.getElementsByTagName("Audio");
             NodeList textoList = doc.getElementsByTagName("Texto");
-
+            // Procesar cada nodo de imagen
             for (int i = 0; i < imagenList.getLength(); i++) {
                 parseImagenNode(imagenList.item(i));
             }
-
+            // Procesar cada nodo de video
             for (int i = 0; i < videoList.getLength(); i++) {
                 parseVideoNode(videoList.item(i));
             }
-
+            // Procesar cada nodo de audio
             for (int i = 0; i < audioList.getLength(); i++) {
                 parseAudioNode(audioList.item(i));
             }
-
+            // Procesar cada nodo de texto
             for (int i = 0; i < textoList.getLength(); i++) {
                 parseTextoNode(textoList.item(i));
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Analiza un nodo de imagen y crea una publicación de imagen en el perfil de Instagram.
+     *
+     * @param imagenNode el nodo de imagen a analizar.
+     */
     private void parseImagenNode(Node imagenNode) {
         if (imagenNode.getNodeType() == Node.ELEMENT_NODE) {
             Element imagenElement = (Element) imagenNode;
@@ -97,7 +112,11 @@ public class ReadXMLFile {
             perfilInstagram.addPublicacion(imagen);
         }
     }
-
+    /**
+     * Analiza un nodo de video y crea una publicación de video en el perfil de Instagram.
+     *
+     * @param videoNode el nodo de video a analizar.
+     */
     private void parseVideoNode(Node videoNode) {
         if (videoNode.getNodeType() == Node.ELEMENT_NODE) {
             Element videoElement = (Element) videoNode;
@@ -142,7 +161,11 @@ public class ReadXMLFile {
             perfilInstagram.addPublicacion(video);
         }
     }
-
+    /**
+     * Analiza un nodo de audio y crea una publicación de audio en el perfil de Instagram.
+     *
+     * @param audioNode el nodo de audio a analizar.
+     */
     private void parseAudioNode(Node audioNode) {
         if (audioNode.getNodeType() == Node.ELEMENT_NODE) {
             Element audioElement = (Element) audioNode;
@@ -185,7 +208,11 @@ public class ReadXMLFile {
             perfilInstagram.addPublicacion(audio);
         }
     }
-
+    /**
+     * Analiza un nodo de texto y crea una publicación de texto en el perfil de Instagram.
+     *
+     * @param textoNode el nodo de texto a analizar.
+     */
     private void parseTextoNode(Node textoNode) {
         if (textoNode.getNodeType() == Node.ELEMENT_NODE) {
             Element textoElement = (Element) textoNode;
@@ -234,23 +261,29 @@ public class ReadXMLFile {
             perfilInstagram.addPublicacion(texto);
         }
     }
-
+    /**
+     * Obtiene el valor de un elemento específico dentro de un elemento dado.
+     *
+     * @param element el elemento padre.
+     * @param tagName el nombre del elemento hijo.
+     * @return el valor del elemento.
+     */
     private String getElementValue(Element element, String tagName) {
-        return getElementValue(element, tagName, null);
-    }
-
-    private String getElementValue(Element element, String tagName, String defaultValue) {
-        Node firstChild = element.getElementsByTagName(tagName).item(0);
-        if (firstChild != null) {
-            NodeList nodeList = firstChild.getChildNodes();
-            Node node = nodeList.item(0);
-            if (node != null) {
-                return node.getNodeValue();
-            }
+        try {
+            NodeList nodes = element.getElementsByTagName(tagName).item(0).getChildNodes();
+            Node node = nodes.item(0);
+            return node.getNodeValue();
+        }catch (Exception e){
+            return "null";
         }
-        return defaultValue;
     }
-
+    /**
+     * Convierte una cadena en un entero y maneja una posible excepción.
+     *
+     * @param str          la cadena a convertir en entero.
+     * @param defaultValue el valor predeterminado a devolver si ocurre una excepción.
+     * @return el entero convertido o el valor predeterminado si ocurre una excepción.
+     */
     private int parseInt(String value, int defaultValue) {
         try {
             return Integer.parseInt(value);

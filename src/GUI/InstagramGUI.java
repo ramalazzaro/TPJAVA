@@ -1,5 +1,7 @@
 package GUI;
 
+import Interfaces.Durable;
+import Interfaces.Filtrable;
 import PrincipalClass.*;
 import Statics.Estadisticas;
 import Reports.ReportesAlbumes;
@@ -25,7 +27,7 @@ public class InstagramGUI extends JFrame {
     private JButton albumButton;
     private ReportesPublicaciones reportesPublicaciones;
     private JPanel publicacionesPanel,reporteAlbumesPanel;
-    private JButton logoutButton, reportPublicacionesButton, reportAlbumesButton, graphsButton;
+    private JButton logoutButton, reportPublicacionesButton, reportAlbumesButton, graphsButton, reportPublicacionesTextButton;
     private ActionListener logoutListener;
     private CardLayout cardLayout;
     private JPanel mainPanel;
@@ -33,9 +35,8 @@ public class InstagramGUI extends JFrame {
     private JPanel estadisticasPanel;
     private JButton graphLikesPorAñoButton,graphLikesPorTipoButton,graphCantPubPorTipoButton,graph5PubMasLikesButton;
 
-    public InstagramGUI(PerfilInstagram perfilInstagram, ReportesPublicaciones reportesPublicaciones) {
+    public InstagramGUI(PerfilInstagram perfilInstagram) {
         this.perfilInstagram = perfilInstagram;
-        this.reportesPublicaciones = reportesPublicaciones;
         createUI();
         addPublicaciones();
         createLogoutButton();
@@ -75,12 +76,14 @@ public class InstagramGUI extends JFrame {
 
         reportePublicacionesArea = new JTextArea();
         reportePublicacionesArea.setEditable(false);
-
+////////////////ver pub panel
         estadisticasPanel = new JPanel();
         publicacionesPanel.setLayout(new GridLayout(0, 1, 10, 10));
 
         reporteAlbumesPanel = new JPanel();
         publicacionesPanel.setLayout(new GridLayout(0, 1, 10, 10));
+
+
 
         // Create the buttons
         reportPublicacionesButton = new JButton("Ver reporte publicaciones");
@@ -143,6 +146,8 @@ public class InstagramGUI extends JFrame {
 
     private void addPublicaciones() {
         System.out.println("Número de publicaciones: " + this.perfilInstagram.getListaPublicaciones().size());
+
+
         for (Publicacion publicacion : this.perfilInstagram.getListaPublicaciones()) {
             String publicacionTexto = "<html><body style='width: 200px'>" +
                     "<b style='font-size:14px; color:#1b95e0'>Nombre:</b>" + publicacion.getNombre() +
@@ -158,8 +163,54 @@ public class InstagramGUI extends JFrame {
             }
 
             publicacionTexto += "<br>...</body></html>";
+
             JLabel publicacionLabel = new JLabel(publicacionTexto);
             publicacionLabel.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+
+            publicacionLabel.setLayout(new BorderLayout());
+            if (publicacion instanceof Imagen || publicacion instanceof Video) {
+                JButton aplicarFiltroButton = new JButton("Aplicar Filtro");
+                JButton quitarFiltroButton = new JButton("Quitar Filtro");
+                JLabel estadoFiltro = new JLabel(((Filtrable) publicacion).consultaFiltro());
+                JPanel buttonsFiltroPanel = new JPanel();
+
+                aplicarFiltroButton.addActionListener(e -> {
+                    // Lógica para aplicar el filtro a la imagen
+                    ((Filtrable) publicacion).poneFiltro();
+                    estadoFiltro.setText(((Filtrable) publicacion).consultaFiltro());
+                    buttonsFiltroPanel.revalidate();
+                    buttonsFiltroPanel.repaint();
+                });
+
+                quitarFiltroButton.addActionListener(e -> {
+                    // Lógica para quitar el filtro a la imagen
+                    ((Filtrable) publicacion).sacaFiltro();
+                    estadoFiltro.setText(((Filtrable) publicacion).consultaFiltro());
+                    buttonsFiltroPanel.revalidate();
+                    buttonsFiltroPanel.repaint();
+                });
+
+                buttonsFiltroPanel.add(aplicarFiltroButton);
+                buttonsFiltroPanel.add(quitarFiltroButton);
+                buttonsFiltroPanel.add(estadoFiltro);
+                publicacionLabel.add(buttonsFiltroPanel, BorderLayout.EAST);
+            }
+
+
+            if(publicacion instanceof Audio || publicacion instanceof Video){
+                JButton reproducirButton = new JButton("Reproducir");
+                JPanel buttonsReproducePanel = new JPanel();
+                buttonsReproducePanel.add(reproducirButton);
+                publicacionLabel.add(buttonsReproducePanel, BorderLayout.PAGE_END);
+
+                reproducirButton.addActionListener(e -> {
+                    ReproductorGUI reproductor = new ReproductorGUI(publicacion);
+                });
+            }
+
+
+            publicacionesPanel.add(publicacionLabel, BorderLayout.CENTER);
+
             this.publicacionesPanel.add(publicacionLabel);
         }
         this.pack();
@@ -193,11 +244,18 @@ public class InstagramGUI extends JFrame {
         System.out.println("Switching to reporte publicaciones");
         mainPanel.removeAll(); // Remove any previously added components from the mainPanel
 
-        reportePublicacionesArea.setText(reportesPublicaciones.getReporte());
+        ReportesPublicaciones reporte = new ReportesPublicaciones();
+        reporte.creaReportePublicaciones(perfilInstagram);
+
+        reportePublicacionesArea.setText(reporte.getReporte());
+
+        JButton reportPubTextButton = new JButton("Generar archivo de texto");
+        reportPubTextButton.addActionListener(e -> reporte.reporteTXT());
+
+        mainPanel.add(reportPubTextButton, BorderLayout.NORTH);
 
         mainPanel.add(new JScrollPane(reportePublicacionesArea), BorderLayout.CENTER); // Add reporteArea in a JScrollPane to
                                                                           // mainPanel
-
         reportPublicacionesButton.setText("Volver");
         // Remove the current ActionListener before adding a new one
         for (ActionListener al : reportPublicacionesButton.getActionListeners()) {
@@ -260,6 +318,11 @@ public class InstagramGUI extends JFrame {
                 JFrame reportFrame = new JFrame("Reporte de Álbumes");
                 reportFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 reportFrame.setSize(400, 300);
+
+                JButton reportAlbTextButton = new JButton("Generar archivo de texto");
+                reportAlbTextButton.addActionListener(a -> reportesAlbumes.reporteTXT());
+
+                reportFrame.add(reportAlbTextButton, BorderLayout.NORTH);
 
                 // Create a JTextArea to display the report
                 JTextArea reportTextArea = new JTextArea(reporte);

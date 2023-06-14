@@ -67,7 +67,7 @@ public class AlbumGUI extends JFrame {
                 JButton deletePublicationButton = new JButton("-");
                 deletePublicationButton.setPreferredSize(new Dimension(20, 20));
                 deletePublicationButton.addActionListener(e -> {
-                    album.deletePublicacion(publicacion);
+                    album.removePublicacion(publicacion);
                     updateAlbumList(perfilInstagram);
                 });
                 publicationEntryPanel.add(publicationLabel);

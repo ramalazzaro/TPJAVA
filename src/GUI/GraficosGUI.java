@@ -15,10 +15,6 @@ import java.util.HashMap;
 import java.util.SortedSet;
 
 public class GraficosGUI extends JFrame {
-    private JPanel graphsPanel;
-    private JButton graphLikesPorAñoButton,graphLikesPorTipoButton,graphCantPubPorTipoButton,graph5PubMasLikesButton;
-
-
     public void graficoCantPubPorTipo(HashMap<String,Integer> mapCantTipo){
         // Fuente de Datos
         DefaultPieDataset data = new DefaultPieDataset();
@@ -34,7 +30,7 @@ public class GraficosGUI extends JFrame {
                 false);
 
         // Mostrar Grafico
-        ChartFrame frame = new ChartFrame("JFreeChart", grafico);
+        ChartFrame frame = new ChartFrame("Cantidad publicaciones por tipo", grafico);
         frame.pack();
         frame.setVisible(true);
     }
@@ -53,7 +49,7 @@ public class GraficosGUI extends JFrame {
                 true,
                 false
         );
-        ChartFrame frame = new ChartFrame("JFreeChart", graficoBarrasLikesPorAño);
+        ChartFrame frame = new ChartFrame("Likes por año", graficoBarrasLikesPorAño);
         frame.pack();
         frame.setVisible(true);
     }
@@ -76,7 +72,7 @@ public class GraficosGUI extends JFrame {
                 true,
                 false
         );
-        ChartFrame frame = new ChartFrame("JFreeChart", graficoBarrasLikesPorTipo);
+        ChartFrame frame = new ChartFrame("Likes por tipo de publicacion", graficoBarrasLikesPorTipo);
         frame.pack();
         frame.setVisible(true);
     }
@@ -84,7 +80,7 @@ public class GraficosGUI extends JFrame {
         DefaultCategoryDataset datos = new DefaultCategoryDataset();
 
         for(Publicacion pub:lista5PubMasLikes){
-            datos.setValue(pub.getCantidadMG(),"Likes",pub.getNombre()+"\n"+pub.getClass().getName());
+            datos.setValue(pub.getCantidadMG(),"Likes",pub.getNombre()+"\n"+pub.getClass().getSimpleName());
         }
         JFreeChart grafico5PubMasLikes = ChartFactory.createBarChart(
                 "Las 5 publicaciones con más likes",
@@ -96,7 +92,7 @@ public class GraficosGUI extends JFrame {
                 true,
                 false
         );
-        ChartFrame frame = new ChartFrame("JFreeChart", grafico5PubMasLikes);
+        ChartFrame frame = new ChartFrame("Publicaciones com más likes", grafico5PubMasLikes);
         frame.pack();
         frame.setVisible(true);
     }

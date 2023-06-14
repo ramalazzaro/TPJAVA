@@ -66,14 +66,14 @@ public class Estadisticas {
     public HashMap<String,Integer> cantPublicacionesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)
     {
         HashMap<String,Integer> MapCant = new HashMap<String, Integer>();
-        MapCant.put("PrincipalClass.Imagen",0);MapCant.put("PrincipalClass.Video",0);MapCant.put("PrincipalClass.Audio",0);MapCant.put("PrincipalClass.Texto",0);
+        MapCant.put("Imagen",0);MapCant.put("Video",0);MapCant.put("Audio",0);MapCant.put("Texto",0);
 
         for(Publicacion publicacion : listaPublicaciones) {
-            switch (publicacion.getClass().getName()) {
-                case "PrincipalClass.Imagen" -> MapCant.put("PrincipalClass.Imagen", MapCant.get("PrincipalClass.Imagen") + 1);
-                case "PrincipalClass.Video" -> MapCant.put("PrincipalClass.Video", MapCant.get("PrincipalClass.Video") + 1);
-                case "PrincipalClass.Audio" -> MapCant.put("PrincipalClass.Audio", MapCant.get("PrincipalClass.Audio") + 1);
-                case "PrincipalClass.Texto" -> MapCant.put("PrincipalClass.Texto", MapCant.get("PrincipalClass.Texto") + 1);
+            switch (publicacion.getClass().getSimpleName()) {
+                case "Imagen" -> MapCant.put("Imagen", MapCant.get("Imagen") + 1);
+                case "Video" -> MapCant.put("Video", MapCant.get("Video") + 1);
+                case "Audio" -> MapCant.put("Audio", MapCant.get("Audio") + 1);
+                case "Texto" -> MapCant.put("Texto", MapCant.get("Texto") + 1);
             }
         }
         return MapCant;
@@ -86,14 +86,13 @@ public class Estadisticas {
      */
     public int[] cantLikesDeCadaTipo(SortedSet<Publicacion> listaPublicaciones)
     {
-        System.out.println("Cant Likes por cada tipo: ");
         int vecCantL[] = {0,0,0,0};
         for(Publicacion publicacion : listaPublicaciones) {
-            switch (publicacion.getClass().getName()) {
-                case "PrincipalClass.Imagen" -> vecCantL[0] += publicacion.getCantidadMG();
-                case "PrincipalClass.Video" -> vecCantL[1] += publicacion.getCantidadMG();
-                case "PrincipalClass.Audio" -> vecCantL[2] += publicacion.getCantidadMG();
-                case "PrincipalClass.Texto" -> vecCantL[3] += publicacion.getCantidadMG();
+            switch (publicacion.getClass().getSimpleName()) {
+                case "Imagen" -> vecCantL[0] += publicacion.getCantidadMG();
+                case "Video" -> vecCantL[1] += publicacion.getCantidadMG();
+                case "Audio" -> vecCantL[2] += publicacion.getCantidadMG();
+                case "Texto" -> vecCantL[3] += publicacion.getCantidadMG();
             }
         }
         return vecCantL;

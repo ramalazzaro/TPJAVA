@@ -71,7 +71,7 @@ public class IndividualAlbumGUI extends JFrame {
     }
 
     public void removePublicacion(Publicacion publicacion) {
-        album.deletePublicacion(publicacion);
+        album.removePublicacion(publicacion);
     }
 
     public void refreshGUI(PerfilInstagram perfilInstagram) {
@@ -83,7 +83,7 @@ public class IndividualAlbumGUI extends JFrame {
 
             JButton deleteButton = new JButton("Eliminar PrincipalClass.Publicacion");
             deleteButton.addActionListener(e -> {
-                album.deletePublicacion(publicacion);
+                album.removePublicacion(publicacion);
                 refreshGUI(perfilInstagram);
             });
 
