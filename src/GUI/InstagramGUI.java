@@ -26,14 +26,15 @@ public class InstagramGUI extends JFrame {
     private ReportesPublicaciones reporte;
     private JButton albumButton;
     private ReportesPublicaciones reportesPublicaciones;
-    private JPanel publicacionesPanel,reporteAlbumesPanel;
-    private JButton logoutButton, reportPublicacionesButton, reportAlbumesButton, graphsButton, reportPublicacionesTextButton;
+    private JPanel publicacionesPanel, reporteAlbumesPanel;
+    private JButton logoutButton, reportPublicacionesButton, reportAlbumesButton, graphsButton,
+            reportPublicacionesTextButton;
     private ActionListener logoutListener;
     private CardLayout cardLayout;
     private JPanel mainPanel;
     private JTextArea reportePublicacionesArea;
     private JPanel estadisticasPanel;
-    private JButton graphLikesPorAñoButton,graphLikesPorTipoButton,graphCantPubPorTipoButton,graph5PubMasLikesButton;
+    private JButton graphLikesPorAñoButton, graphLikesPorTipoButton, graphCantPubPorTipoButton, graph5PubMasLikesButton;
 
     public InstagramGUI(PerfilInstagram perfilInstagram) {
         this.perfilInstagram = perfilInstagram;
@@ -76,14 +77,12 @@ public class InstagramGUI extends JFrame {
 
         reportePublicacionesArea = new JTextArea();
         reportePublicacionesArea.setEditable(false);
-////////////////ver pub panel
+        //////////////// ver pub panel
         estadisticasPanel = new JPanel();
         publicacionesPanel.setLayout(new GridLayout(0, 1, 10, 10));
 
         reporteAlbumesPanel = new JPanel();
         publicacionesPanel.setLayout(new GridLayout(0, 1, 10, 10));
-
-
 
         // Create the buttons
         reportPublicacionesButton = new JButton("Ver reporte publicaciones");
@@ -147,7 +146,6 @@ public class InstagramGUI extends JFrame {
     private void addPublicaciones() {
         System.out.println("Número de publicaciones: " + this.perfilInstagram.getListaPublicaciones().size());
 
-
         for (Publicacion publicacion : this.perfilInstagram.getListaPublicaciones()) {
             String publicacionTexto = "<html><body style='width: 200px'>" +
                     "<b style='font-size:14px; color:#1b95e0'>Nombre:</b>" + publicacion.getNombre() +
@@ -196,8 +194,7 @@ public class InstagramGUI extends JFrame {
                 publicacionLabel.add(buttonsFiltroPanel, BorderLayout.EAST);
             }
 
-
-            if(publicacion instanceof Audio || publicacion instanceof Video){
+            if (publicacion instanceof Audio || publicacion instanceof Video) {
                 JButton reproducirButton = new JButton("Reproducir");
                 JPanel buttonsReproducePanel = new JPanel();
                 buttonsReproducePanel.add(reproducirButton);
@@ -207,7 +204,6 @@ public class InstagramGUI extends JFrame {
                     ReproductorGUI reproductor = new ReproductorGUI(publicacion);
                 });
             }
-
 
             publicacionesPanel.add(publicacionLabel, BorderLayout.CENTER);
 
@@ -254,8 +250,9 @@ public class InstagramGUI extends JFrame {
 
         mainPanel.add(reportPubTextButton, BorderLayout.NORTH);
 
-        mainPanel.add(new JScrollPane(reportePublicacionesArea), BorderLayout.CENTER); // Add reporteArea in a JScrollPane to
-                                                                          // mainPanel
+        mainPanel.add(new JScrollPane(reportePublicacionesArea), BorderLayout.CENTER); // Add reporteArea in a
+                                                                                       // JScrollPane to
+        // mainPanel
         reportPublicacionesButton.setText("Volver");
         // Remove the current ActionListener before adding a new one
         for (ActionListener al : reportPublicacionesButton.getActionListeners()) {
@@ -287,12 +284,13 @@ public class InstagramGUI extends JFrame {
         reporteAlbumesPanel.add(new JLabel("Fecha Máxima:"));
         reporteAlbumesPanel.add(fechaMaximaTextField);
         reporteAlbumesPanel.add(generarReporteButton);
-        reporteAlbumesPanel.add(new JLabel("Ingresar fechas entre "+estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida()+" y "+estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida()));
+        reporteAlbumesPanel.add(new JLabel(
+                "Ingresar fechas entre " + estadisticas.getListaPublicacionesPorFecha().last().getFechaSubida() + " y "
+                        + estadisticas.getListaPublicacionesPorFecha().first().getFechaSubida()));
 
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.add(new JScrollPane(reporteAlbumesPanel), BorderLayout.CENTER); // Add reporteAlbumesPanel in a JScrollPane to mainPanel
-
-
+        mainPanel.add(new JScrollPane(reporteAlbumesPanel), BorderLayout.CENTER); // Add reporteAlbumesPanel in a
+                                                                                  // JScrollPane to mainPanel
 
         reportAlbumesButton.setText("Volver");
         // Remove the current ActionListener before adding a new one
@@ -310,7 +308,8 @@ public class InstagramGUI extends JFrame {
 
             ReportesAlbumes reportesAlbumes = new ReportesAlbumes();
 
-            if(reportesAlbumes.validaFechaMinima(estadisticas,fechaMinima)&&reportesAlbumes.validaFechaMaxima(estadisticas,fechaMaxima)) {
+            if (reportesAlbumes.validaFechaMinima(estadisticas, fechaMinima)
+                    && reportesAlbumes.validaFechaMaxima(estadisticas, fechaMaxima)) {
                 reportesAlbumes.creaReporte(perfilInstagram.getListaAlbumes(), fechaMinima, fechaMaxima);
                 String reporte = reportesAlbumes.getReporte();
                 reportesAlbumes.reportePantalla();
@@ -333,7 +332,7 @@ public class InstagramGUI extends JFrame {
 
                 // Set the JFrame visible
                 reportFrame.setVisible(true);
-            }else{
+            } else {
                 JFrame reportFrame = new JFrame("Fecha invalida");
                 reportFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 reportFrame.setSize(400, 300);
@@ -350,8 +349,6 @@ public class InstagramGUI extends JFrame {
             }
         });
     }
-
-
 
     private void showPublicaciones() {
         System.out.println("Switching to publicaciones");
@@ -383,7 +380,7 @@ public class InstagramGUI extends JFrame {
         mainPanel.repaint();
     }
 
-    private void showEstadisticas(){
+    private void showEstadisticas() {
         System.out.println("Switching to estadisticas");
         mainPanel.removeAll(); // Remove any previously added components from the mainPanel
 
@@ -398,17 +395,27 @@ public class InstagramGUI extends JFrame {
 
         Estadisticas estadisticas = new Estadisticas();
         estadisticas.creaListaPorFecha(perfilInstagram);
-        GraficosGUI graficosGUI = new GraficosGUI();
+        // GraficosGUI graficosGUI = new GraficosGUI();
 
-        graphLikesPorAñoButton = new JButton("Cantidad de Likes por año");
-        graphLikesPorAñoButton.addActionListener(e -> graficosGUI.graficoLikesPorAño(estadisticas.LikesPorAño()));
-        graphLikesPorTipoButton = new JButton("Cantidad de Likes por tipo de publicacion");
-        graphLikesPorTipoButton.addActionListener(e -> graficosGUI.graficoLikesPorTipo(estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones())));
-        graphCantPubPorTipoButton = new JButton("Cantidad de publicaciones por tipo");
-        graphCantPubPorTipoButton.addActionListener(e -> graficosGUI.graficoCantPubPorTipo(estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones())));
-        graph5PubMasLikesButton = new JButton("Las 5 publicaciones con más likes");
-        graph5PubMasLikesButton.addActionListener(e -> graficosGUI.grafico5PubMasLikes(estadisticas.publicacionesConMasLikes(perfilInstagram.getListaPublicaciones())));
-
+        /*
+         * graphLikesPorAñoButton = new JButton("Cantidad de Likes por año");
+         * graphLikesPorAñoButton.addActionListener(e ->
+         * graficosGUI.graficoLikesPorAño(estadisticas.LikesPorAño()));
+         * graphLikesPorTipoButton = new
+         * JButton("Cantidad de Likes por tipo de publicacion");
+         * graphLikesPorTipoButton.addActionListener(e ->
+         * graficosGUI.graficoLikesPorTipo(estadisticas.cantLikesDeCadaTipo(
+         * perfilInstagram.getListaPublicaciones())));
+         * graphCantPubPorTipoButton = new
+         * JButton("Cantidad de publicaciones por tipo");
+         * graphCantPubPorTipoButton.addActionListener(e ->
+         * graficosGUI.graficoCantPubPorTipo(estadisticas.cantPublicacionesDeCadaTipo(
+         * perfilInstagram.getListaPublicaciones())));
+         * graph5PubMasLikesButton = new JButton("Las 5 publicaciones con más likes");
+         * graph5PubMasLikesButton.addActionListener(e ->
+         * graficosGUI.grafico5PubMasLikes(estadisticas.publicacionesConMasLikes(
+         * perfilInstagram.getListaPublicaciones())));
+         */
         JPanel buttonPanelEst = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanelEst.add(graphLikesPorAñoButton);
         buttonPanelEst.add(graphLikesPorTipoButton);
@@ -416,7 +423,6 @@ public class InstagramGUI extends JFrame {
         buttonPanelEst.add(graph5PubMasLikesButton);
 
         estadisticasPanel.add(buttonPanelEst, BorderLayout.CENTER);
-
 
         mainPanel.revalidate(); // Update the panel
         mainPanel.repaint();

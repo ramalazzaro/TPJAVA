@@ -5,11 +5,15 @@ import java.util.ArrayList;
 
 /**
  * La clase Album representa un álbum que contiene publicaciones y subálbumes.
- * Permite agregar, eliminar y obtener información sobre las publicaciones y subálbumes que se encuentran en ella.
- * Además, realiza un seguimiento de la cantidad de tipos diferentes de publicaciones.
+ * Permite agregar, eliminar y obtener información sobre las publicaciones y
+ * subálbumes que se encuentran en ella.
+ * Además, realiza un seguimiento de la cantidad de tipos diferentes de
+ * publicaciones.
  *
- * La clase también proporciona métodos para obtener información detallada sobre el álbum, incluyendo
- * el nombre, la lista de publicaciones, la lista de subálbumes, la cantidad de cada tipo de publicación
+ * La clase también proporciona métodos para obtener información detallada sobre
+ * el álbum, incluyendo
+ * el nombre, la lista de publicaciones, la lista de subálbumes, la cantidad de
+ * cada tipo de publicación
  * y la cantidad total de publicaciones.
  */
 public class Album implements Serializable {
@@ -32,35 +36,41 @@ public class Album implements Serializable {
             this.cantTipo[i] = 0;
         }
     }
+
     /**
      * Incrementa la cantidad de publicaciones del mismo tipo en el álbum.
      *
-     * @param publicacion La publicación a agregar. Se obtiene su tipo utilizando el método getClass().
+     * @param publicacion La publicación a agregar. Se obtiene su tipo utilizando el
+     *                    método getClass().
      */
     private void addCantTipo(Publicacion publicacion) {
-        switch (publicacion.getClass().getName()) {
+        switch (publicacion.getClass().getSimpleName()) {
             case "Imagen" -> cantTipo[0]++;
             case "Video" -> cantTipo[1]++;
             case "Texto" -> cantTipo[2]++;
             case "Audio" -> cantTipo[3]++;
         }
     }
+
     /**
      * Decrementa la cantidad de publicaciones del mismo tipo en el álbum.
      *
-     * @param publicacion La publicación a remover. Se obtiene su tipo utilizando el método getClass().
+     * @param publicacion La publicación a remover. Se obtiene su tipo utilizando el
+     *                    método getClass().
      */
     private void removeCantTipo(Publicacion publicacion) {
-        switch (publicacion.getClass().getName()) {
+        switch (publicacion.getClass().getSimpleName()) {
             case "Imagen" -> cantTipo[0]--;
             case "Video" -> cantTipo[1]--;
             case "Texto" -> cantTipo[2]--;
             case "Audio" -> cantTipo[3]--;
         }
     }
+
     /**
      * Agrega una publicación al álbum.
-     * Incrementa la cantidad total de publicaciones y la cantidad de publicaciones del mismo tipo.
+     * Incrementa la cantidad total de publicaciones y la cantidad de publicaciones
+     * del mismo tipo.
      *
      * @param publicacion La publicación a agregar.
      */
@@ -69,9 +79,11 @@ public class Album implements Serializable {
         addCantTipo(publicacion);
         cantTotal++;
     }
+
     /**
      * Elimina una publicación del álbum.
-     * Decrementa la cantidad total de publicaciones y la cantidad de publicaciones del mismo tipo.
+     * Decrementa la cantidad total de publicaciones y la cantidad de publicaciones
+     * del mismo tipo.
      *
      * @param publicacion La publicación a eliminar.
      */
@@ -89,6 +101,7 @@ public class Album implements Serializable {
     public void addSubAlbum(Album subAlbum) {
         subAlbumes.add(subAlbum);
     }
+
     /**
      * Elimina un subálbum del álbum.
      *
@@ -97,6 +110,7 @@ public class Album implements Serializable {
     public void removeSubAlbum(Album subAlbum) {
         subAlbumes.remove(subAlbum);
     }
+
     /**
      * Obtiene el nombre del álbum.
      *
@@ -105,6 +119,7 @@ public class Album implements Serializable {
     public String getNombre() {
         return this.nombre;
     }
+
     /**
      * Obtiene la lista de publicaciones del álbum.
      *
@@ -113,6 +128,7 @@ public class Album implements Serializable {
     public ArrayList<Publicacion> getPublicaciones() {
         return publicaciones;
     }
+
     /**
      * Obtiene la lista de subálbumes del álbum.
      *
@@ -121,15 +137,18 @@ public class Album implements Serializable {
     public ArrayList<Album> getSubAlbumes() {
         return subAlbumes;
     }
+
     /**
      * Obtiene la cantidad de un tipo específico de publicación en el álbum.
      *
-     * @param i El índice del tipo de publicación. Índice 0: Imagen, Índice 1: Video, Índice 2: Texto, Índice 3: Audio.
+     * @param i El índice del tipo de publicación. Índice 0: Imagen, Índice 1:
+     *          Video, Índice 2: Texto, Índice 3: Audio.
      * @return La cantidad de publicaciones del tipo especificado.
      */
     public int getCantTipo(int i) {
         return cantTipo[i];
     }
+
     /**
      * Obtiene la cantidad total de publicaciones en el álbum.
      *
@@ -138,8 +157,10 @@ public class Album implements Serializable {
     public int getCantTotal() {
         return cantTotal;
     }
+
     /**
-     * Convierte las publicaciones del álbum a una representación en forma de cadena.
+     * Convierte las publicaciones del álbum a una representación en forma de
+     * cadena.
      *
      * @return Una cadena que representa las publicaciones del álbum.
      */
@@ -150,6 +171,7 @@ public class Album implements Serializable {
         }
         return temp.toString();
     }
+
     /**
      * Convierte los subálbumes del álbum a una representación en forma de cadena.
      *
@@ -163,6 +185,7 @@ public class Album implements Serializable {
         }
         return temp.toString();
     }
+
     /**
      * Devuelve una representación en forma de cadena del álbum.
      *
@@ -181,4 +204,3 @@ public class Album implements Serializable {
                 "</html>";
     }
 }
-

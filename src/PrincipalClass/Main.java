@@ -11,6 +11,7 @@ import java.awt.*;
 
 public class Main {
     private static Runnable loginAndLaunchInstagram;
+
     public static void main(String[] args) {
         PerfilInstagram perfilIG = new PerfilInstagram();
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilIG);
@@ -20,7 +21,7 @@ public class Main {
             FileInputStream fileIn = new FileInputStream("datos.ser");
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             PerfilInstagram perfilIGRec = (PerfilInstagram) objectIn.readObject();
-            if(!perfilIGRec.getListaAlbumes().isEmpty())
+            if (!perfilIGRec.getListaAlbumes().isEmpty())
                 perfilIG.getListaAlbumes().addAll(perfilIGRec.getListaAlbumes());
             objectIn.close();
             fileIn.close();
@@ -31,7 +32,6 @@ public class Main {
             e.printStackTrace();
         }
 
-
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
@@ -40,9 +40,9 @@ public class Main {
         PerfilInstagram perfilInstagram = perfilIG;
 
         Estadisticas estadisticas = new Estadisticas();
-        int vecCantL[]=estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
-        for(int i=0;i<4;i++){
-            System.out.println(vecCantL[i]+"\n");
+        int vecCantL[] = estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones());
+        for (int i = 0; i < 4; i++) {
+            System.out.println(vecCantL[i] + "\n");
         }
 
         loginAndLaunchInstagram = () -> {
