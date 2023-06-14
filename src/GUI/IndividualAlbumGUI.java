@@ -7,20 +7,23 @@ import PrincipalClass.Album;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class IndividualAlbumGUI extends JFrame {
     private Album album;
     private PerfilInstagram perfilInstagram;
     private JPanel albumPanel;
     private GridLayout albumPanelLayout;
-    private List<IndividualAlbumGUI> subAlbumWindows;
+    private Map<Album, IndividualAlbumGUI> subAlbumWindowsMap;
+
 
     public IndividualAlbumGUI(Album album, PerfilInstagram perfilInstagram) {
         albumPanelLayout = new GridLayout(0, 1, 10, 10);
         albumPanel = new JPanel();
         albumPanel.setLayout(albumPanelLayout);
-        subAlbumWindows = new ArrayList<>();
+        subAlbumWindowsMap = new HashMap<>();
 
         this.album = album;
         this.perfilInstagram = perfilInstagram;
@@ -123,11 +126,10 @@ public class IndividualAlbumGUI extends JFrame {
     public void updateAlbumList(PerfilInstagram perfilInstagram) {
         albumPanel.removeAll(); // Limpiamos los álbumes existentes
 
-
         // Primero, mostramos las publicaciones
         for (Publicacion publicacion : album.getPublicaciones()) {
             JPanel pubPanel = new JPanel();
-            JLabel publicationLabel = new JLabel(publicacion.getClass().getSimpleName()+publicacion.getNombre());
+            JLabel publicationLabel = new JLabel(publicacion.getClass().getSimpleName()+" "+publicacion.getNombre());
 
             pubPanel.add(publicationLabel,BorderLayout.WEST);
 
@@ -151,12 +153,13 @@ public class IndividualAlbumGUI extends JFrame {
 
             subAlbumButton.addActionListener(e -> {
                 IndividualAlbumGUI subAlbumWindow = new IndividualAlbumGUI(subAlbum, perfilInstagram);
-                subAlbumWindows.add(subAlbumWindow);
+                subAlbumWindowsMap.put(subAlbum, subAlbumWindow);
             });
 
             JButton deleteButton = new JButton("Eliminar Sub-Álbum");
             deleteButton.addActionListener(e -> {
                 album.removeSubAlbum(subAlbum);
+                closeSubAlbumWindows(subAlbum);
                 updateAlbumList(perfilInstagram);
             });
             subAlbumPanel.add(deleteButton, BorderLayout.EAST);
@@ -166,5 +169,13 @@ public class IndividualAlbumGUI extends JFrame {
         albumPanel.revalidate(); // Actualizamos el albumPanel
         albumPanel.repaint(); // Repintamos el panel
     }
-
+    private void closeSubAlbumWindows(Album subAlbum) { // MODIFICATION HERE
+        IndividualAlbumGUI window = subAlbumWindowsMap.get(subAlbum);
+        if (window != null) {
+            for (Album childAlbum : subAlbum.getSubAlbumes()) {
+                window.closeSubAlbumWindows(childAlbum);
+            }
+            window.dispose();
+        }
+    }
 }
