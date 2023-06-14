@@ -17,6 +17,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InstagramGUI extends JFrame {
     private JTextArea reporteTextArea;
@@ -27,8 +29,7 @@ public class InstagramGUI extends JFrame {
     private JButton albumButton;
     private ReportesPublicaciones reportesPublicaciones;
     private JPanel publicacionesPanel, reporteAlbumesPanel;
-    private JButton logoutButton, reportPublicacionesButton, reportAlbumesButton, graphsButton,
-            reportPublicacionesTextButton;
+    private JButton logoutButton, reportPublicacionesButton, reportAlbumesButton, graphsButton;
     private ActionListener logoutListener;
     private CardLayout cardLayout;
     private JPanel mainPanel;
@@ -79,10 +80,10 @@ public class InstagramGUI extends JFrame {
         reportePublicacionesArea.setEditable(false);
         //////////////// ver pub panel
         estadisticasPanel = new JPanel();
-        publicacionesPanel.setLayout(new GridLayout(0, 1, 10, 10));
+        estadisticasPanel.setLayout(new GridLayout(0, 1, 10, 10));
 
         reporteAlbumesPanel = new JPanel();
-        publicacionesPanel.setLayout(new GridLayout(0, 1, 10, 10));
+        reporteAlbumesPanel.setLayout(new GridLayout(0, 1, 10, 10));
 
         // Create the buttons
         reportPublicacionesButton = new JButton("Ver reporte publicaciones");
@@ -395,27 +396,18 @@ public class InstagramGUI extends JFrame {
 
         Estadisticas estadisticas = new Estadisticas();
         estadisticas.creaListaPorFecha(perfilInstagram);
-        // GraficosGUI graficosGUI = new GraficosGUI();
+        GraficosGUI graficosGUI = new GraficosGUI();
 
-        /*
-         * graphLikesPorAñoButton = new JButton("Cantidad de Likes por año");
-         * graphLikesPorAñoButton.addActionListener(e ->
-         * graficosGUI.graficoLikesPorAño(estadisticas.LikesPorAño()));
-         * graphLikesPorTipoButton = new
-         * JButton("Cantidad de Likes por tipo de publicacion");
-         * graphLikesPorTipoButton.addActionListener(e ->
-         * graficosGUI.graficoLikesPorTipo(estadisticas.cantLikesDeCadaTipo(
-         * perfilInstagram.getListaPublicaciones())));
-         * graphCantPubPorTipoButton = new
-         * JButton("Cantidad de publicaciones por tipo");
-         * graphCantPubPorTipoButton.addActionListener(e ->
-         * graficosGUI.graficoCantPubPorTipo(estadisticas.cantPublicacionesDeCadaTipo(
-         * perfilInstagram.getListaPublicaciones())));
-         * graph5PubMasLikesButton = new JButton("Las 5 publicaciones con más likes");
-         * graph5PubMasLikesButton.addActionListener(e ->
-         * graficosGUI.grafico5PubMasLikes(estadisticas.publicacionesConMasLikes(
-         * perfilInstagram.getListaPublicaciones())));
-         */
+
+        graphLikesPorAñoButton = new JButton("Cantidad de Likes por año");
+        graphLikesPorAñoButton.addActionListener(e -> graficosGUI.graficoLikesPorAño(estadisticas.LikesPorAño()));
+        graphLikesPorTipoButton = new JButton("Cantidad de Likes por tipo de publicacion");
+        graphLikesPorTipoButton.addActionListener(e -> graficosGUI.graficoLikesPorTipo(estadisticas.cantLikesDeCadaTipo(perfilInstagram.getListaPublicaciones())));
+        graphCantPubPorTipoButton = new JButton("Cantidad de publicaciones por tipo");
+        graphCantPubPorTipoButton.addActionListener(e -> graficosGUI.graficoCantPubPorTipo(estadisticas.cantPublicacionesDeCadaTipo(perfilInstagram.getListaPublicaciones())));
+        graph5PubMasLikesButton = new JButton("Las 5 publicaciones con más likes");
+        graph5PubMasLikesButton.addActionListener(e -> graficosGUI.grafico5PubMasLikes(estadisticas.publicacionesConMasLikes(perfilInstagram.getListaPublicaciones())));
+
         JPanel buttonPanelEst = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanelEst.add(graphLikesPorAñoButton);
         buttonPanelEst.add(graphLikesPorTipoButton);
