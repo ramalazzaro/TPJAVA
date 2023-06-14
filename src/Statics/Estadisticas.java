@@ -14,7 +14,6 @@ import java.util.HashMap;
  */
 public class Estadisticas {
     private final SortedSet<Publicacion> listaPublicacionesPorFecha = new TreeSet<>(new FechaComparator());
-
     /**
      * Crea una lista de publicaciones ordenadas por fecha a partir de un perfil de Instagram.
      * @param perfilInstagram El perfil de Instagram del cual obtener las publicaciones.
@@ -27,7 +26,6 @@ public class Estadisticas {
      * @return La lista de publicaciones ordenadas por fecha.
      */
     public SortedSet<Publicacion> getListaPublicacionesPorFecha(){return listaPublicacionesPorFecha;}
-
     /**
      * Calcula la cantidad de likes por año de las publicaciones.
      * @param listaPublicacionesPorFecha La lista de publicaciones ordenadas por fecha.
@@ -57,7 +55,6 @@ public class Estadisticas {
 
         return MapCantLikesAño;
     }
-
     /**
      * Calcula la cantidad de publicaciones por tipo.
      * @param listaPublicaciones La lista de publicaciones.
@@ -78,7 +75,6 @@ public class Estadisticas {
         }
         return MapCant;
     }
-
     /**
      * Calcula la cantidad de likes por cada tipo de publicación.
      * @param listaPublicaciones La lista de publicaciones.
@@ -97,7 +93,6 @@ public class Estadisticas {
         }
         return vecCantL;
     }
-
     /**
      * Obtiene las publicaciones con más likes.
      * @param listaPublicaciones La lista de publicaciones.

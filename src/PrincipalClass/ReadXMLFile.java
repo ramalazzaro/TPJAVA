@@ -40,24 +40,24 @@ public class ReadXMLFile {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
             doc.getDocumentElement().normalize();
-            // Obtener nodos de imagen, video, audio y texto del archivo XML
+            // Obtiene nodos de imagen, video, audio y texto del archivo XML
             NodeList imagenList = doc.getElementsByTagName("Imagen");
             NodeList videoList = doc.getElementsByTagName("Video");
             NodeList audioList = doc.getElementsByTagName("Audio");
             NodeList textoList = doc.getElementsByTagName("Texto");
-            // Procesar cada nodo de imagen
+            // Procesa cada nodo de imagen
             for (int i = 0; i < imagenList.getLength(); i++) {
                 parseImagenNode(imagenList.item(i));
             }
-            // Procesar cada nodo de video
+            // Procesa cada nodo de video
             for (int i = 0; i < videoList.getLength(); i++) {
                 parseVideoNode(videoList.item(i));
             }
-            // Procesar cada nodo de audio
+            // Procesa cada nodo de audio
             for (int i = 0; i < audioList.getLength(); i++) {
                 parseAudioNode(audioList.item(i));
             }
-            // Procesar cada nodo de texto
+            // Procesa cada nodo de texto
             for (int i = 0; i < textoList.getLength(); i++) {
                 parseTextoNode(textoList.item(i));
             }

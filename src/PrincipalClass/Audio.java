@@ -49,13 +49,22 @@ public class Audio extends Publicacion implements Durable {
     @Override
     public void finalizar() {
         finaliza = true;
-    }
+    }/**
+    * Devuelve el estado de la variable "pausa".
+    *
+    * @return true si la pausa está activada, false en caso contrario.
+    */
     @Override
-    public boolean getPausa(){
+    public boolean getPausa() {
         return pausa;
     }
+    /**
+     * Devuelve el estado de la variable "finaliza".
+     *
+     * @return true si la finalización está activada, false en caso contrario.
+     */
     @Override
-    public boolean getFinaliza(){
+    public boolean getFinaliza() {
         return finaliza;
     }
     /**
