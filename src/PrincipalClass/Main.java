@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         PerfilInstagram perfilInstagram = new PerfilInstagram();
         ReadXMLFile readXMLFile = new ReadXMLFile(perfilInstagram);
-        readXMLFile.parseXML("TPJAVA/datos.xml");
+        readXMLFile.parseXML("datos.xml");
 
         try {
             FileInputStream fileIn = new FileInputStream("datos.ser");
