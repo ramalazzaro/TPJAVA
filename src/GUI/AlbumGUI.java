@@ -1,4 +1,3 @@
-
 package GUI;
 
 import PrincipalClass.Album;
@@ -8,10 +7,18 @@ import PrincipalClass.Publicacion;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Clase que representa la interfaz de usuario para mostrar y gestionar álbumes de un perfil de Instagram.
+ */
 public class AlbumGUI extends JFrame {
     private JPanel albumPanel;
     private GridLayout albumPanelLayout;
 
+    /**
+     * Constructor de la clase AlbumGUI.
+     *
+     * @param perfil el perfil de Instagram para el cual se mostrarán los álbumes.
+     */
     public AlbumGUI(PerfilInstagram perfil) {
         createUI(perfil);
         displayAlbum();
@@ -40,8 +47,13 @@ public class AlbumGUI extends JFrame {
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
     }
 
+    /**
+     * Actualiza la lista de álbumes en la interfaz de usuario.
+     *
+     * @param perfilInstagram el perfil de Instagram del cual se obtendrán los álbumes.
+     */
     public void updateAlbumList(PerfilInstagram perfilInstagram) {
-        albumPanel.removeAll(); // Clear the existing albums
+        albumPanel.removeAll(); // Limpiar los álbumes existentes
 
         int numRows = perfilInstagram.getListaAlbumes().size();
         albumPanel.setLayout(new GridLayout(numRows, 1, 10, 10));
@@ -62,11 +74,11 @@ public class AlbumGUI extends JFrame {
             albumEntryPanel.add(albumButton);
             albumEntryPanel.add(deleteAlbumButton);
 
-            // Create the publications panel
+            // Crear el panel de publicaciones
             JPanel publicationsPanel = new JPanel();
             publicationsPanel.setLayout(new BoxLayout(publicationsPanel, BoxLayout.Y_AXIS));
 
-            // Add the publication buttons
+            // Agregar los botones de publicación
             for (Publicacion publicacion : album.getPublicaciones()) {
                 JPanel publicationEntryPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
                 JLabel publicationLabel = new JLabel(
@@ -84,14 +96,19 @@ public class AlbumGUI extends JFrame {
 
             albumEntryPanel.add(publicationsPanel);
 
-            // Add the components to the album panel
+            // Agregar los componentes al panel de álbumes
             albumPanel.add(albumEntryPanel);
         }
 
-        albumPanel.revalidate(); // Update the albumPanel
+        albumPanel.revalidate(); // Actualizar albumPanel
         albumPanel.repaint();
     }
 
+    /**
+     * Crea un nuevo álbum para el perfil de Instagram.
+     *
+     * @param perfilInstagram el perfil de Instagram al que se agregará el álbum.
+     */
     public void createAlbum(PerfilInstagram perfilInstagram) {
         JDialog dialog = new JDialog(this, "Crear Álbum", true);
         dialog.setSize(400, 300);
@@ -120,7 +137,7 @@ public class AlbumGUI extends JFrame {
                     }
                 }
                 perfilInstagram.addAlbum(album);
-                // Since you have created a new album, you should refresh your album's UI here.
+                // Dado que se ha creado un nuevo álbum, se debe actualizar la interfaz de usuario del álbum aquí.
                 dialog.dispose();
                 refreshGUI(perfilInstagram);
             }
@@ -130,8 +147,13 @@ public class AlbumGUI extends JFrame {
         dialog.setVisible(true);
     }
 
+    /**
+     * Actualiza la interfaz de usuario del álbum.
+     *
+     * @param perfilInstagram el perfil de Instagram del cual se obtendrán los álbumes.
+     */
     public void refreshGUI(PerfilInstagram perfilInstagram) {
-        albumPanel.removeAll(); // Clear the existing albums
+        albumPanel.removeAll(); // Limpiar los álbumes existentes
 
         for (Album album : perfilInstagram.getListaAlbumes()) {
             JButton albumButton = new JButton(album.toString());
@@ -149,7 +171,7 @@ public class AlbumGUI extends JFrame {
             albumPanel.add(albumEntryPanel);
         }
 
-        albumPanel.revalidate(); // Update the albumPanel
+        albumPanel.revalidate(); // Actualizar albumPanel
         albumPanel.repaint();
     }
 

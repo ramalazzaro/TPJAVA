@@ -11,17 +11,27 @@ import java.awt.event.ItemListener;
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * Clase que representa la interfaz de usuario para el inicio de sesión.
+ */
 public class LoginGUI extends JFrame {
     private JTextField usernameField;
     private JPasswordField passwordField;
     private LoginListener listener;
     private String password;
 
+    /**
+     * Constructor de la clase LoginGUI.
+     * Carga la contraseña almacenada y crea la interfaz de usuario.
+     */
     public LoginGUI() {
         loadPassword();
         createUI();
     }
 
+    /**
+     * Método privado que carga la contraseña almacenada desde un archivo.
+     */
     private void loadPassword() {
         try {
             File file = new File("password.txt");
@@ -34,6 +44,11 @@ public class LoginGUI extends JFrame {
         }
     }
 
+    /**
+     * Método privado que guarda la nueva contraseña en un archivo.
+     *
+     * @param newPassword la nueva contraseña a guardar
+     */
     private void savePassword(String newPassword) {
         try {
             FileWriter writer = new FileWriter("password.txt");
@@ -45,6 +60,9 @@ public class LoginGUI extends JFrame {
         }
     }
 
+    /**
+     * Método privado que crea la interfaz de usuario.
+     */
     private void createUI() {
         setTitle("Login");
         setSize(300, 250);
@@ -127,6 +145,11 @@ public class LoginGUI extends JFrame {
         getContentPane().add(formPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Método privado que autentica el inicio de sesión.
+     * Comprueba si el nombre de usuario y la contraseña ingresados son válidos.
+     * Si la autenticación es exitosa, llama al método onLoginSuccessful del listener.
+     */
     private void authenticate() {
         String username = usernameField.getText();
         String inputPassword = new String(passwordField.getPassword());
@@ -141,6 +164,11 @@ public class LoginGUI extends JFrame {
         }
     }
 
+    /**
+     * Establece el listener de inicio de sesión.
+     *
+     * @param listener el objeto que implementa la interfaz LoginListener
+     */
     public void setListener(LoginListener listener) {
         this.listener = listener;
     }

@@ -23,9 +23,9 @@ public class Main {
             PerfilInstagram perfilIGRec = (PerfilInstagram) objectIn.readObject();
             if (!perfilIGRec.getListaAlbumes().isEmpty()){
                 perfilInstagram.getListaAlbumes().addAll(perfilIGRec.getListaAlbumes());
-                System.out.println("Se recupero el perfil correctamente");
+                System.out.println("Se recupero los albumes");
             }else
-                System.out.println("No se recuperó ningun perfil");
+                System.out.println("No se recuperó ningun album");
             objectIn.close();
             fileIn.close();
         } catch (IOException | ClassNotFoundException e) {

@@ -21,17 +21,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class InstagramGUI extends JFrame {
-    private JTextArea reporteTextArea;
-    private JTextField fechaMinimaTextField;
-    private JTextField fechaMaximaTextField;
     private PerfilInstagram perfilInstagram;
-    private ReportesPublicaciones reporte;
     private JButton albumButton;
-    private ReportesPublicaciones reportesPublicaciones;
     private JPanel publicacionesPanel, reporteAlbumesPanel;
     private JButton logoutButton, reportPublicacionesButton, reportAlbumesButton, graphsButton;
     private ActionListener logoutListener;
-    private CardLayout cardLayout;
     private JPanel mainPanel;
     private JTextArea reportePublicacionesArea;
     private JPanel estadisticasPanel;
